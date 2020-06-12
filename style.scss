@@ -3,6 +3,10 @@ $primary-color_2:#171A70;
 $primary-color_3:#707070;
 $danger-color_1:#FF0303;
 $danger-color_2:#910A0A;
+$active-color:#141F57;
+p{
+    background:rgb(123, 126, 228);
+}
 
 
 .container{
@@ -26,11 +30,15 @@ $danger-color_2:#910A0A;
         position: absolute;
         left:24px;
         top: 40px;
+        
     }
     a{
        text-decoration: none; 
     }
+    
+
 }
+
 
 #top-bar>div:nth-child(2){
     font-size:3rem;
@@ -41,6 +49,42 @@ $danger-color_2:#910A0A;
     padding:5px 0px 8px 0px;
     border-bottom: 11px solid rgba(0, 14, 92,0.26);
     
+}
+
+#primary-nav{
+    
+    text-transform: uppercase;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    padding-top:80px;
+    width:60vw;
+    background: #000C47;
+    color:white;
+    height: 100vh;
+    a{
+        text-decoration: none;
+        color:white;
+    }
+    ul{
+        list-style-type: square;
+        padding-left:50px;
+        li{
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.nav-close{
+    transform: translateY(-100%);
+}
+
+.nav-close,.nav-open{
+    transition: 0.8s;
+}
+
+.nav-open{
+    transform: translateY(0%);
 }
 
 
