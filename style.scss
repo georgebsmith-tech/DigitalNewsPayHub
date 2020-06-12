@@ -4,8 +4,14 @@ $primary-color_3:#707070;
 $danger-color_1:#FF0303;
 $danger-color_2:#910A0A;
 $active-color:#141F57;
-p{
-    background:rgb(123, 126, 228);
+
+
+*{
+    padding:0;
+    margin: 0;
+}
+.fg-red{
+    color: red;
 }
 
 
@@ -76,15 +82,16 @@ p{
 }
 
 .nav-close{
-    transform: translateY(-100%);
+    transform: translateX(-100%);
 }
 
 .nav-close,.nav-open{
+    
     transition: 0.8s;
 }
 
 .nav-open{
-    transform: translateY(0%);
+    transform: translateX(0%);
 }
 
 
@@ -100,7 +107,7 @@ p{
         box-shadow: 14px 15px 10px $danger-color_1;
     }
     #news-slide{
-        width: 68.9%;
+        width: 67%;
         height: 31px;
         background:$primary-color_3;
     }  
@@ -159,6 +166,35 @@ p{
 footer{
     height: 38px;
     background-color: #000E5C;
+}
+
+//latest news blog page
+.latest-news{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 10px;
+    text-overflow: wrap;
+    .news-image-wrapper{
+        background: $primary-color_3;
+        img{
+            width:100%;
+        }
+    }
+    .news-content{
+        .news-date{
+            color: rgba(80, 78, 78,0.5);
+        }
+        // background: grey;
+    }
+    h4{
+        margin-bottom: 8px;
+        a{
+            text-decoration: none;
+        }
+    }
+    h3{
+        margin-bottom: 5px;
+    }
 }
 
 /* Mobile design styles ends here */

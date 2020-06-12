@@ -1,0 +1,47 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+<main>
+    <section class="story container">
+        <div class="image-wrapper">
+            <img src="./images/story image1.1.png" alt="" class="story-image">
+        </div>
+        <div class="article">
+            <h4 class="story-category">Travel</h4>
+            <h2 class="story-title">Surfing in Maldives</h2>
+            <article>
+                It’s windy. The cool breeze of the ocean. It gives, a sense of beauty, in motion. All is flowing,
+                rushing and tide-And I sit in wonder, dreaming beside.
+            </article>
+        </div>
+
+    </section>
+    <section class="wrapper">
+        <ul>
+            <% posts.forEach(post=>{ %>
+            <li class="latest-news container">
+                <div class="news-image-wrapper ">
+                    <img src="<%= post.image %>" alt="<%= post.image_descr %>" class="hide">
+                </div>
+                <div class="news-content">
+
+                    <% if(post.category==="Travel"){ %>
+                    <h4 class="news-category">
+                        <a href="/" class="fg-blue"><%= post.category %></a></h4>
+
+                    <% }else{ %>
+                    <h4 class="news-category"><a href="/" class="fg-red">
+                            <%= post.category %></a></h4>
+                    <% } %>
+                    <h3 class="news-title"><%= post.title %></h3>
+                    <div class="news-date"><%= post.date %></div>
+                    <article class="news-body"><%= post.body %></article>
+                    <div class="news-explore"><a href="/">read more</a></div>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </section>
+</main>
+
+
+<%- include('./partials/footer.ejs') %>
