@@ -19,6 +19,9 @@ $fg-fashion:#0AACDC;
 .fg-blue{
     color: #0AACDC;
 }
+main{
+    min-height: 87vh;
+}
 
 
 .container{
@@ -98,6 +101,19 @@ $fg-fashion:#0AACDC;
 
 .nav-open{
     transform: translateX(0%);
+}
+
+.advert-space{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ecf1f7;
+    color:#000E5C;
+    font-weight:bold;
+    font-size:32px;
+    text-transform:uppercase;
+    height:85px;
+    margin:27px auto;
 }
 
 
@@ -205,6 +221,88 @@ footer{
         font-size:1.1rem;
     }
 }
+
+
+/*login page starts here*/
+.sec-logo{
+    margin-top: 45px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#back-nav{
+    position: absolute;
+    left: 12vw;
+    top: 97px;
+    font-size: 0.8rem;
+    padding: 3px 6px;
+    background: #EFE2E2;
+    max-width: fit-content;
+    border-radius: 50%;
+    height: fit-content;
+}
+
+.form-group{
+    box-sizing: border-box;
+    border:none;
+    display: grid;
+    outline: none;
+    padding:7px 14px;
+    margin:10px auto;
+    width:80vw;
+    column-gap: 5px;
+    grid-template-columns: 10% auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 6px 4px 5px rgb(246, 245, 245);
+    input{
+        width: 100%;
+        padding: 5px;
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+    }
+    label{
+        color:rgba(80, 78, 78,0.2);
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        
+    }
+
+    
+}
+
+.form-control{
+    font-size: 0.7rem;
+    display: block;
+    margin-top: 30px;
+    outline: none;
+    padding:15px;
+    margin:10px auto;
+    margin-top: 30px;
+    width:83vw;
+    background: #070b7a;
+    color: white;
+    border-radius: 100px;
+    text-transform: uppercase;
+    box-shadow: 0px 6px 4px 5px rgb(246, 245, 245);
+
+}
+
+.login-form-caption{
+    font-size: 1.7rem;
+    margin-top: 5px;
+    margin-bottom:40px;
+    
+
+}
+
+
+
+
+/*login page ends here*/
+
+
+
 
 /* Mobile design styles ends here */
 

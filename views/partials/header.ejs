@@ -20,10 +20,12 @@
 
 
             </div>
-
-            <div id="welcome">
-                Welcome
-            </div>
+            <% if(show){ %>
+                <div id="welcome">
+                    Welcome
+                </div>
+            <% } %>
+            
         </div>
         <nav id="primary-nav" class="nav-close">
             <ul>
@@ -40,7 +42,7 @@
                     </ul>
                 </li>
                 <li><a href="/">Sign up</a></li>
-                <li><a href="/">login</a></li>
+                <li><a href="/login">login</a></li>
             </ul>
         </nav>
 

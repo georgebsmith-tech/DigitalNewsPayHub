@@ -3,21 +3,21 @@ const express = require("express");
 const app = express()
 
 app.use(express.static("public"))
-app.use("/blog/css",express.static("public/css"))
-app.use("/blog/images",express.static("public/images"))
+app.use("/blog/css", express.static("public/css"))
+app.use("/blog/images", express.static("public/images"))
 
 
 app.set("views", "./views")
 app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
-    res.render("home", { title: "Home" })
+    res.render("home", { title: "Home", show: true })
 })
 
 // const posts = [6, 8, 3, 7]
 const posts = [
     {
-        id:"12",
+        id: "12",
         image: "images/post1.png",
         image_descr: "image of patients",
         category: "Travel",
@@ -27,7 +27,7 @@ const posts = [
 
     },
     {
-        id:"2",
+        id: "2",
         image: "images/post2.png",
         image_descr: "image of patients",
         category: "Fashion and design",
@@ -37,7 +37,7 @@ const posts = [
 
     },
     {
-        id:"1",
+        id: "1",
         image: "images/post1.png",
         image_descr: "image of patients",
         category: "food and lifestyle",
@@ -46,8 +46,8 @@ const posts = [
         body: "Working out in the morning is so reviving. You feel this much energy that spikes up your day..."
 
     },
-        {
-        id:"9",
+    {
+        id: "9",
         image: "images/post1.png",
         image_descr: "image of patients",
         category: "programming",
@@ -60,19 +60,24 @@ const posts = [
 
 app.get("/blog", (req, res) => {
 
-    res.render("blog_home", { title: "BLOG", posts, cat_color: "fg-red" })
+    res.render("blog_home", { title: "BLOG", posts, cat_color: "fg-red", show: true })
+})
+
+app.get("/login", (req, res) => {
+
+    res.render("login", { title: "Login", show: false })
 })
 
 app.get("/blog/:id", (req, res) => {
-    let myPost=posts[0];
+    let myPost = posts[0];
     posts.forEach(post => {
-        if(post.id===req.params.id){
-            myPost=post;
+        if (post.id === req.params.id) {
+            myPost = post;
         }
     });
     console.log(myPost)
     console.log(req.url)
-    res.render("blog_detailed", { title: `${myPost.category}|${myPost.title}`, myPost})
+    res.render("blog_detailed", { title: `${myPost.category}|${myPost.title}`, myPost, show: true })
 })
 
 
