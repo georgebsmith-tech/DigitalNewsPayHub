@@ -3,6 +3,8 @@ const express = require("express");
 const app = express()
 
 app.use(express.static("public"))
+app.use("/blog/css",express.static("public/css"))
+app.use("/blog/images",express.static("public/images"))
 
 
 app.set("views", "./views")
@@ -63,11 +65,11 @@ app.get("/blog", (req, res) => {
 
 app.get("/blog/:id", (req, res) => {
     let myPost=posts[0];
-    // posts.forEach(post => {
-    //     if(post.id===req.params.id){
-    //         myPost=post;
-    //     }
-    // });
+    posts.forEach(post => {
+        if(post.id===req.params.id){
+            myPost=post;
+        }
+    });
     console.log(myPost)
     console.log(req.url)
     res.render("blog_detailed", { title: `${myPost.category}|${myPost.title}`, myPost})
