@@ -4,7 +4,11 @@
 }
 
 .fg-red {
-  color: red;
+  color: #E44385;
+}
+
+.fg-blue {
+  color: #0AACDC;
 }
 
 .container {
@@ -141,28 +145,30 @@ footer {
 }
 
 .latest-news {
+  margin-bottom: 27px;
   display: grid;
   grid-template-columns: 40% 60%;
   column-gap: 10px;
   text-overflow: wrap;
 }
-.latest-news .news-image-wrapper {
-  background: #707070;
-}
 .latest-news .news-image-wrapper img {
+  display: block;
   width: 100%;
+  height: 100%;
 }
 .latest-news .news-content .news-date {
   color: rgba(80, 78, 78, 0.5);
+  font-size: 0.8rem;
 }
 .latest-news h4 {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .latest-news h4 a {
   text-decoration: none;
 }
 .latest-news h3 {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  font-size: 1.1rem;
 }
 
 /* Mobile design styles ends here */

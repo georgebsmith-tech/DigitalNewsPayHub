@@ -1,0 +1,21 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+<main>
+    <section class="story container">
+        <div class="image-wrapper">
+            <img src="<%= myPost.image %>" alt="<%= myPost.image_descr %>" class="story-image">
+        </div>
+        <div class="article">
+            <h4 class="story-category"><%= myPost.category %></h4>
+            <h2 class="story-title"><%= myPost.title %></h2>
+            <article>
+                <%= myPost.body %>
+            </article>
+        </div>
+
+    </section>
+    
+</main>
+
+
+<%- include('./partials/footer.ejs') %>

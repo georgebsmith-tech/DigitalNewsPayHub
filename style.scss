@@ -4,6 +4,8 @@ $primary-color_3:#707070;
 $danger-color_1:#FF0303;
 $danger-color_2:#910A0A;
 $active-color:#141F57;
+$fg-lifestyle:#E44385;
+$fg-fashion:#0AACDC;
 
 
 *{
@@ -11,7 +13,11 @@ $active-color:#141F57;
     margin: 0;
 }
 .fg-red{
-    color: red;
+    color: #E44385;
+}
+
+.fg-blue{
+    color: #0AACDC;
 }
 
 
@@ -170,30 +176,34 @@ footer{
 
 //latest news blog page
 .latest-news{
+    margin-bottom:27px;
     display: grid;
     grid-template-columns: 40% 60%;
     column-gap: 10px;
     text-overflow: wrap;
     .news-image-wrapper{
-        background: $primary-color_3;
         img{
+            display:block;
             width:100%;
+            height:100%;
         }
     }
     .news-content{
         .news-date{
             color: rgba(80, 78, 78,0.5);
+            font-size:0.8rem;
         }
         // background: grey;
     }
     h4{
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         a{
             text-decoration: none;
         }
     }
     h3{
-        margin-bottom: 5px;
+        margin-bottom: 3px;
+        font-size:1.1rem;
     }
 }
 
