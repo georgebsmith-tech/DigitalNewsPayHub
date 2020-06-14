@@ -262,7 +262,7 @@ footer{
         box-sizing: border-box;
     }
     label{
-        color:rgba(80, 78, 78,0.2);
+        color:rgba(80, 78, 78,0.3);
         text-transform: uppercase;
         font-size: 0.7rem;
         
@@ -296,10 +296,67 @@ footer{
 
 }
 
+#login-mini-btn{
+    position: absolute;
+    right: 11%;
+    top: 52.6%;
+}
+
 
 
 
 /*login page ends here*/
+
+// vendors styling starts here
+
+.table-container{
+    background-color: #73A1D8;
+    padding: 20px;
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        font-size: 9px;
+        text-transform: uppercase;
+       
+
+    }
+    thead{
+        background-color: #0017E6;
+        color:white;
+        td{
+            padding: 10px;
+        }
+
+    }
+
+    tbody>tr:nth-child(even){
+        background-color: #E2D5AA;
+    }
+    tbody>tr:nth-child(odd){
+        background-color: white;
+    }
+    td{
+        
+        margin: 0px;
+        padding: 8px;
+    }
+
+    table, th, td {
+        border-bottom: 2px solid black;
+    }
+    
+}
+
+.vendor-cap{
+    margin-top: 35px;
+    color: #E68619;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+
+//vendors styling ends hers
 
 
 

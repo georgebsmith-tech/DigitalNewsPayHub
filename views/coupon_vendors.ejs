@@ -1,0 +1,50 @@
+<%- include('./partials/head.ejs') %>
+<main>
+    <section>
+        <div class="container sec-logo">
+            <img src="./images/secondary-logo1.png" alt="" srcset="./images/secondary-logo1.png 1x,./images/secondary-logo2.png 2x">
+        </div>
+        <h1 class="vendor-cap container center-text">
+            Vendors
+        </h1>
+
+    </section>
+    <section class="container">
+        <div class="table-container center-text">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vendor</th>
+                        <th>contact no</th>
+                        <th>bank</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <% for(let record of records){ %>
+                        <tr>
+                            <td><%= record.name %></td>
+                            <td><%= record.phone %></td>
+                            <td><%= record.bank %></td>
+                        </tr>
+                    <% } %>
+        
+        
+    
+
+                </tbody>
+                
+                
+            </table>
+            
+
+        </div>
+     
+         
+    </section>
+
+               
+</main>
+
+
+<%- include('./partials/footer.ejs') %>
