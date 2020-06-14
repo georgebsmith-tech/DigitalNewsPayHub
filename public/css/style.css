@@ -241,7 +241,7 @@ footer {
   margin: 10px auto;
   margin-top: 30px;
   width: 83vw;
-  background: #070b7a;
+  background: #070B7A;
   color: white;
   border-radius: 100px;
   text-transform: uppercase;
@@ -262,7 +262,7 @@ footer {
 
 /*login page ends here*/
 .table-container {
-  background-color: #73A1D8;
+  background-color: #E2E2FF;
   padding: 20px;
 }
 .table-container table {
@@ -298,6 +298,59 @@ footer {
   color: #E68619;
   text-transform: uppercase;
   font-size: 2rem;
+}
+
+.dashboard-wrapper {
+  background-color: #E2E2FF;
+  padding: 30px 0px;
+}
+.dashboard-wrapper .container {
+  background-color: white;
+  border-radius: 5px;
+}
+.dashboard-wrapper .container .profile-avatar {
+  padding: 15px 0px;
+  border-bottom: 1px solid grey;
+}
+.dashboard-wrapper .container .profile-avatar:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+.dashboard-wrapper .container button {
+  width: 62vw;
+  background: #070B7A;
+  border-radius: 7px;
+  color: white;
+  padding: 6px 0px;
+  margin: 7px 0px 20px 0px;
+}
+.dashboard-wrapper .container .earning-details {
+  padding: 10px 0px;
+  position: relative;
+}
+.dashboard-wrapper .container .earning-details > div {
+  display: flex;
+  justify-content: space-around;
+}
+.dashboard-wrapper .container .earning-details > div > div {
+  margin-bottom: 5px;
+  padding-left: 0px;
+}
+.dashboard-wrapper .container .earning-details #border-line {
+  border-bottom: 1px solid grey;
+  margin: 15px auto 0px auto;
+  width: 77vw;
+}
+
+.dash-toggle-wrapper {
+  background-color: #000C47;
+}
+.dash-toggle-wrapper .container {
+  height: 69px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 /* Mobile design styles ends here */

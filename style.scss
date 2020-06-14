@@ -6,6 +6,9 @@ $danger-color_2:#910A0A;
 $active-color:#141F57;
 $fg-lifestyle:#E44385;
 $fg-fashion:#0AACDC;
+$wrapper1:#E2E2FF;
+$button-color:#070B7A;
+
 
 
 *{
@@ -280,7 +283,7 @@ footer{
     margin:10px auto;
     margin-top: 30px;
     width:83vw;
-    background: #070b7a;
+    background: $button-color;
     color: white;
     border-radius: 100px;
     text-transform: uppercase;
@@ -310,7 +313,7 @@ footer{
 // vendors styling starts here
 
 .table-container{
-    background-color: #73A1D8;
+    background-color: $wrapper1;
     padding: 20px;
     table{
         width: 100%;
@@ -357,6 +360,73 @@ footer{
 
 
 //vendors styling ends hers
+
+// dashboard styling starts here
+.dashboard-wrapper{
+    background-color: $wrapper1;
+    padding:30px 0px;
+    
+    .container{
+        background-color: white;
+        border-radius: 5px;
+        .profile-avatar{
+            padding: 15px 0px;
+            border-bottom: 1px solid grey;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.03);
+            }
+        }
+        button{
+            width:62vw;
+            background: $button-color;
+            border-radius: 7px;
+            color: white;
+            padding: 6px 0px;
+            margin:7px 0px 20px 0px;
+        }
+        .earning-details{
+            padding: 10px 0px;
+           
+            position: relative;
+            & >div{
+                display: flex;
+                justify-content:space-around;
+                & >div{
+                    margin-bottom: 5px;
+                    padding-left: 0px;
+                }
+
+            }
+
+            #border-line{
+
+                border-bottom: 1px solid grey;
+                margin: 15px auto 0px auto;
+                width: 77vw;
+            }
+            
+        }
+    }
+}
+
+.dash-toggle-wrapper{
+    background-color: #000C47;
+    .container{
+        height: 69px;
+        margin-top: 0px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        
+    }
+}
+
+
+
+
+//dashboard styling ends here
 
 
 
