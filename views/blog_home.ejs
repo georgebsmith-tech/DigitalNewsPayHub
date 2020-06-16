@@ -1,13 +1,13 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/header.ejs') %>
 <main>
-<section class="wrapper">
-    <div class="advert-space center-text container">
-        advert
+    <section class="wrapper">
+        <div class="advert-space center-text container">
+            advert
 
-    </div>
-    
-</section>
+        </div>
+
+    </section>
     <section class="story container">
         <div class="image-wrapper">
             <img src="./images/story image1.1.png" alt="" class="story-image">
@@ -41,7 +41,7 @@
                     <% } %>
                     <h3 class="news-title"><%= post.title %></h3>
                     <div class="news-date"><%= post.date %></div>
-                    <article class="news-body"><%= post.body %></article>
+                    <article class="news-body"><%- post.markedBody.substr(0,100) %>...</article>
                     <div class="news-explore"><a href="/blog/<%= post.id %>">read more</a></div>
                 </div>
             </li>

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router()
 
-const UserModel = require("../models/usersModel");
+const PostModel = require("../models/postModel");
 
 router.get("/login", (req, res) => {
 
