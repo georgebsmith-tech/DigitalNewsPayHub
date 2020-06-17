@@ -7,19 +7,24 @@ const JSDOM = require("jsdom").JSDOM
 const dompurify = creatDompurifier(new JSDOM().window)
 
 // const url = "mongodb://localhost:27017/myPosts"
-const url = `mongodb+srv://user1:user1@dnh-yltvr.mongodb.net/posts?retryWrites=true&w=majority`
+const url = `mongodb+srv://digitalnews:digitalnews@cluster0-kyup2.mongodb.net/newsPosts?retryWrites=true&w=majority`
 
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
-    if (err) throw err
-    console.log("Connection is successful!!");
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(data => {
+        console.log("Connection is successful!!")
+    })
+    .catch(err => {
+        throw err
+    })
 
-})
 
 const Schema = new mongoose.Schema({
     title: String,
     category: String,
+    Story_Image: Buffer,
     body: String,
-    markedBody: String
+    markedBody: String,
+
 })
 
 Schema.pre("validate", function (next) {
@@ -30,6 +35,6 @@ Schema.pre("validate", function (next) {
     next()
 })
 
-const Post = mongoose.model("Post", Schema)
+const Post = mongoose.model("post", Schema)
 
 module.exports = Post;

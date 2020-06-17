@@ -34,7 +34,8 @@ const adminBro = new AdminBro({
     }],
     rootPath: '/admin',
     branding: {
-        companyName: "Digital news Hub"
+        companyName: "Digital news Hub",
+        logo: "https://res.cloudinary.com/dfm1c1iri/image/upload/v1592379289/Digitalnewpay_logo-02_z2q6cr.png"
     }
 
 })
