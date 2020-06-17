@@ -4,9 +4,6 @@ const router = express.Router()
 const PostModel = require("../models/postModel")
 
 
-
-
-
 const posts = [
 
 ]
