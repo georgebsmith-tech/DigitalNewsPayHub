@@ -4,12 +4,13 @@ const router = express.Router()
 const PostModel = require("../models/postModel")
 
 
-
+const img = "https://res.cloudinary.com/dfm1c1iri/image/upload/v1592415652/image1_fqzvuh.jpg"
 router.get("/blog", (req, res) => {
     PostModel.find()
         .then(data => {
             // console.log(osts)
-            res.render("blog_home", { title: "BLOG", posts: data, cat_color: "fg-red", show: true })
+
+            res.render("blog_home", { title: "BLOG", posts: data, cat_color: "fg-red", show: true, img })
         })
         .catch(err => {
             console.log(err)
@@ -24,9 +25,9 @@ router.get("/blog/:id", (req, res) => {
 
     PostModel.findOne({ _id: req.params.id })
         .then((data) => {
-            console.log(data)
+            // console.log(data)
             // res.end()
-            res.render("blog_detailed", { title: `${data.category}|${data.title}`, myPost: data, show: true })
+            res.render("blog_detailed", { title: `${data.category}|${data.title}`, myPost: data, show: true, img })
         })
 
 
@@ -34,9 +35,8 @@ router.get("/blog/:id", (req, res) => {
 
 router.post("/admin/posts/add", (req, res) => {
     const result = req.body;
-    // const now = new Date();
-    // result.date = now.toDateString()
-    console.log(result)
+
+    // console.log(result)
     const post = new PostModel(result)
     post.save()
         .then(data => {

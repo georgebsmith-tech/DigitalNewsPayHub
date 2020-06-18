@@ -204,6 +204,7 @@ footer{
         img{
             display:block;
             width:100%;
+            height: 100%;
         }
     }
     .news-content{
@@ -359,7 +360,17 @@ footer{
 }
 
 
+
 //vendors styling ends hers
+// Blog detailed page starts here
+.the-main{
+    p{
+        margin-bottom: 15px;
+        line-height: 1.5rem;
+    }
+}
+
+// Blog detailed page ends here
 
 // dashboard styling starts here
 .dashboard-wrapper{
