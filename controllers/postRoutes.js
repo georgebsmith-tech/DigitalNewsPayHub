@@ -31,7 +31,7 @@ router.get("/news/:id", (req, res) => {
         .then((data) => {
             // console.log(data)
             // res.end()
-            res.render("news_detailed", { title: `${data.category}|${data.title}`, post: data, img })
+            res.render("news_detailed", { title: `${data.category}|${data.title}`, post: data })
         })
 
 
