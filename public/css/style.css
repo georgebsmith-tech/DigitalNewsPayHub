@@ -152,7 +152,6 @@ ul {
   width: 100%;
   display: block;
   border-radius: 7px;
-  height: 100%;
 }
 .liked-in-categories .conainer .story h3, .liked-in-categories .conainer .story h2 {
   font-size: 0.8rem;
@@ -289,7 +288,6 @@ footer .biz-links a {
   .main-section .news .latest-newz img {
     width: 100%;
     border-radius: 7px;
-    height: 100%;
   }
   .main-section .news .latest-newz h2 {
     font-size: 0.9rem;
