@@ -35,12 +35,18 @@ ul{
 //Mobile styling starts here
 
 //styling for the header starts here
+.header{
+    padding: 0px;
+}
 .banner{
     background: rgba(168, 121, 121,0.02);
+    background: white;
+    height: 100%;
     #brand{
         text-align: center;
         text-transform: uppercase;
         font-size: 1.5rem;
+        height: 100%;
        
     }
 }
@@ -48,6 +54,7 @@ ul{
 
 #welcome{
     display: none;
+    background: rgba(168, 121, 121,0.02);
 }
 
 //styling for the header ends here
@@ -186,15 +193,23 @@ ul{
         .story{
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-template-rows: 23vh;
             column-gap: 9px;
             margin-top: 10px;
             margin-bottom: 20px;
             margin-left: 20px;
-            .image{
-                width: 100%;
-                display: block;
+            .image-wrapper{
+                overflow: scroll;
                 border-radius: 7px;
+
+                .image{
+                    width: 300px;
+                    // display: block;
+                    
+                }
+
             }
+            
             h3,h2{
                 font-size: 0.8rem;
             }
@@ -407,6 +422,35 @@ footer{
         
         .the-adverts{
             display:none;
+        }
+    }
+    .liked-in-categories{
+ 
+    
+        .conainer{
+            .story{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 150px;
+                column-gap: 9px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-left: 20px;
+                .image-wrapper{
+                    overflow: scroll;
+                    border-radius: 7px;
+    
+                    .image{
+                        width: 100%;
+                        // display: block;
+                        
+                    }
+    
+                }
+                
+             
+            }
+    
         }
     }
     

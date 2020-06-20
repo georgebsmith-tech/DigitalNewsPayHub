@@ -21,17 +21,25 @@ ul {
   cursor: pointer;
 }
 
+.header {
+  padding: 0px;
+}
+
 .banner {
   background: rgba(168, 121, 121, 0.02);
+  background: white;
+  height: 100%;
 }
 .banner #brand {
   text-align: center;
   text-transform: uppercase;
   font-size: 1.5rem;
+  height: 100%;
 }
 
 #welcome {
   display: none;
+  background: rgba(168, 121, 121, 0.02);
 }
 
 .breaking-news-and-more #adverts {
@@ -143,15 +151,18 @@ ul {
 .liked-in-categories .conainer .story {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 23vh;
   column-gap: 9px;
   margin-top: 10px;
   margin-bottom: 20px;
   margin-left: 20px;
 }
-.liked-in-categories .conainer .story .image {
-  width: 100%;
-  display: block;
+.liked-in-categories .conainer .story .image-wrapper {
+  overflow: scroll;
   border-radius: 7px;
+}
+.liked-in-categories .conainer .story .image-wrapper .image {
+  width: 300px;
 }
 .liked-in-categories .conainer .story h3, .liked-in-categories .conainer .story h2 {
   font-size: 0.8rem;
@@ -320,6 +331,23 @@ footer .biz-links a {
 
   .the-search-and-more .the-adverts {
     display: none;
+  }
+
+  .liked-in-categories .conainer .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px;
+    column-gap: 9px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+  .liked-in-categories .conainer .story .image-wrapper {
+    overflow: scroll;
+    border-radius: 7px;
+  }
+  .liked-in-categories .conainer .story .image-wrapper .image {
+    width: 100%;
   }
 
   footer .biz-links {
