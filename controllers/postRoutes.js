@@ -1,33 +1,37 @@
 const express = require("express");
-const { route } = require("./userRoutes");
 const router = express.Router()
 const PostModel = require("../models/postModel")
 
 
 const img = "https://res.cloudinary.com/dfm1c1iri/image/upload/v1592415652/image1_fqzvuh.jpg"
-router.get("/blog", (req, res) => {
-    PostModel.find()
-        .then(data => {
-            // console.log(osts)
+router.get("/", async (req, res) => {
+    const data = await PostModel.findOne()
+    const allData = await PostModel.find()
+    // console.log(result)
+    // res.end()
 
-            res.render("blog_home", { title: "BLOG", posts: data, cat_color: "fg-red", show: true, img })
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    // console.log(ans)
+
+    // console.log(osts)
+    res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", img })
+    // })
+    // .catch(err => {
+    //     console.log(err)
+    // })
+
+    // res.render("index", { title: "Home" })
+
 
 
 
 })
 
-router.get("/blog/:id", (req, res) => {
+router.get("/news/:id", (req, res) => {
 
     PostModel.findOne({ _id: req.params.id })
         .then((data) => {
             // console.log(data)
             // res.end()
-            res.render("blog_detailed", { title: `${data.category}|${data.title}`, myPost: data, show: true, img })
+            res.render("news_detailed", { title: `${data.category}|${data.title}`, post: data, img })
         })
 
 

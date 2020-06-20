@@ -24,6 +24,8 @@ const Schema = new mongoose.Schema({
     Story_Image: Buffer,
     body: String,
     markedBody: String,
+    image_url: String,
+    number_of_views: Number,
 
 })
 

@@ -9,19 +9,9 @@ router.get("/login", (req, res) => {
 })
 
 router.get("/register", (req, res) => {
-    // const user = new UserModel({
-    //     userName: "whyte-man",
-    //     email: "bomag@blahblabla",
-    //     password: "This is it",
-    //     phone: "my precious"
 
-    // })
+    res.render("sign_up", { show: false })
 
-    // user.save((err, doc) => {
-    //     if (err) throw err
-    //     console.log("Document has been saved successfully\n" + doc)
-    // })
-    // console.log(req.body)
 })
 
 router.post("/register", (req, res) => {

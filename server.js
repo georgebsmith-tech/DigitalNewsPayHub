@@ -7,7 +7,6 @@ const AWS = require("aws-sdk")
 // const postRoutes = require("./controllers/postRoutes");
 const postRouter = require("./controllers/postRoutes");
 const userRouter = require("./controllers/userRoutes");
-const homeRouter = require("./controllers/homeRoute");
 const couponRouter = require("./controllers/coupons");
 const adminRouter = require("./controllers/adminRouter");
 const app = express()
@@ -25,11 +24,11 @@ app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use("/blog/css", express.static("public/css"))
 app.use("/blog/images", express.static("public/images"))
+app.use("/js", express.static("public/js"))
 
 
 app.use(postRouter)
 app.use(userRouter)
-app.use(homeRouter)
 app.use(couponRouter)
 
 

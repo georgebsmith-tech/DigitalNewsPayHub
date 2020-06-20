@@ -1,450 +1,436 @@
-$primary-color_1:#000E5C;
-$primary-color_2:#171A70;
-$primary-color_3:#707070;
-$danger-color_1:#FF0303;
-$danger-color_2:#910A0A;
-$active-color:#141F57;
-$fg-lifestyle:#E44385;
-$fg-fashion:#0AACDC;
-$wrapper1:#E2E2FF;
-$button-color:#070B7A;
-
+// General styling starts here
+$button-color1:#ECF1F7;
+$color1:#070B7A;
+$color2:#000E5C;
+$color3:#003FED;
+$color4:#C9CFEF;
+$color5:#070EEB;
 
 
 *{
     padding:0;
     margin: 0;
 }
-.fg-red{
-    color: #E44385;
+a{
+    text-decoration: none;
 }
-
-.fg-blue{
-    color: #0AACDC;
+ul{
+    list-style-type: none;
 }
-main{
-    min-height: 87vh;
-}
-
 
 .container{
-    width: 88vw;
-    margin:0px auto;
-    margin-top:20px;
+    padding: 0px 20px;
 }
 
-.center-text{
-    text-align: center;
-}
-
-#topmost-header{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    padding-bottom: 17px;
-    #toggle-menu{
-        position: absolute;
-        left:24px;
-        top: 40px;
-        
-    }
-    a{
-       text-decoration: none; 
-    }
-    
-
-}
-
-
-#top-bar>div:nth-child(2){
-    font-size:3rem;
+.active{
+    background: rgba(255, 255, 255,0.19);
     font-weight: bold;
-    color: $primary-color_1;
-    background: #E4E4E4;
-    text-align: center;
-    padding:5px 0px 8px 0px;
-    border-bottom: 11px solid rgba(0, 14, 92,0.26);
-    
+    cursor: pointer;
 }
 
-#primary-nav{
-    
-    text-transform: uppercase;
-    position: absolute;
-    top:0px;
-    left: 0px;
-    padding-top:80px;
-    width:60vw;
-    background: #000C47;
-    color:white;
-    height: 100vh;
-    a{
-        text-decoration: none;
-        color:white;
-    }
-    ul{
-        list-style-type: square;
-        padding-left:50px;
-        li{
-            margin-bottom: 5px;
-        }
-    }
-}
-
-.nav-close{
-    transform: translateX(-100%);
-}
-
-.nav-close,.nav-open{
-    
-    transition: 0.8s;
-}
-
-.nav-open{
-    transform: translateX(0%);
-}
-
-.advert-space{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#ecf1f7;
-    color:#000E5C;
-    font-weight:bold;
-    font-size:32px;
-    text-transform:uppercase;
-    height:85px;
-    margin:27px auto;
-}
+//general styling ends here
 
 
-#news{
-    display: flex;
-    #breaking-news{
-        background:radial-gradient($danger-color_1 70%,$danger-color_2);
-        width: fit-content;
-        padding:10px;
-        color: white;
+
+//Mobile styling starts here
+
+//styling for the header starts here
+.banner{
+    background: rgba(168, 121, 121,0.02);
+    #brand{
+        text-align: center;
         text-transform: uppercase;
-        font-size: 10px;
-        box-shadow: 14px 15px 10px $danger-color_1;
-    }
-    #news-slide{
-        width: 67%;
-        height: 31px;
-        background:$primary-color_3;
-    }  
-
-}
-
-
-
-#search-btn{
-    border: 2px solid $primary-color_3;
-    text-align: center;
-    width: fit-content;
-    padding: 7px 70px;
-    margin: 40px auto 20px auto;
-}
-
-
-
-
-
-.article{
-    padding:10px 15px;
-    .story-title{
-        color:#303336;
-        margin-bottom: 10px;
-    }
-    .story-category{
-        text-transform: uppercase;
-        margin-top: 15px;
-    }
-}
-
-.story-image{
-    width:100%;
-}
-
-
-
-
-
-.access-buttons{
-    margin-bottom: 200px;
-    .button{
-        background: #ECF1F7;
-        color: $primary-color_2;
-        font-size: 17px;
-        text-transform: uppercase;
-        padding: 15px 10px;
-        width: 80px;
-        margin:0px auto 10px auto;
-        border-radius: 50%;
-    
-    }
-}
-
-footer{
-    height: 38px;
-    background-color: #000E5C;
-}
-
-//latest news blog page
-.latest-news{
-    margin-bottom:27px;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    column-gap: 10px;
-    text-overflow: wrap;
-    .news-image-wrapper{
-        img{
-            display:block;
-            width:100%;
-            height: 100%;
-        }
-    }
-    .news-content{
-        .news-date{
-            color: rgba(80, 78, 78,0.5);
-            font-size:0.8rem;
-        }
-        // background: grey;
-    }
-    h4{
-        margin-bottom: 6px;
-        a{
-            text-decoration: none;
-        }
-    }
-    h3{
-        margin-bottom: 3px;
-        font-size:1.1rem;
-    }
-}
-
-
-/*login page starts here*/
-.sec-logo{
-    margin-top: 45px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#back-nav{
-    position: absolute;
-    left: 12vw;
-    top: 97px;
-    font-size: 0.8rem;
-    padding: 3px 6px;
-    background: #EFE2E2;
-    max-width: fit-content;
-    border-radius: 50%;
-    height: fit-content;
-}
-
-.form-group{
-    box-sizing: border-box;
-    border:none;
-    display: grid;
-    outline: none;
-    padding:7px 14px;
-    margin:10px auto;
-    width:80vw;
-    column-gap: 5px;
-    grid-template-columns: 10% auto;
-    margin-bottom: 20px;
-    box-shadow: 0px 6px 4px 5px rgb(246, 245, 245);
-    input{
-        width: 100%;
-        padding: 5px;
-        outline: none;
-        border: none;
-        box-sizing: border-box;
-    }
-    label{
-        color:rgba(80, 78, 78,0.3);
-        text-transform: uppercase;
-        font-size: 0.7rem;
-        
-    }
-
-    
-}
-
-.form-control{
-    font-size: 0.7rem;
-    display: block;
-    margin-top: 30px;
-    outline: none;
-    padding:15px;
-    margin:10px auto;
-    margin-top: 30px;
-    width:83vw;
-    background: $button-color;
-    color: white;
-    border-radius: 100px;
-    text-transform: uppercase;
-    box-shadow: 0px 6px 4px 5px rgb(246, 245, 245);
-
-}
-
-.login-form-caption{
-    font-size: 1.7rem;
-    margin-top: 5px;
-    margin-bottom:40px;
-    
-
-}
-
-#login-mini-btn{
-    position: absolute;
-    right: 11%;
-    top: 52.6%;
-}
-
-
-
-
-/*login page ends here*/
-
-// vendors styling starts here
-
-.table-container{
-    background-color: $wrapper1;
-    padding: 20px;
-    table{
-        width: 100%;
-        border-collapse: collapse;
-        border-spacing: 0px;
-        font-size: 9px;
-        text-transform: uppercase;
+        font-size: 1.5rem;
        
-
-    }
-    thead{
-        background-color: #0017E6;
-        color:white;
-        td{
-            padding: 10px;
-        }
-
-    }
-
-    tbody>tr:nth-child(even){
-        background-color: #E2D5AA;
-    }
-    tbody>tr:nth-child(odd){
-        background-color: white;
-    }
-    td{
-        
-        margin: 0px;
-        padding: 8px;
-    }
-
-    table, th, td {
-        border-bottom: 2px solid black;
-    }
-    
-}
-
-.vendor-cap{
-    margin-top: 35px;
-    color: #E68619;
-    text-transform: uppercase;
-    font-size: 2rem;
-}
-
-
-
-//vendors styling ends hers
-// Blog detailed page starts here
-.the-main{
-    p{
-        margin-bottom: 15px;
-        line-height: 1.5rem;
-    }
-}
-
-// Blog detailed page ends here
-
-// dashboard styling starts here
-.dashboard-wrapper{
-    background-color: $wrapper1;
-    padding:30px 0px;
-    
-    .container{
-        background-color: white;
-        border-radius: 5px;
-        .profile-avatar{
-            padding: 15px 0px;
-            border-bottom: 1px solid grey;
-            &:hover{
-                cursor: pointer;
-                transform: scale(1.03);
-            }
-        }
-        button{
-            width:62vw;
-            background: $button-color;
-            border-radius: 7px;
-            color: white;
-            padding: 6px 0px;
-            margin:7px 0px 20px 0px;
-        }
-        .earning-details{
-            padding: 10px 0px;
-           
-            position: relative;
-            & >div{
-                display: flex;
-                justify-content:space-around;
-                & >div{
-                    margin-bottom: 5px;
-                    padding-left: 0px;
-                }
-
-            }
-
-            #border-line{
-
-                border-bottom: 1px solid grey;
-                margin: 15px auto 0px auto;
-                width: 77vw;
-            }
-            
-        }
-    }
-}
-
-.dash-toggle-wrapper{
-    background-color: #000C47;
-    .container{
-        height: 69px;
-        margin-top: 0px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        
     }
 }
 
 
-
-
-//dashboard styling ends here
-
-
-
-
-/* Mobile design styles ends here */
-
-.hide{
+#welcome{
     display: none;
 }
 
+//styling for the header ends here
+
+//breaking nes and adverts starts here
+.breaking-news-and-more{
+    // margin-top: 1px;
+    #adverts{
+        height: 36px;
+        width: 100vw;
+        background: $color4;
+    }
+}
+
+.the-search-and-more{
+    margin-top: 26px;
+    .the-adverts{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $color4;
+        width: 80vw;
+        margin: 0px auto;
+        height: 36px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        span{
+            position: absolute;
+            left: 33%;
+        }
+       
+    }
+    .search{
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        button{
+            padding: 10px 70px;
+            background: white;
+            border:1px solid grey;
+        }
+    }
+}
+
+//breaking news and adverts ends here
+
+// toggle nav styling starts here 
+.primary-nav{
+    
+    // background: $color2;
+    .toggle-nav{
+        padding-left: 0px;
+        background: $color2;
+        padding-bottom: 6px;
+        & div{
+            width: 100vw;
+            background: $color3;
+            padding-top: 8px;
+            margin-left: 0px;
+            img{
+                margin-left: 20px;
+            }
+        }
+    }
+    nav{
+        opacity: 0;
+        height: 0px;
+        transition: all 0.8s;
+        background: $color2;
+        position: relative;
+        top: -2px;
+        padding: 2px 0px 12px inherit;
+        a{
+            color:white;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+
+        }
+
+        ul{
+            background: $color2;
+            li{
+                padding-bottom: 4px;
+            }
+        }
+
+        .form-nav{
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+//styling for the most-liked starts
+.most-liked{
+    margin-top: 35px;
+    .image-wrapper{
+        .image{
+            width: 100%;
+            display: block;
+            border-radius: 7px 7px 0px 0px;
+        }
+    }
+    h3,h4,em{
+        padding-left:25px ;
+        
+    }
+    h4{
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        padding-top:25px;
+        padding-bottom: 7px;
+    }
+    h3{
+        text-transform: capitalize;
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+    em{
+        display: block;
+        margin-bottom: 20px;
+    }
+
+
+   
+}
+
+//category most liked starts here
+.liked-in-categories{
+    margin-top: 30px;
+
+    .conainer{
+        .story{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 9px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            .image{
+                width: 100%;
+                display: block;
+                border-radius: 7px;
+                height: 100%;
+            }
+            h3,h2{
+                font-size: 0.8rem;
+            }
+        }
+
+    }
+}
+
+//category most liked ends here
+
+
+//forms controls starts here
+.forms-section{
+    margin-top: 80px;
+    .container{
+        a{
+            display: grid;
+            width:35vw;
+            background: $button-color1;
+            text-align: center;
+            padding: 10px 0px;
+            margin:15px auto;
+            border-radius: 50px;
+            text-transform: uppercase;
+            color: $color1;
+        }
+    }
+}
+//forms controls ends here
+
+//styling for the most liked ends
+
+
+//styling for the main content area starts here
+
+.aside-home{
+    display: none;
+}
+
+//styling for the main content area ends here
+//styling for detailed page
+.article{
+    p{
+        margin-bottom: 12px;
+        line-height: 1.5rem;
+    }
+}
+//styling for detailed page ends here
+// footer styling starts here
+footer{
+    margin-top: 20px;
+    .biz-links{
+        background: $color1;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px initial 7px initial;
+        a{
+            color: rgba(255, 255, 255,0.8);
+            font-size: 0.5rem;
+            text-transform: uppercase;
+    
+        }
+    
+    }
+    
+}
+
+
+// footer styling ends here
+
+
+
+
+
+
+
+
+
+
+//Mobile styling ends here
+
+
+// Desktop styling starts here
+@media(min-width:810px){
+    .toggle-nav{
+        display: none;
+    }
+    .primary-nav{
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: fit-content;
+            opacity:1
+        }
+        ul{
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            li{
+                margin-right: 2vw;
+                padding: 5px 10px;
+                &:hover{
+                    background: rgba(255, 255, 255,0.19);
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+        }
+        .form-nav{
+            margin-top: 5px;
+
+        }
+    }
+    #welcome.container{
+        display:flex;
+        justify-content: center;
+        padding-left: 200px;
+        width: 40vw;
+        font-size: 6vw;
+        color: $color2;
+    }
+    #brand{
+        background: white;
+        width: 40vw;
+        margin-left: 0px;
+        color: $color2;
+        img{
+            width: 55px;
+        }
+    }
+    .container{
+        padding:0px 70px;
+    }
+
+    .banner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #brand{
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    .main-section{
+        display: grid;
+        column-gap: 45px;
+        grid-template-columns: 1.5fr 1fr;
+        
+        .aside-home{
+            display: block;
+            margin-top: 38px;
+            width: 100%;
+           
+            & >h3{
+                text-align: center;
+                padding:10px 0px;
+                background: $color5;
+                color:white;
+                border-radius: 10px 10px 0px 0px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+        }
+        .news{
+            .latest-newz{
+                margin-bottom: 25px;
+                margin-left: 22px;
+                display: grid;
+                grid-template-columns: 1fr 1.7fr;
+                column-gap: 25px;
+                img{
+                    width: 100%;
+                    border-radius: 7px;
+                    height: 100%;
+                }
+                h2{
+                    font-size: 0.9rem;
+                }
+                h3{
+                    text-transform: uppercase;
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+    .forms-section{
+        display: none;
+    }
+
+    .desktop-advert{
+        margin-top: 80px;
+        background: $color2;
+        margin-left: 22px;
+        box-sizing: border-box;
+        padding: 30px 20px;
+        .adverts-content{
+            padding: 60px 0px;
+            font-size: 5rem;
+            color: #A4B2FF;
+            text-align: center;
+            background: #7A9FC1;
+            font-weight: bolder;
+            border-radius: 25px;
+        }
+    }
+    .the-search-and-more{
+        
+        .the-adverts{
+            display:none;
+        }
+    }
+    
+    footer{
+        
+        .biz-links{
+            padding-top: 15px;
+            a{
+                font-size: 0.7rem;
+            }
+        }
+        
+    }
+}
+
+    //most ;iked story starts here
+    
+    //most ;iked story ends here
+
+
+
+
+
+
+// Desktop styling ends here

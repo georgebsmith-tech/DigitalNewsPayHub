@@ -1,0 +1,64 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+<main>
+    <section>
+        <div class="breaking-news-and-more">
+            <div id="adverts">
+                This is it
+            </div>
+            <div id="breaking-news">
+
+            </div>
+            <div id="search">
+
+            </div>
+        </div>
+    </section>
+    <section class="the-search-and-more">
+        <div>
+            <div class="the-adverts">
+                <img src="../images/adverts-right1.png" alt="">
+                <span>advertisements</span>
+                <img src="../images/adverts-left1.png" alt="">
+            </div>
+            <div class="search">
+                <button>
+                    search
+                </button>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="content">
+        <div class="container main-section">
+            <div class="blog-content">
+                <section class="most-liked">
+                    <div class="image-wrapper">
+                        <img src="<%= post.image_url %>" alt="" class="image">
+                    </div>
+                    <div class="write-up">
+                        <h4><%= post.category %></h4>
+                        <h3><%= post.title %></h3>
+                        <em>Post on the<%= post.day %> by <%= post.time %></em>
+                        <article class="article">
+                            <%- post.markedBody %>...
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </div>
+            <aside class="latest-news">
+
+            </aside>
+
+        </div>
+    </section>
+</main>
+
+<%- include('./partials/footer.ejs') %>
