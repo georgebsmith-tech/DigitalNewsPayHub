@@ -3,9 +3,10 @@ const router = express.Router()
 
 const PostModel = require("../models/postModel");
 
-router.get("/login", (req, res) => {
+router.get("/login", async (req, res) => {
+    const allData = await PostModel.find()
 
-    res.render("login", { title: "Login", show: false })
+    res.render("login", { title: "Login", posts: allData })
 })
 
 router.get("/register", (req, res) => {

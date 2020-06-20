@@ -11,6 +11,17 @@ $color5:#070EEB;
     padding:0;
     margin: 0;
 }
+
+.block{
+    display: block;
+}
+.red{
+    color: red;
+}
+
+.center-text{
+    text-align: center;
+}
 a{
     text-decoration: none;
 }
@@ -103,6 +114,19 @@ ul{
 }
 
 //breaking news and adverts ends here
+
+//Detailed story starts here
+.news-detailed{
+    // margin: ;
+
+    .image{
+        width:100%;
+    }
+}
+
+
+//Detailed story ends here
+
 
 // toggle nav styling starts here 
 .primary-nav{
@@ -258,6 +282,64 @@ ul{
     }
 }
 //styling for detailed page ends here
+
+//login page starts here
+.login-section{
+    margin: 40px auto;
+    form{
+        margin-bottom: 25px;
+        .button{
+            display: block;
+            width:100%;
+            border-radius: 50px;
+            padding: 8px 0px;
+            background: $color1;
+            color: white;
+            text-transform: uppercase;
+            border: 1px solid $color1;
+            outline: none;
+            box-shadow: 3px 6px 9px 3px rgba(128, 128, 128,0.2);
+        }
+        .form-group{
+            color: rgba(81, 92, 111,0.5);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 3px 6px 9px 3px rgba(128, 128, 128,0.2);
+            border-radius: 8px 8px 0px 0px;
+            padding: 3px 5px 0px 5px;
+            margin-bottom: 25px;
+            &:nth-child(2){
+                border-radius: 0px 0px 8px 8px;
+            }
+            & >div{
+                margin:10px 4px;
+                input{
+                    padding: 6px;
+                    border: none;
+                    outline: none;
+                }
+                
+            }
+            & >div:first-child{
+                padding-top: 6px;
+            }
+            
+            
+        }
+
+    }
+    p{
+        margin-bottom: 15px;
+    };
+    
+}
+
+//login page ends here
+
+
 // footer styling starts here
 footer{
     margin-top: 20px;
@@ -452,6 +534,34 @@ footer{
             }
     
         }
+    }
+    #for-registry{
+        margin-top: 5px;
+        background: red;
+        padding-bottom: 8px;
+
+        #register{
+            padding:5px;
+            background:rgba(255, 255, 255,0.27);
+        }
+    }
+    
+
+    .news-detailed{
+        margin:0 auto ;
+        padding:20px 21vw;
+    
+        .image{
+            width:100%;
+        }
+    }
+
+    .login-section{
+        border:1px solid black;
+        height: fit-content;
+        border-radius: 6px;
+        padding-bottom: 40px;
+        padding-top: 40px;
     }
     
     footer{

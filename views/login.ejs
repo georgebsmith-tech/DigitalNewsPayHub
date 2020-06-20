@@ -33,63 +33,54 @@
 
     <section class="content">
         <div class="container main-section">
-            <div class="blog-content">
-                <section class="most-liked">
-                    <div class="image-wrapper">
-                        <img src="<%= post.image_url %>" alt="" class="image">
-                    </div>
-                    <div class="write-up">
-                        <h4><%= post.category %></h4>
-                        <h3><%= post.title %></h3>
-                        <em>Post on the<%= post.day %> by <%= post.time %></em>
-                        <article>
-                            <%- post.markedBody.substr(0,200) %>...
-                            <a href="/news/<%= post.id %>">Read more</a>
-                        </article>
+            <section class="container login-section">
+                <div>
+                        <h2 class="center-text">Login</h2>
+                        <form action="/" method="POST">
+                            <div class="form-group">
+                                <div>
+                                    <img src="../images/Profile_user1.png" alt="">
 
-                    </div>
-
-                </section>
-                <section class="liked-in-categories">
-                    <div class="conainer">
-                        <% for(const post of posts){ %>
-                        <div class="story">
-                            <div class="image-wrapper">
-                                <img src="<%= post.image_url %>" alt="" class="image">
+                                </div>
+                                <div>
+                                    <label for="user-name" class="block">username / email</label>
+                                    <input type="text" name="user-name" class="block">
+                                </div>
                             </div>
-                            <div class="write-up">
-                                <h3><%= post.category %></h3>
-                                <h2><%= post.title %></h2>
-                                <em>Post on the<%= post.day %> by <%= post.time %></em>
-                                <article>
-                                    <%- post.markedBody.substr(0,50) %>...
-                                    <a href="/news/<%= post.id %>">Read more</a>
-                                </article>
+                            <div class="form-group">
+                                <div>
+                                    <img src="../images/Profile_password1.png" alt="">
 
+                                </div>
+                                <div>
+                                    <label for="password" class="block">password</label>
+                                    <input type="password" name="password" class="block">
+                                </div>
                             </div>
-
-                        </div>
-
-                        <% } %>
-
-                    </div>
-
-                </section>
-                <section class="forms-section">
-                    <div class="container">
+                            
+                            <button type="submit" class="button">login</button>
+                            
+                        </form>
                         <div>
-                            <a href="/login">login</a>
+                            <p >
+                                <div class="center-text" >Forgot Password?</div>
+                                <div class="center-text">Don't have an account <a href="/" class="red"> sign up</a></div>
+                                
+                            </p>
+                            <p>
+                                We are glad to have you back today.Kindly login with your registered username and password and start enjoying the opportunity today.Wishing you splendid stay ahead!
+                            </p>
+                            <p>WhatsApp: <a href="https://wa.me/234598658605">+234 598658605</a></p>
+                            <p>
+                                <div class="red">WhatsApp Us</div>
+                                <div>We will respond within 30 minutes</div>
+                            </p>
+
                         </div>
-
-                        <div>
-                            <a href="/">register</a>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
+                    
+                </div>
+            </section>
+            
             <aside class="aside-home">
                 <h3>Latest News</h3>
 

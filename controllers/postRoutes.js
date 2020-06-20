@@ -3,7 +3,7 @@ const router = express.Router()
 const PostModel = require("../models/postModel")
 
 
-const img = "https://res.cloudinary.com/dfm1c1iri/image/upload/v1592415652/image1_fqzvuh.jpg"
+
 router.get("/", async (req, res) => {
     const data = await PostModel.findOne()
     const allData = await PostModel.find()
@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
 
     // console.log(osts)
-    res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", img })
+    res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red" })
     // })
     // .catch(err => {
     //     console.log(err)
