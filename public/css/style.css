@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.full {
+  width: 100%;
+}
+
 .block {
   display: block;
 }
@@ -92,8 +96,20 @@ ul {
   border: 1px solid grey;
 }
 
+.more-details {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 60px);
+}
+
 .news-detailed .image {
   width: 100%;
+}
+
+.reviews {
+  padding: 7px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd8d8;
 }
 
 .primary-nav .toggle-nav {
@@ -142,7 +158,7 @@ ul {
   display: block;
   border-radius: 7px 7px 0px 0px;
 }
-.most-liked h3, .most-liked h4, .most-liked em {
+.most-liked h3, .most-liked h4, .most-liked em, .most-liked .more-details {
   padding-left: 25px;
 }
 .most-liked h4 {
@@ -158,7 +174,7 @@ ul {
 }
 .most-liked em {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .liked-in-categories {
@@ -231,7 +247,7 @@ ul {
   font-size: 0.9rem;
   text-transform: uppercase;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 3px 6px 9px 3px rgba(128, 128, 128, 0.2);
   border-radius: 8px 8px 0px 0px;
@@ -254,6 +270,46 @@ ul {
 }
 .login-section p {
   margin-bottom: 15px;
+}
+
+.comments {
+  padding: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.3);
+}
+.comments form > div {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.comments form > div input, .comments form > div textarea {
+  padding: 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+.comments form > div input {
+  border: none;
+  border-bottom: 1px solid grey;
+}
+.comments form button {
+  padding: 10px;
+  background: #003FED;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: #003FED;
+  border-radius: 4px;
+}
+
+.detailed {
+  background: rgba(128, 128, 128, 0.2);
+}
+
+.news-detailed {
+  padding: 12px;
+  background: white;
+}
+.news-detailed h1 {
+  font-size: 1.8rem;
+  margin-bottom: 7px;
 }
 
 footer {
@@ -281,6 +337,7 @@ footer .biz-links a {
     justify-content: space-between;
     align-items: center;
     height: fit-content;
+    flex-wrap: wrap;
     opacity: 1;
   }
   .primary-nav ul {
@@ -425,10 +482,16 @@ footer .biz-links a {
   }
 
   .news-detailed {
-    margin: 0 auto;
-    padding: 20px 21vw;
+    background: white;
+    margin: 0 14vw;
+    padding: 20px 2vw;
+    border-radius: 6px;
   }
-  .news-detailed .image {
+  .news-detailed .image-wrapper {
+    box-shadow: 3px 3px 5px 4px rgba(128, 128, 128, 0.4);
+    margin-bottom: 15px;
+  }
+  .news-detailed .image-wrapper .image {
     width: 100%;
   }
 

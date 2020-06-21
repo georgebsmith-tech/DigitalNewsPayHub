@@ -22,11 +22,13 @@ const Schema = new mongoose.Schema({
     title: String,
     category: String,
     Story_Image: Buffer,
+    date: { type: Date, default: new Date().toDateString() },
     body: String,
     markedBody: String,
     image_url: String,
-    number_of_views: Number,
-
+    number_of_views: { type: Number, default: 0 },
+    number_of_likes: { type: Number, default: 0 },
+    comments: [{ body: String, date: Date, by: String, email: String, website: String }]
 })
 
 Schema.pre("validate", function (next) {

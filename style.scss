@@ -11,6 +11,9 @@ $color5:#070EEB;
     padding:0;
     margin: 0;
 }
+.full{
+    width: 100%;
+}
 
 .block{
     display: block;
@@ -115,6 +118,14 @@ ul{
 
 //breaking news and adverts ends here
 
+//details about posts
+.more-details{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,60px);
+}
+//details about posts ends here
+
 //Detailed story starts here
 .news-detailed{
     // margin: ;
@@ -126,6 +137,15 @@ ul{
 
 
 //Detailed story ends here
+
+//readers' reviews starts here
+.reviews{
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(221, 216, 216);
+}
+
+//readers' review ends here
 
 
 // toggle nav styling starts here 
@@ -185,7 +205,7 @@ ul{
             border-radius: 7px 7px 0px 0px;
         }
     }
-    h3,h4,em{
+    h3,h4,em,.more-details{
         padding-left:25px ;
         
     }
@@ -202,7 +222,7 @@ ul{
     }
     em{
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
 
 
@@ -305,7 +325,7 @@ ul{
             font-size: 0.9rem;
             text-transform: uppercase;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             box-shadow: 3px 6px 9px 3px rgba(128, 128, 128,0.2);
             border-radius: 8px 8px 0px 0px;
@@ -338,6 +358,51 @@ ul{
 }
 
 //login page ends here
+
+//comments starts here
+.comments{
+    padding: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(128, 128, 128,0.3);
+    form{
+        & >div{
+            margin-bottom: 15px;
+            margin-top: 15px;
+            input,textarea{
+                padding: 5px;
+                box-sizing: border-box;
+                outline: none;
+            }
+            input{
+                border:none;
+                border-bottom: 1px solid grey;
+            }
+
+        }
+        button{
+            padding: 10px;
+            background: $color3;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            border: $color3;
+            border-radius: 4px;
+        }
+    }
+}
+
+// comments ends here
+
+.detailed{
+    background: rgba(128, 128, 128,0.2);
+}
+.news-detailed{
+    h1{
+       font-size: 1.8rem;
+       margin-bottom: 7px;
+    }
+    padding: 12px;
+    background: white;
+}
 
 
 // footer styling starts here
@@ -385,6 +450,7 @@ footer{
             justify-content: space-between;
             align-items: center;
             height: fit-content;
+            flex-wrap: wrap;
             opacity:1
         }
         ul{
@@ -548,12 +614,19 @@ footer{
     
 
     .news-detailed{
-        margin:0 auto ;
-        padding:20px 21vw;
-    
-        .image{
-            width:100%;
+        background: white;
+        margin:0 14vw ;
+        padding:20px 2vw;
+        border-radius: 6px;
+        .image-wrapper{
+            box-shadow: 3px 3px 5px 4px rgba(128, 128, 128,0.4);
+            margin-bottom: 15px;
+            .image{
+                width:100%;
+            }
+
         }
+        
     }
 
     .login-section{

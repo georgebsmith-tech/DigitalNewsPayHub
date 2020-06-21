@@ -1,6 +1,6 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/header.ejs') %>
-<main>
+<main class="detailed">
     <section>
         <div class="breaking-news-and-more">
             <div id="search">
@@ -31,25 +31,85 @@
         <div class="container detailed-section">
             <div class="blog-content">
                 <section class="news-detailed">
+                    <h1><%= post.title %></h1>
                     <div class="image-wrapper">
                         <img src="<%= post.image_url %>" alt="" class="image">
                     </div>
                     <div class="write-up">
                         <h4><%= post.category %></h4>
-                        <h3><%= post.title %></h3>
-                        <em>Post on the<%= post.day %> by <%= post.time %></em>
+
+                        <em>Posted on <%= post.date %>
+                            <!-- by <%= post.time %>--></em>
                         <article class="article">
                             <%- post.markedBody %>...
                         </article>
+                        <div class="more-details">
+                            <div>
+                                <img src="../images/views1.png" alt="">
+                                <span><%= post.number_of_views %></span>
+                            </div>
+                            <div>
+                                <img src="../images/comments1.png" alt="">
+                                <span><%= post.comments.length %></span>
+                            </div>
+                        </div>
 
                     </div>
 
+
+                    <div class="comments">
+                        <div>
+                            <h3>Comments</h3>
+                            <div class="reviews">
+                                <% for(let comment of post.comments) { %>
+                                <h4><%= comment.by %></h4>
+                                <div><em><%= comment.date %></em></div>
+                                <p><%= comment.body %></p>
+
+                                <% } %>
+                            </div>
+                        </div>
+                        <h3>Leave a comment</h3>
+                        <p>Your email address will not be published</p>
+                        <form action="/news/comments/<%= post.id %>" method="POST">
+                            <div>
+                                <label for="name" class="block full">Name</label>
+                                <input type="text" class="block full" name="name">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block full">Email<span class="red"> *</span></label>
+                                <input type="email" class="block full" required name="email">
+                            </div>
+
+                            <div>
+                                <label for="" class="block">Website</label>
+                                <input type="text" class="block full" name="website">
+                            </div>
+                            <div>
+                                <label for="email" class="block" aria-required="">Comments<span class="red">
+                                        *</span></label>
+                                <textarea name="comment" id="comment" cols="30" rows="10" class="block full"></textarea>
+                            </div>
+                            <div>
+                                <div>
+                                    <input type="checkbox" name="notify-for-comments" id=""><label for="">Notify me of
+                                        follow-up comments by email</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="notify-for-posts" id=""><label for="">Notify me of new
+                                        posts by email</label>
+                                </div>
+
+                            </div>
+
+                            <button class="block" type="submit">post comment</button>
+                        </form>
+
+                    </div>
                 </section>
 
             </div>
-            <!-- <aside class="latest-news">
-
-            </aside> -->
 
         </div>
     </section>

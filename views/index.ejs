@@ -3,7 +3,7 @@
 <main>
     <section>
         <div class="breaking-news-and-more">
-            
+
             <div id="breaking-news">
 
             </div>
@@ -41,7 +41,18 @@
                     <div class="write-up">
                         <h4><%= post.category %></h4>
                         <h3><%= post.title %></h3>
-                        <em>Post on the<%= post.day %> by <%= post.time %></em>
+                        <em>Posted on <%= post.date %>
+                            <!-- by <%= post.time %>--></em>
+                        <div class="more-details">
+                            <div>
+                                <img src="../images/views1.png" alt="">
+                                <span><%= post.number_of_views %></span>
+                            </div>
+                            <div>
+                                <img src="../images/comments1.png" alt="">
+                                <span><%= post.comments.length %></span>
+                            </div>
+                        </div>
                         <article>
                             <%- post.markedBody.substr(0,200) %>...
                             <a href="/news/<%= post.id %>">Read more</a>
