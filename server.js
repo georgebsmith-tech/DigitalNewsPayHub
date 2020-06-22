@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const AWS = require("aws-sdk")
+// const AWS = require("aws-sdk")
 
 
 
@@ -8,11 +8,12 @@ const AWS = require("aws-sdk")
 const postRouter = require("./controllers/postRoutes");
 const userRouter = require("./controllers/userRoutes");
 const couponRouter = require("./controllers/coupons");
-const adminRouter = require("./controllers/adminRouter");
+// const adminRouter = require("./controllers/adminRouter");
+const adminRoute = require("./controllers/adminroutes")
 const app = express()
 
 
-app.use("/admin", adminRouter)
+// app.use("/admin", adminRouter)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
@@ -30,6 +31,7 @@ app.use("/js", express.static("public/js"))
 app.use(postRouter)
 app.use(userRouter)
 app.use(couponRouter)
+app.use(adminRoute)
 
 
 

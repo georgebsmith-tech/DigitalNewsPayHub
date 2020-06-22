@@ -58,7 +58,7 @@ router.post("/news/comments/:id", async (req, res) => {
 
 })
 
-router.post("/admin/posts/add", (req, res) => {
+router.post("/admins/add_post", (req, res) => {
     const result = req.body;
 
     // console.log(result)
@@ -66,16 +66,13 @@ router.post("/admin/posts/add", (req, res) => {
     post.save()
         .then(data => {
             console.log("data saved" + data)
-            res.redirect("/blog")
+            res.redirect("/")
         })
         .catch(err => {
             throw err
         })
 })
 
-router.get("/admin/posts/add", (req, res) => {
-    res.render("add_post", { title: "New post" })
-})
 
 
 module.exports = router;

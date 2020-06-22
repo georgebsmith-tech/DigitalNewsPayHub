@@ -3,9 +3,13 @@ const nav = document.querySelector(".primary-nav nav");
 let count = 0;
 toggleNav.addEventListener("click", function (e) {
     if (count % 2 === 0) {
-        nav.style.opacity = 1;
-        nav.style.height = "fit-content";
-        this.setAttribute("src", "../images/toggle-close1.png");
+        nav.style.display = "block";
+        setTimeout(() => {
+            nav.style.opacity = 1;
+            nav.style.height = "fit-content";
+            this.setAttribute("src", "../images/toggle-close1.png");
+        }, 200)
+
         // this.style.width = "35px";
     } else {
         nav.style.height = 0;

@@ -71,7 +71,7 @@
                             <div class="write-up">
                                 <h3><%= post.category %></h3>
                                 <h2><%= post.title %></h2>
-                                <em>Post on the<%= post.day %> by <%= post.time %></em>
+                                <!-- <em>Post on the<%= post.day %> by <%= post.time %></em> -->
                                 <article>
                                     <%- post.markedBody.substr(0,50) %>...
                                     <a href="/news/<%= post.id %>">Read more</a>
@@ -114,7 +114,7 @@
                         <div class="write-up">
                             <h3><%= post.category %></h3>
                             <h2><%= post.title %></h2>
-                            <em>Post on the<%= post.day %> by <%= post.time %></em>
+                            <!-- <em>Post on the<%= post.day %> by <%= post.time %></em> -->
                             <article>
                                 <%- post.markedBody.substr(0,50) %>...
                                 <a href="/news/<%= post.id %>">Read more</a>

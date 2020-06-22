@@ -1,3 +1,56 @@
+#dashboard-main {
+  background: rgba(243, 241, 241, 0.2);
+}
+#dashboard-main #temp1 {
+  height: 50px;
+}
+
+.admin-posts-dashboard input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 8px;
+}
+.admin-posts-dashboard #save-and-preview {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.admin-posts-dashboard #save-and-preview button {
+  padding: 10px 15px;
+  width: 25vw;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #003FED;
+  color: white;
+  border: #003FED;
+  outline: none;
+  border-radius: 5px;
+}
+.admin-posts-dashboard #new-post-title {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 27px;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+.admin-posts-dashboard #category {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 20px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.admin-posts-dashboard .ck-editor__editable_inline {
+  min-height: 300px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,6 +58,10 @@
 
 .full {
   width: 100%;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .block {
@@ -127,6 +184,7 @@ ul {
   margin-left: 20px;
 }
 .primary-nav nav {
+  display: none;
   opacity: 0;
   height: 0px;
   transition: all 0.8s;
@@ -509,6 +567,66 @@ footer .biz-links a {
   footer .biz-links a {
     font-size: 0.7rem;
   }
+}
+#admin-form {
+  background-color: white;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+#admin-form .admin-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#admin-form section {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 300px;
+  min-height: 250px;
+  background: #1b1b1b;
+  background: white;
+  box-shadow: 3px 3px 4px 3px rgba(197, 197, 197, 0.3);
+  border-radius: 5px;
+}
+#admin-form section #admin-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#admin-form .form-section {
+  width: 90%;
+  padding: 10px;
+}
+#admin-form .form-section form {
+  padding-bottom: 20px;
+}
+#admin-form .form-section form div > div {
+  background: white;
+}
+#admin-form .form-section form div > div input {
+  background: whitesmoke;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+#admin-form .form-section form button {
+  text-transform: uppercase;
+  background: #003FED;
+  outline: none;
+  border: #003FED;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

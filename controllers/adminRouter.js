@@ -16,6 +16,8 @@ AdminBro.registerAdapter(AdminBroMongoose)
 //     }
 // })
 
+
+
 const adminBro = new AdminBro({
     resources: [{
         resource: Posts,
