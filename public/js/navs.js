@@ -27,3 +27,13 @@ document.querySelectorAll("nav li").forEach(link => {
         link.classList.add("active")
     })
 })
+
+
+let counter = 0
+document.querySelector(".sub-menu-control").addEventListener("click", function () {
+    if (counter % 2 == 0)
+        document.querySelector("#sub-cat1").style.display = "block"
+    else
+        document.querySelector("#sub-cat1").style.display = "none"
+    counter++
+})

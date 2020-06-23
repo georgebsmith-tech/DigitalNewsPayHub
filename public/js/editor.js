@@ -22,7 +22,7 @@ ClassicEditor
         console.log('Editor was initialized', editor);
     })
     .catch(err => {
-        console.error(err.stack);
+        // console.error(err.stack);
     });
 
 // setTimeout(() => {

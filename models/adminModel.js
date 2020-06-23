@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi")
+const bcrypt = require("bcrypt")
+
 
 // const url = "mongodb://localhost:27017/myPosts"
 const url = `mongodb+srv://digitalnews:digitalnews@cluster0-kyup2.mongodb.net/newsPosts?retryWrites=true&w=majority`
@@ -14,7 +16,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const Schema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
         required: true,
         minlength: 5,
@@ -42,7 +44,53 @@ const Schema = new mongoose.Schema({
 
 })
 
+Schema.pre("save", async function (next) {
+    try {
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(this.password, salt)
+        this.password = hash
+        next()
+
+    } catch (err) {
+        next(err)
+    }
+})
+
+// Schema.methods.isValidPassword= async function(password){
+//     try{
+//         return await bcrypt.compare(password,this.password)
+
+//     }catch(err){
+//         throw err
+//     }
+// }
+
 
 const Admin = mongoose.model("Admin", Schema)
+// const admin = new Admin({
+//     username: "testing",
+//     password: "testing",
+//     email: "testing@gmail.com",
+//     phone: "09812767237"
+// })
+
+// async function encrypt() {
+//     const salt = await bcrypt.genSalt(10)
+//     const hashedPassword = await bcrypt.hash(admin.password, salt)
+//     admin.password = hashedPassword
+//     admin.save()
+//         .then(data => {
+//             console.log("Data saved!!")
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// }
+
+// encrypt()
+
+
+
+
 
 module.exports = Admin;

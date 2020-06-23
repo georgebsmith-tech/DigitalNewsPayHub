@@ -193,6 +193,17 @@ ul {
   top: -2px;
   padding: 2px 0px 12px inherit;
 }
+.primary-nav nav #sep1 {
+  display: flex;
+  justify-content: space-between;
+}
+.primary-nav nav #sep1 #left-it {
+  height: 14px;
+}
+.primary-nav nav #sub-cat1 {
+  display: none;
+  margin-left: 30px;
+}
 .primary-nav nav a {
   color: white;
   text-transform: uppercase;
@@ -398,16 +409,32 @@ footer .biz-links a {
     flex-wrap: wrap;
     opacity: 1;
   }
-  .primary-nav ul {
+  .primary-nav nav > ul > li:hover #sub-cat1 {
+    display: block;
+    margin-top: 7px;
+    margin-left: -10px;
+    position: absolute;
+  }
+  .primary-nav nav > ul > li:hover #sub-cat1 ul {
+    display: block;
+  }
+  .primary-nav nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .primary-nav ul li {
+  .primary-nav nav ul #sub-cat1 {
+    display: none;
+  }
+  .primary-nav nav ul #sub-cat1 a {
+    color: white;
+  }
+  .primary-nav nav ul li {
     margin-right: 2vw;
     padding: 5px 10px;
+    color: white;
   }
-  .primary-nav ul li:hover {
+  .primary-nav nav ul li:hover {
     background: rgba(255, 255, 255, 0.19);
     font-weight: bold;
     cursor: pointer;
@@ -627,6 +654,10 @@ footer .biz-links a {
   padding: 10px;
   width: 100%;
   border-radius: 5px;
+}
+
+.block {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

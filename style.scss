@@ -240,6 +240,18 @@ ul{
         position: relative;
         top: -2px;
         padding: 2px 0px 12px inherit;
+        #sep1{
+            display: flex;
+            justify-content: space-between;
+            #left-it{
+                height: 14px;
+            }
+        }
+        #sub-cat1{
+            display: none;
+            margin-left: 30px;
+
+        }
         a{
             color:white;
             text-transform: uppercase;
@@ -517,23 +529,45 @@ footer{
             align-items: center;
             height: fit-content;
             flex-wrap: wrap;
-            opacity:1
-        }
-        ul{
+            opacity:1;
+            & >ul>li:hover #sub-cat1{
+                display: block;
+                margin-top: 7px;
+                margin-left: -10px;
+                position: absolute;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            li{
-                margin-right: 2vw;
-                padding: 5px 10px;
-                &:hover{
-                    background: rgba(255, 255, 255,0.19);
-                    font-weight: bold;
-                    cursor: pointer;
+            }
+            & >ul>li:hover #sub-cat1 ul{
+                display: block;
+            }
+            // & >ul>li:hover #sub-cat1 ul li{
+            //     background: transparent;
+            // }
+            ul{
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                #sub-cat1{
+                    display: none;
+                    
+                    a{
+                        color:white;
+                    }
+                }
+                li{
+                    margin-right: 2vw;
+                    padding: 5px 10px;
+                    color: white;
+                    &:hover{
+                        background: rgba(255, 255, 255,0.19);
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
                 }
             }
         }
+        
         .form-nav{
             margin-top: 5px;
 
@@ -809,6 +843,10 @@ footer{
 
     }
     
+}
+
+.block{
+    display: block;
 }
 
 // background: rgb(0, 0, 0,0.7);
