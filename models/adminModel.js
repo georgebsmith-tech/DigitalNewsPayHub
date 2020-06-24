@@ -46,8 +46,8 @@ const Schema = new mongoose.Schema({
 
 Schema.pre("save", async function (next) {
     try {
-        const salt = await bcrypt.genSalt(10)
-        const hash = await bcrypt.hash(this.password, salt)
+        // const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(this.password, 10)
         this.password = hash
         next()
 
@@ -68,11 +68,16 @@ Schema.pre("save", async function (next) {
 
 const Admin = mongoose.model("Admin", Schema)
 // const admin = new Admin({
-//     username: "testing",
-//     password: "testing",
-//     email: "testing@gmail.com",
+//     username: "booming",
+//     password: "booming",
+//     email: "booming@gmail.com",
 //     phone: "09812767237"
 // })
+
+// admin.save()
+//     .then(data => {
+//         console.log("data saved!!")
+//     })
 
 // async function encrypt() {
 //     const salt = await bcrypt.genSalt(10)

@@ -1,45 +1,68 @@
 const AdminModel = require("../models/adminModel")
 const bcrypt = require("bcrypt")
 const { func } = require("joi")
-let salt
-async function generateSalt() {
-    salt = await bcrypt.genSalt(10)
-    console.log(salt)
+const passport = require("passport")
+
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+    res.redirect("/admins/login")
 }
 
-generateSalt()
+function checkNotAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        res.redirect("/admins/posts_dashboard")
+        return
+    }
+    next()
+}
 
 
 const router = require("express").Router()
 
-router.get("/admins/login", (req, res) => {
+router.get("/admins/login", checkNotAuthenticated, (req, res) => {
     res.render("admin", { title: "Admin Panel" })
 })
 
-router.post("/admins/login", async (req, res) => {
-    const data = await AdminModel.findOne({ username: req.body.name })
-    if (data) {
+router.post("/admins/login", passport.authenticate("local", {
+    successRedirect: "/admins/posts_dashboard",
+    failureRedirect: "/admins/login",
+    failureFlash: true
 
-        const isTrue = await bcrypt.compare(req.body.password, data.password)
-        console.log(isTrue)
+}))
 
-
-        console.log("Gotten data is " + data)
-        if (data.password === req.body.password) {
-            console.log(data)
-            res.render("admin_posts_dashboard", { title: "Admin Panel" })
-        } else {
-            console.log("Invalid username or  password")
-        }
-    } else {
-        console.log("Invalid username or  password")
-    }
-
-
-
+router.delete("/admins/logout", (req, res) => {
+    req.logOut()
+    res.redirect("/admins/login")
 })
+// const data = await AdminModel.findOne({ username: req.body.name })
 
-router.get("/admins/posts_dashboard", (req, res) => {
+// const AWS = require("aws-sdk")
+
+
+
+// if (data) {
+
+//     const isTrue = await bcrypt.compare(req.body.password, data.password)
+// console.log(isTrue)
+
+// console.log("Gotten data is " + data)
+// if (isTrue) {
+//     // console.log(data)
+//     res.render("admin_posts_dashboard", { title: "Admin Panel" })
+// } else {
+//     console.log("Invalid username or  password")
+//     }
+// } else {
+//     console.log("Invalid username or  password")
+// }
+
+
+
+// })
+
+router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard" })
 })
 

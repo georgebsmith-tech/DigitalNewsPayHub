@@ -31,12 +31,13 @@
         <div class="container detailed-section">
             <div class="blog-content">
                 <section class="news-detailed">
+                    <h5><%= post.category %></h5>
                     <h1><%= post.title %></h1>
                     <div class="image-wrapper">
                         <img src="<%= post.image_url %>" alt="" class="image">
                     </div>
                     <div class="write-up">
-                        <h4><%= post.category %></h4>
+
 
                         <em>Posted on <%= post.date %>
                             <!-- by <%= post.time %>--></em>
@@ -62,9 +63,13 @@
                             <h3>Comments</h3>
                             <div class="reviews">
                                 <% for(let comment of post.comments) { %>
-                                <h4><%= comment.by %></h4>
-                                <div><em><%= comment.date %></em></div>
-                                <p><%= comment.body %></p>
+                                <div class="theComment">
+
+
+                                    <h4><%= comment.by %></h4>
+                                    <div><em><%= comment.date %></em></div>
+                                    <p><%= comment.body %></p>
+                                </div>
 
                                 <% } %>
                             </div>

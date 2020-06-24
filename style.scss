@@ -14,6 +14,16 @@ $color5:#070EEB;
         height: 50px;
     }
 }
+
+#logout{
+    padding: 5px 10px;
+    position: fixed;
+    margin-top: 10px;
+    margin-right: 7px;
+    right: 0px;
+    z-index: 10;
+}
+
 .admin-posts-dashboard{
     input{
         width: 100%;
@@ -204,6 +214,9 @@ ul{
 //Detailed story ends here
 
 //readers' reviews starts here
+.theComment{
+    margin-bottom: 12px;
+}
 .reviews{
     padding: 7px;
     margin-bottom: 10px;
@@ -373,12 +386,26 @@ ul{
 
 //styling for the main content area ends here
 //styling for detailed page
-.article{
-    p{
+.news-detailed{
+    h5{
         margin-bottom: 12px;
-        line-height: 1.5rem;
+        text-transform: uppercase;
+        
+        // margin-top: 12px;
+    }
+    
+    .article{
+        margin-top: 20px;
+        p{
+            margin-bottom: 12px;
+            line-height: 1.5rem;
+        }
+        
+    
+       
     }
 }
+
 //styling for detailed page ends here
 
 //login page starts here
@@ -482,10 +509,52 @@ ul{
     background: white;
 }
 
+//news by category starts here
+.news-by-cat{
+    min-height: 68vh;
+}
+
+.category-contents{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a{
+        display: block;
+        background: $color3;
+        padding: 5px 10px;
+        color: white;
+        margin-top: 10px;
+        width: fit-content;
+    }
+
+    & >div{
+        // text-align: center;
+        padding: 5px;
+        display: block;
+        margin: 10px 5px;
+        // background: lightgray;
+        width: 250px;
+        & >div{
+            width: 100%;
+            margin-top: 8px;
+            
+            img{
+                width: 100%;
+                border-radius: 6px;
+                
+            }
+        }
+        // height: 300px;
+    }
+}
+
+//news by category ends here
 
 // footer styling starts here
 footer{
     margin-top: 20px;
+    // min-height: 88vh;
     .biz-links{
         background: $color1;
         display: flex;

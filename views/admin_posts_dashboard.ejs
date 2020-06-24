@@ -1,7 +1,11 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/header.ejs') %>
 <main id="dashboard-main">
-    <div id="temp1"></div>
+    <div id="temp1">
+        <form action="/admins/logout?_method=DELETE" method="POST">
+            <button type="submit" id="logout" class="block">Log Out</button>
+        </form>
+    </div>
     <section class="admin-posts-dashboard container">
         <section></section>
         <section class="middle-content">

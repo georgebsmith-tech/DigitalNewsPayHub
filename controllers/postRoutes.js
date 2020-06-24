@@ -65,12 +65,26 @@ router.post("/admins/add_post", (req, res) => {
     const post = new PostModel(result)
     post.save()
         .then(data => {
-            console.log("data saved" + data)
+            // console.log("data saved" + data)
             res.redirect("/")
         })
         .catch(err => {
             throw err
         })
+})
+
+
+router.get("/index/:category", async (req, res) => {
+    try {
+        const data = await PostModel.find({ category: req.params.category })
+        if (data === [])
+            data = undefined
+        // console.log(data)
+        res.render("post_by_category", { posts: data, title: req.params.category })
+    } catch (err) {
+        throw err
+    }
+
 })
 
 

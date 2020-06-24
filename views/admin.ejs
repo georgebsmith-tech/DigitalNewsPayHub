@@ -18,6 +18,9 @@
                             <input type="password" placeholder="Password" name="password">
                         </div>
                         <button class="block" type="submit">Login</button>
+                        <% if (messages.error) { %>
+                        <em><%= messages.error %></em>
+                        <% } %>
                     </div>
                 </form>
             </div>

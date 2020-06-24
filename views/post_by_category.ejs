@@ -1,0 +1,64 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+<main class="news-by-cat">
+    <section>
+        <div class="breaking-news-and-more">
+            <div id="search">
+
+            </div>
+        </div>
+    </section>
+    <section class="the-search-and-more">
+        <div>
+            <div class="the-adverts">
+                <img src="../images/adverts-right1.png" alt="">
+                <span>advertisements</span>
+                <img src="../images/adverts-left1.png" alt="">
+            </div>
+            <div class="search">
+                <button>
+                    search
+                </button>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <div>
+        <section>
+
+        </section>
+        <section class="category-contents container">
+            <% if(posts) { %>
+            <% for(let post of posts) { %>
+            <div>
+                <div>
+                    <img src="<%= post.image_url %>" alt="" class="block">
+                </div>
+                <div>
+                    <article>
+                        <%- post.markedBody.substr(0,200) %>...
+                    </article>
+                    <a href="/news/<%= post.id %>">Continue Reading</a>
+                </div>
+            </div>
+
+            <% } %>
+            <% }else{ %>
+            <div>
+                <h2>There is no post in this category yet</h2>
+            </div>
+
+            <% } %>
+        </section>
+        <section>
+
+        </section>
+
+    </div>
+
+</main>
+
+<%- include('./partials/footer.ejs') %>
