@@ -25,6 +25,7 @@ const passport = require("passport");
 const initialize = require("./passport.config")
 
 const AdminModel = require("./models/adminModel")
+const VendorModel = require("./models/vendorsModel")
 const app = express()
 
 
