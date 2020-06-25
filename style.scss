@@ -7,6 +7,65 @@ $color4:#C9CFEF;
 $color5:#070EEB;
 
 
+//socail media share links starts here
+
+.social-media-share{
+    & >div{
+        display: flex;
+        div{
+            margin-left: 7px;
+        }
+    }
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px; 
+    left: 0px;
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 4px 0px 8px rgba(0,0,0,0.3);
+    a {
+        transition: 1s;
+        & :hover{
+            transform: scale(1.2);
+        }
+        
+        .fa-facebook{
+                color: #3b5998;
+        }
+
+        .fa-whatsapp{
+            color: #25d366;
+        }
+        .fa-twitter{
+            color: #1da1f2;
+        }
+
+        .fa-instagram{
+            color: #c13584;
+        }
+
+        .fa-linkedin{
+            color: #0077b5;
+        }
+        
+        
+
+        
+        
+        i{
+            font-size: 1.6rem;
+        }
+    }
+    
+
+}
+
+//socail media share links endss here
+
+
 // admin dashboard starts here
 #dashboard-main{
     background: rgba(243, 241, 241,0.2);
@@ -588,6 +647,23 @@ footer{
 
 // Desktop styling starts here
 @media(min-width:810px){
+
+    .social-media-share{
+        
+        background: white;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-70%);
+        padding: 10px;
+        position: fixed;
+        width: fit-content; 
+        left: 0px;
+        border-radius: 0px 8px 8px 0px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+        a{
+            margin-bottom: 13px;
+        }
+    }
     .toggle-nav{
         display: none;
     }
