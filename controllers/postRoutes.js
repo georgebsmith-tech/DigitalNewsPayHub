@@ -79,8 +79,9 @@ router.get("/index/:category", async (req, res) => {
         const data = await PostModel.find({ category: req.params.category })
         if (data === [])
             data = undefined
+        let post
         // console.log(data)
-        res.render("post_by_category", { posts: data, title: req.params.category })
+        res.render("post_by_category", { posts: data, title: req.params.category, post })
     } catch (err) {
         throw err
     }

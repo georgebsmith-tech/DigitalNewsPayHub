@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital New Hub-<%= title %></title>
 
-    <meta property="og:title" content="European Travel Destinations">
-    <meta property="og:description" content="Offering tour packages for individuals or groups.">
-    <meta property="og:image"
-        content="https://nealschaffer.com/wp-content/uploads/2018/02/coffee-smartphone-twitter-application-58639.jpg">
-    <meta property="og:url" content="https://codeinclusive.codabae.vercel.app/">
+    <% if(post){ %>
+
+    <meta property="og:title" content="<%= post.title %>">
+    <meta property="og:description" content="<%= post.title %>">
+    <meta property="og:image" content="<%= post.image_url %>">
+    <meta property="og:url" content="https://www.dnpayhub.com/news/<%= post.id %>">
     <meta name="twitter:card" content="summary_large_image">
+    <% }else{ %>
+    <meta property="og:title" content="Digital News Pay Hub">
+    <meta property="og:description" content="Where you acquire latest info and get paid for it.">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dfm1c1iri/image/upload/v1592379289/Digitalnewpay_logo-02_z2q6cr.png">
+    <meta property="og:url" content="https://www.dnpayhub.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <% } %>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
