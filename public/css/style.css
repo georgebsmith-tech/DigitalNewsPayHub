@@ -1,3 +1,36 @@
+.vendors-content {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.vendors-content h2 {
+  margin-bottom: 15px;
+}
+.vendors-content > div {
+  background: #DCDFF3;
+  padding: 40px 40px 60px 40px;
+}
+.vendors-content > div table {
+  text-transform: uppercase;
+  background: white;
+  border-collapse: collapse;
+}
+.vendors-content > div table td, .vendors-content > div table th {
+  padding: 7px 40px;
+  border-collapse: collapse;
+}
+.vendors-content > div thead {
+  background: #0017E6;
+  color: white;
+  border-collapse: collapse;
+}
+.vendors-content > div tbody tr:nth-child(even) {
+  background: rgba(0, 23, 230, 0.1);
+}
+
 .social-media-share {
   background: white;
   display: flex;
@@ -208,9 +241,12 @@ ul {
 .more-details {
   margin-bottom: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 60px);
+  grid-template-columns: repeat(3, 60px);
+  column-gap: 10px;
 }
-
+.more-details img {
+  cursor: pointer;
+}
 .news-detailed .image {
   width: 100%;
 }

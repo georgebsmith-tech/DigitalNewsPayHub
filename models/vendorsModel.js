@@ -21,10 +21,10 @@ const Schema = new mongoose.Schema({
         minlength: 5,
         maxlength: 255
     },
-    acct_name: {
+    bank_name: {
         type: String,
         required: true,
-        minlength: 5,
+        minlength: 3,
         maxlength: 255
     },
     // email: {
@@ -68,7 +68,7 @@ const Vendors = mongoose.model("Vendors", Schema)
 // const vendor = new Vendors({
 //     name: "smith",
 //     phone: "08165335988",
-//     acct_name: "George, B smith"
+//     bank_name: "GTB"
 // })
 
 // vendor.save()

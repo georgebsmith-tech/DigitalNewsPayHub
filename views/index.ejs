@@ -41,7 +41,7 @@
                     <div class="write-up">
                         <h4><%= post.category %></h4>
                         <h3><%= post.title %></h3>
-                        <em>Posted on <%= post.date %>
+                        <em>Posted on <%= post.date.toDateString() %>
                             <!-- by <%= post.time %>--></em>
                         <div class="more-details">
                             <div>
@@ -147,6 +147,6 @@
 
 
     </section>
- 
 
-<%- include('./partials/footer.ejs') %>
+
+    <%- include('./partials/footer.ejs') %>

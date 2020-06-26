@@ -67,23 +67,24 @@
                     <div class="write-up">
 
 
-                        <em>Posted on <%= post.date %>
+                        <em>Posted on <%= post.date.toDateString() %>
                             <!-- by <%= post.time %>--></em>
                         <article class="article">
                             <%- post.markedBody %>...
                         </article>
                         <div class="more-details">
                             <div>
-                                <img src="../images/like.png" alt="" width="35px">
+                                <img src="../images/like.png" alt="" width="35px" title="Like this post">
                                 <span>12</span>
+                            </div>
+
+                            <div>
+                                <img src="../images/comments1.png" alt="" title="Drop a comment">
+                                <span><%= post.comments.length %></span>
                             </div>
                             <div>
                                 <img src="../images/views1.png" alt="">
                                 <span><%= post.number_of_views %></span>
-                            </div>
-                            <div>
-                                <img src="../images/comments1.png" alt="">
-                                <span><%= post.comments.length %></span>
                             </div>
                         </div>
 

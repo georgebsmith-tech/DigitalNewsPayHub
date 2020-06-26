@@ -7,6 +7,49 @@ $color4:#C9CFEF;
 $color5:#070EEB;
 
 
+//vendors starts here
+// d
+.vendors-content{
+    h2{
+        margin-bottom: 15px;
+    }
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    & >div{
+        background:#DCDFF3;
+        padding: 40px 40px 60px 40px ;
+        table{
+            text-transform: uppercase;
+            background: white;
+            border-collapse: collapse;
+            td,th{
+                padding: 7px 40px;
+                border-collapse: collapse;
+            }
+        }
+        thead{
+            background:#0017E6;
+            color: white;
+            border-collapse: collapse;
+
+        }
+        tbody{
+            tr:nth-child(even){
+                background: rgba(0, 23, 230,0.1);
+
+            }
+        }
+
+        
+    }
+}
+
+//vendors ends here
+
 //socail media share links starts here
 
 .social-media-share{
@@ -256,7 +299,15 @@ ul{
 .more-details{
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: repeat(2,60px);
+    grid-template-columns: repeat(3,60px);
+    column-gap: 10px;
+    img{
+        cursor: pointer;
+        & :hover{
+
+        }
+
+    }
 }
 //details about posts ends here
 

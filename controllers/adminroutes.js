@@ -22,7 +22,8 @@ function checkNotAuthenticated(req, res, next) {
 const router = require("express").Router()
 
 router.get("/admins/login", checkNotAuthenticated, (req, res) => {
-    res.render("admin", { title: "Admin Panel" })
+    let post;
+    res.render("admin", { title: "Admin Panel", post })
 })
 
 router.post("/admins/login", passport.authenticate("local", {
@@ -63,7 +64,8 @@ router.delete("/admins/logout", (req, res) => {
 // })
 
 router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
-    res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard" })
+    let post;
+    res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
 })
 
 

@@ -1,35 +1,17 @@
 const express = require("express");
 const router = express.Router()
-const records = [
-    {
-        name: "smith",
-        phone: "+2348165335988",
-        bank: "GTB"
 
-    },
-    {
-        name: "smith",
-        phone: "+2348165335988",
-        bank: "GTB"
+const VendorsVendors = require("../models/vendorsModel");
 
-    },
-    {
-        name: "smith",
-        phone: "+2348165335988",
-        bank: "GTB"
 
-    },
-    {
-        name: "smith",
-        phone: "+2348165335988",
-        bank: "GTB"
-
+router.get("/voucher-vendors", async (req, res) => {
+    let post;
+    try {
+        const records = await VendorsVendors.find()
+        res.render("vendors", { title: "Coupon vendors", records, post })
+    } catch (err) {
+        throw err
     }
-]
-
-router.get("/coupon_vendors", (req, res) => {
-
-    res.render("coupon_vendors", { title: "Coupon vendors", records })
 })
 
 
