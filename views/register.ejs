@@ -1,0 +1,165 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+
+<main>
+    <section>
+        <div class="breaking-news-and-more">
+
+            <div id="breaking-news">
+
+            </div>
+            <div id="search">
+
+            </div>
+        </div>
+    </section>
+    <section class="the-search-and-more">
+        <div>
+            <div class="the-adverts">
+                <img src="../images/adverts-right1.png" alt="">
+                <span>advertisements</span>
+                <img src="../images/adverts-left1.png" alt="">
+            </div>
+            <div class="search">
+                <button>
+                    search
+                </button>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="content">
+        <div class="container main-section">
+            <section class="container register-section">
+                <div>
+                    <h2 class="center-text sign-up">Sign Up</h2>
+
+                    <form action="/" method="POST">
+                        <section>
+                            <div class="form-group">
+
+                                <label for="user-name" class="block">First Name</label>
+                                <input type="text" name="user-name" class="block">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name" class="block">Last Name</label>
+                                <input type="text" name="last-name" class="block">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="block">Username</label>
+                                <input type="text" name="username" class="block">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="block">Email</label>
+                                <input type="email" name="email" class="block">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="block">Email</label>
+                                <input type="email" name="email" class="block">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="block">Phone</label>
+                                <input type="tel" name="phone" class="block">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="block">Password</label>
+                                <input type="password" name="password" class="block">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ref-username" class="block">Referal's Username</label>
+                                <input type="text" name="ref-username" class="block">
+                            </div>
+                        </section>
+
+                        <div class="form-group">
+
+                            <input type="checkbox" name="t-and-c">
+                            <label for="t-and-c">I accept to the <a href="#">Terms</a> and <a
+                                    href="">Conditions.</a></label>
+                        </div>
+
+                        <button type="submit" class="sign-up block">sign up</button>
+
+                    </form>
+                    <div class="divider"></div>
+                    <div>
+                        <p>
+                        <div class="center-text have-acct">Already have an account?<a href="#"> Login Here</a></div>
+                        <div class="divider the-second"></div>
+                        <div class="padd-more padd-first">Click <a href="#" class="red">here</a> for authorised
+                            activation code
+                            merchants.</div>
+
+                        </p>
+                        <p>
+                        <h3 class="center-text"> Withdraw, Payment or cash</h3>
+                        <p class="padd-more padd-second">
+                            Kindly note that affiliate/referral
+                            commissions are paid out in cash
+                            within 24 hours.
+                        </p>
+                        </p>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <aside class="aside-home">
+                <h3>Latest News</h3>
+
+
+                <section class="news">
+                    <% for(const post of posts){ %>
+                    <div class="latest-newz">
+                        <div class="image-wrapper">
+                            <img src="<%= post.image_url %>" alt="" class="image">
+                        </div>
+                        <div class="write-up">
+                            <h3><%= post.category %></h3>
+                            <h2><%= post.title %></h2>
+                            <em>Post on the<%= post.day %> by <%= post.time %></em>
+                            <article>
+                                <%- post.markedBody.substr(0,50) %>...
+                                <a href="/news/<%= post.id %>">Read more</a>
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                    <% } %>
+
+
+                </section>
+                <section class="desktop-advert">
+                    <div class="adverts-content">
+                        <div>A</div>
+                        <div>D</div>
+                        <div>V</div>
+                        <div>E</div>
+                        <div>R</div>
+                        <div>T</div>
+                        <div>S</div>
+
+                    </div>
+
+                </section>
+            </aside>
+
+        </div>
+
+
+    </section>
+</main>
+
+<%- include('./partials/footer.ejs') %>

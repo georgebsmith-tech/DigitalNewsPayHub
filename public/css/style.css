@@ -1,3 +1,68 @@
+.sign-up {
+  margin-bottom: 30px;
+}
+
+.padd-more {
+  padding: 10px 43px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.the-second {
+  position: relative;
+}
+
+.have-acct {
+  margin-bottom: 12px;
+  padding-bottom: 16px;
+}
+.have-acct a {
+  color: red;
+}
+
+.register-section button {
+  border-radius: 50px;
+  padding: 10px 35px;
+  text-transform: uppercase;
+  background: #070B7A;
+  margin: 10px auto 15px auto;
+  color: white;
+  font-weight: bold;
+  border: #070B7A;
+}
+.register-section .divider {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  margin-bottom: 13px;
+}
+.register-section section + .form-group {
+  margin: 40px 10px;
+}
+.register-section section + .form-group input {
+  margin-right: 6px;
+}
+.register-section section {
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  padding: 15px;
+}
+.register-section section .form-group {
+  margin-bottom: 8px;
+}
+.register-section section .form-group input {
+  border-radius: 6px;
+  padding: 5px;
+  margin-left: 7px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  box-shadow: 3px 2px 2px rgba(128, 128, 128, 0.2);
+}
+.register-section section .form-group label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.register-section section .form-group input, .register-section section .form-group label {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .vendors-content {
   height: 70vh;
   display: flex;
@@ -529,6 +594,19 @@ footer .biz-links a {
 }
 
 @media (min-width: 810px) {
+  .register-section {
+    margin-left: 16%;
+  }
+  .register-section button {
+    padding: 7px 100px;
+  }
+  .register-section .padd-second {
+    padding: 10px 125px;
+  }
+  .register-section .padd-first {
+    text-align: center;
+  }
+
   .social-media-share {
     background: white;
     display: flex;

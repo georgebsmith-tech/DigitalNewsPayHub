@@ -7,6 +7,82 @@ $color4:#C9CFEF;
 $color5:#070EEB;
 
 
+
+
+
+
+//register styling starts here
+.sign-up{
+    margin-bottom: 30px;
+}
+.padd-more{
+    padding:10px 43px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.the-second{
+    position: relative;
+}
+.have-acct{
+    // border-bottom:1px solid rgba(128, 128, 128,0.5);
+   
+    margin-bottom: 12px;
+    padding-bottom: 16px;
+    a{
+        color:red;
+    }
+}
+
+.register-section{
+    button{
+        border-radius: 50px;
+        padding: 10px 35px;
+        text-transform: uppercase;
+        background: $color1;
+        margin: 10px auto 15px auto;
+        color: white;
+        font-weight: bold;
+        border: $color1;
+    }
+    .divider{
+        border: 1px solid rgba(128, 128, 128,0.5);
+        margin-bottom: 13px;
+    }
+
+    
+    section+.form-group{
+        margin: 40px 10px;
+        input{
+            margin-right: 6px;
+        }
+    }
+    section{
+        border: 1px solid rgba(128, 128, 128,0.4);
+        padding: 15px;
+        .form-group{
+            margin-bottom: 8px;
+            input{
+                border-radius: 6px;
+                padding: 5px;
+                margin-left: 7px;
+                border: 1px solid rgba(128, 128, 128,0.4);
+                box-shadow:3px 2px 2px rgba(128, 128, 128,0.2) ;
+            }
+            label{
+                margin-bottom: 4px;
+                font-weight: bold;
+            }
+            input,label{
+                width:100%;
+                box-sizing: border-box;
+            }
+
+        }
+        
+    }
+    
+}
+//registration section ends here 
 //vendors starts here
 // d
 .vendors-content{
@@ -698,6 +774,22 @@ footer{
 
 // Desktop styling starts here
 @media(min-width:810px){
+    //registration starts here
+
+    .register-section{
+        margin-left: 16%;
+        button{
+            padding: 7px 100px;
+        }
+        .padd-second{
+            padding:10px 125px;
+        }
+        .padd-first{
+            text-align: center;
+        }
+
+    }
+    //registration ends here
 
     .social-media-share{
         

@@ -100,7 +100,9 @@
 
 
                                     <h4><%= comment.by %></h4>
-                                    <div><em><%= comment.date %></em></div>
+                                    <% if (comment.date) {%>
+                                    <div><em><%= comment.date.toDateString() %></em></div>
+                                    <% } %>
                                     <p><%= comment.body %></p>
                                 </div>
 

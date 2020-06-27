@@ -10,10 +10,12 @@ router.get("/login", async (req, res) => {
     res.render("login", { title: "Login", posts: allData, post })
 })
 
-router.get("/register", (req, res) => {
+router.get("/register", async (req, res) => {
+    const allData = await PostModel.find()
 
     let post;
-    res.render("sign_up", { show: false, post })
+
+    res.render("register", { show: false, post, title: "User Registration", posts: allData })
 
 })
 
