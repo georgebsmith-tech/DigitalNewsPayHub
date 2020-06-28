@@ -155,19 +155,19 @@
   border: 0px;
   margin-bottom: 30px;
 }
-#dashboard-main .toggle-nav2 {
+#dashboard-main .toggle-nav {
   padding: 5px;
   width: 40px;
   box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.4);
 }
-#dashboard-main .toggle-nav2 div {
+#dashboard-main .toggle-nav div {
   padding: 2px;
   border-radius: 50px;
   background: rgba(0, 0, 255, 0.7);
   margin: 4px;
   width: 30px;
 }
-#dashboard-main .toggle-nav2 div:last-child {
+#dashboard-main .toggle-nav div:last-child {
   width: 21px;
 }
 #dashboard-main nav {
