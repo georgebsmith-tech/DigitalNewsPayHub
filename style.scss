@@ -185,32 +185,7 @@ $color5:#070EEB;
 //socail media share links endss here
 
 
-// admin dashboard starts here
-// .display{
-//     background: rgba(230, 227, 227, 0.1);
-//     height: 600px;
-//     margin-top: 0px;
-//     display: flex;
-//     justify-content: center;
-//     flex-wrap: wrap;
-//     padding: 5px;
-//     &>div{
-//         display: flex;
-//         justify-content: center;
-//         padding: 5px;
-//         flex-wrap: wrap;
-//         background: grey;
-        
-//         &>div{
-//             width: 250px;
-//             height: 150px;
-//             background: white;
-//             margin: 5px;
-            
-//         }
 
-//     }
-// }
 #dashboard-main{
     .toggle-close{
         margin-bottom:30px;
@@ -222,8 +197,6 @@ $color5:#070EEB;
         box-shadow: 0px 2px 1px rgb(128, 128, 128,0.2);
         border: 0px;
         margin-bottom: 30px;
-        // position: fixed;
-        // height: 100vh;
     }
     background: rgba(255, 255, 255,1);
     width: 100vw;
@@ -231,7 +204,7 @@ $color5:#070EEB;
     .toggle-nav{
         padding: 5px;
         width: 40px;
-        // background: grey;
+      
         box-shadow: 3px 3px 4px rgba(255, 255, 255,0.4);
         div{
             padding:2px;
@@ -285,30 +258,28 @@ $color5:#070EEB;
             }
         }
     }
-    // #temp1{
-    //     height: 50px;
-    // }
+ 
 
 
-#logout{
-    padding: 5px 10px;
-    position: fixed;
-    margin-top: 10px;
-    margin-right: 7px;
-    right: 0px;
-    z-index: 10;
-}
-
-.admin-posts-dashboard{
-    input{
-        width: 100%;
-        box-sizing: border-box;
-        border: none;
-        outline: none;
-        font-size: 20px;
-        padding: 8px;
+    #logout{
+        padding: 5px 10px;
+        position: fixed;
+        margin-top: 10px;
+        margin-right: 7px;
+        right: 0px;
+        z-index: 10;
     }
-}
+
+    .admin-posts-dashboard{
+        input{
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            padding: 8px;
+        }
+    }
    
     
     #save-and-preview{
@@ -362,6 +333,7 @@ $color5:#070EEB;
 }
 .full{
     width: 100%;
+    
 }
 button:hover{
     cursor: pointer;
@@ -478,10 +450,6 @@ ul{
     column-gap: 10px;
     img{
         cursor: pointer;
-        & :hover{
-
-        }
-
     }
 }
 //details about posts ends here
