@@ -140,13 +140,74 @@
 }
 
 #dashboard-main {
-  background: rgba(243, 241, 241, 0.2);
+  background: white;
+  width: 100vw;
+  box-sizing: border-box;
 }
-#dashboard-main #temp1 {
-  height: 50px;
+#dashboard-main .toggle-close {
+  margin-bottom: 30px;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 2rem;
 }
-
-#logout {
+#dashboard-main header {
+  box-shadow: 0px 2px 1px rgba(128, 128, 128, 0.2);
+  border: 0px;
+  margin-bottom: 30px;
+}
+#dashboard-main .toggle-nav2 {
+  padding: 5px;
+  width: 40px;
+  box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.4);
+}
+#dashboard-main .toggle-nav2 div {
+  padding: 2px;
+  border-radius: 50px;
+  background: rgba(0, 0, 255, 0.7);
+  margin: 4px;
+  width: 30px;
+}
+#dashboard-main .toggle-nav2 div:last-child {
+  width: 21px;
+}
+#dashboard-main nav {
+  background: white;
+  height: 100vh;
+  box-shadow: 4px 0px 2px rgba(128, 128, 128, 0.2);
+  border-radius: 0px 100px 0px 0px;
+  padding-top: 50px;
+  color: rgba(0, 0, 255, 0.4);
+  position: fixed;
+  z-index: 10;
+}
+#dashboard-main nav > ul > li {
+  margin-left: 15px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+#dashboard-main nav > ul > li ul li {
+  padding-left: 20px;
+}
+#dashboard-main nav > ul > li ul li a {
+  margin-bottom: 10px;
+  display: block;
+  padding: 10px;
+}
+#dashboard-main nav > ul > li > a {
+  padding: 10px;
+  background: rgba(230, 227, 227, 0.1);
+  width: 150px;
+  display: block;
+  text-transform: uppercase;
+}
+#dashboard-main nav > ul > li > a span {
+  margin-left: 5px;
+  padding: 4px 10px;
+  background: blue;
+  border-radius: 6px;
+  color: white;
+}
+#dashboard-main #logout {
   padding: 5px 10px;
   position: fixed;
   margin-top: 10px;
@@ -154,8 +215,7 @@
   right: 0px;
   z-index: 10;
 }
-
-.admin-posts-dashboard input {
+#dashboard-main .admin-posts-dashboard input {
   width: 100%;
   box-sizing: border-box;
   border: none;
@@ -163,12 +223,12 @@
   font-size: 20px;
   padding: 8px;
 }
-.admin-posts-dashboard #save-and-preview {
+#dashboard-main #save-and-preview {
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
 }
-.admin-posts-dashboard #save-and-preview button {
+#dashboard-main #save-and-preview button {
   padding: 10px 15px;
   width: 25vw;
   text-align: center;
@@ -179,7 +239,7 @@
   outline: none;
   border-radius: 5px;
 }
-.admin-posts-dashboard #new-post-title {
+#dashboard-main #new-post-title {
   border: none;
   outline: none;
   width: 100%;
@@ -188,7 +248,7 @@
   padding: 8px;
   margin-bottom: 20px;
 }
-.admin-posts-dashboard #category {
+#dashboard-main #category {
   border: none;
   outline: none;
   width: 100%;
@@ -197,8 +257,9 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
-.admin-posts-dashboard .ck-editor__editable_inline {
+#dashboard-main .ck-editor__editable_inline {
   min-height: 300px;
+  width: 100%;
 }
 
 * {
@@ -884,6 +945,10 @@ footer .biz-links a {
 
 .block {
   display: block;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
