@@ -13,14 +13,9 @@ router.get("/", async (req, res) => {
 
     // console.log(osts)
     res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red" })
-
-
-
-
-
 })
 
-router.get("/:slug", (req, res) => {
+router.get("/blogs/:slug", (req, res) => {
 
     PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
@@ -81,6 +76,13 @@ router.get("/index/:category", async (req, res) => {
         throw err
     }
 
+})
+
+
+
+
+router.get("/api", (req, res) => {
+    res.send({ name: "Smith" })
 })
 
 
