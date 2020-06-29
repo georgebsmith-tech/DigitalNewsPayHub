@@ -448,6 +448,9 @@ ul {
 
 .all-posts {
   min-height: 84vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .all-posts .table-wrapper {
   background: rgba(32, 123, 243, 0.3);
