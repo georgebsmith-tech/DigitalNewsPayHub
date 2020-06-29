@@ -81,8 +81,10 @@ router.get("/index/:category", async (req, res) => {
 
 
 
-router.get("/api", (req, res) => {
-    res.send({ name: "Smith" })
+router.get("/api", async (req, res) => {
+    const allData = await PostModel.find()
+    res.send(allData)
+
 })
 
 

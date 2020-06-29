@@ -399,6 +399,24 @@ footer{
 
 // Desktop styling starts here
 @media(min-width:810px){
+    //admin dash board charts
+    .charts{
+        font-size: 1.7em;
+        &>div{
+            width: 600px;
+            height: fit-content;
+        }
+        
+        &>div:first-child>div{
+            em,span{
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+    //admin dash board charts
+
+
 
     
     //registration starts here

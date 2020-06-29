@@ -20,7 +20,9 @@
     <section>
         <header class="container">
             <div class="toggle-nav2">
-                <div></div>
+                <div>
+
+                </div>
                 <div></div>
                 <div></div>
             </div>
@@ -34,8 +36,30 @@
         <section class="admin-posts-dashboard container">
 
             <section class="charts">
-                <div></div>
-                <div></div>
+
+                <div>
+                    <div>
+                        <div>
+                            <h3>Posts</h3>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="center-text"><%= posts.length %></h2>
+                        </div>
+                        <div>
+                            <em class="green">3.5%</em> <span>Since last week</span>
+                        </div>
+
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
                 <div></div>
                 <div></div>
 
@@ -46,5 +70,6 @@
 
 </main>
 <script src="../js/admin-nav.js"></script>
+<script src="../js/charts.js"></script>
 
 <%- include('./partials/footer.ejs') %>

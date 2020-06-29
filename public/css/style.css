@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.green {
+  color: green;
+}
+
 .hide {
   display: none;
 }
@@ -411,11 +415,31 @@ ul {
   min-height: 100vh;
   padding-top: 20px;
 }
-.charts div {
+.charts > div {
   width: 300px;
-  height: 300px;
   background: white;
   margin-bottom: 10px;
+}
+.charts > div:first-child {
+  background: rgba(32, 123, 243, 0);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 15px;
+  row-gap: 15px;
+}
+.charts > div:first-child > div {
+  background: white;
+  box-shadow: 3px 3px 2px rgba(32, 123, 243, 0.4);
+  border-radius: 6px;
+  padding: 10px;
+}
+.charts > div:first-child > div div {
+  margin-bottom: 9px;
+}
+.charts > div:first-child > div em, .charts > div:first-child > div span {
+  margin-top: 5px;
+  font-size: 0.8rem;
 }
 
 #admin-form {
@@ -737,6 +761,17 @@ footer .biz-links a {
 }
 
 @media (min-width: 810px) {
+  .charts {
+    font-size: 1.7em;
+  }
+  .charts > div {
+    width: 600px;
+    height: fit-content;
+  }
+  .charts > div:first-child > div em, .charts > div:first-child > div span {
+    font-size: 1.5rem;
+  }
+
   .register-section {
     margin-left: 16%;
   }

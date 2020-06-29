@@ -2,6 +2,7 @@ const AdminModel = require("../models/adminModel")
 const bcrypt = require("bcrypt")
 const { func } = require("joi")
 const passport = require("passport")
+const PostModel = require("../models/postModel")
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -47,9 +48,10 @@ router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
 })
 
-router.get("/admins/charts", function (req, res) {
+router.get("/admins/charts", checkAuthenticated, async function (req, res) {
+    const allData = await PostModel.find()
     let post;
-    res.render("general_charts", { post, title: "-Admin-Charts" })
+    res.render("general_charts", { post, title: "-Admin-Charts", posts: allData })
 })
 
 module.exports = router
