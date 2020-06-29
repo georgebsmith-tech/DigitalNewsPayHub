@@ -43,12 +43,12 @@ router.delete("/admins/logout", (req, res) => {
 
 
 
-router.get("/admins/posts_dashboard", /*checkAuthenticated,*/(req, res) => {
+router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
     let post;
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
 })
 
-router.get("/admins/all-posts", /*checkAuthenticated,*/ async (req, res) => {
+router.get("/admins/all-posts", checkAuthenticated, async (req, res) => {
     const allData = await PostModel.find()
     let post;
     res.render("admin-all-posts", { title: "Admin Posst Dashboard-All Post", post, posts: allData })
