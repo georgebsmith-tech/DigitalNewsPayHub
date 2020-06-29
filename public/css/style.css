@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .full {
   width: 100%;
 }
@@ -285,6 +289,7 @@ ul {
   text-align: right;
   margin-right: 20px;
   font-size: 2rem;
+  cursor: pointer;
 }
 #dashboard-main header {
   box-shadow: 0px 2px 1px rgba(128, 128, 128, 0.2);
@@ -294,6 +299,7 @@ ul {
 #dashboard-main .toggle-nav2 {
   padding: 5px;
   width: 40px;
+  cursor: pointer;
   box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.4);
 }
 #dashboard-main .toggle-nav2 div {
@@ -395,7 +401,82 @@ ul {
 }
 #dashboard-main .ck-editor__editable_inline {
   min-height: 300px;
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: rgba(32, 123, 243, 0.3);
+  min-height: 100vh;
+  padding-top: 20px;
+}
+.charts div {
+  width: 300px;
+  height: 300px;
+  background: white;
+  margin-bottom: 10px;
+}
+
+#admin-form {
+  background-color: white;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+#admin-form .admin-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#admin-form section {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 300px;
+  min-height: 250px;
+  background: #1b1b1b;
+  background: white;
+  box-shadow: 3px 3px 4px 3px rgba(197, 197, 197, 0.3);
+  border-radius: 5px;
+}
+#admin-form section #admin-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#admin-form .form-section {
+  width: 90%;
+  padding: 10px;
+}
+#admin-form .form-section form {
+  padding-bottom: 20px;
+}
+#admin-form .form-section form div > div {
+  background: white;
+}
+#admin-form .form-section form div > div input {
+  background: whitesmoke;
+  padding: 10px;
   width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+#admin-form .form-section form button {
+  text-transform: uppercase;
+  background: #003FED;
+  outline: none;
+  border: #003FED;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .header {
@@ -882,74 +963,6 @@ footer .biz-links a {
   footer .biz-links a {
     font-size: 0.7rem;
   }
-}
-#admin-form {
-  background-color: white;
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-}
-#admin-form .admin-brand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#admin-form section {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  width: 300px;
-  min-height: 250px;
-  background: #1b1b1b;
-  background: white;
-  box-shadow: 3px 3px 4px 3px rgba(197, 197, 197, 0.3);
-  border-radius: 5px;
-}
-#admin-form section #admin-options {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-#admin-form .form-section {
-  width: 90%;
-  padding: 10px;
-}
-#admin-form .form-section form {
-  padding-bottom: 20px;
-}
-#admin-form .form-section form div > div {
-  background: white;
-}
-#admin-form .form-section form div > div input {
-  background: whitesmoke;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 4px;
-  outline: none;
-  border: none;
-}
-#admin-form .form-section form button {
-  text-transform: uppercase;
-  background: #003FED;
-  outline: none;
-  border: #003FED;
-  color: white;
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.block {
-  display: block;
-}
-
-.hide {
-  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

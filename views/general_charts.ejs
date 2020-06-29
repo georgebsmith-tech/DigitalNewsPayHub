@@ -1,0 +1,50 @@
+<%- include('./partials/head.ejs') %>
+
+<main id="dashboard-main">
+    <section class="hide nav">
+        <nav>
+            <div class="toggle-close">X</div>
+            <ul>
+                <li><a>posts</a>
+                    <ul class="hide">
+                        <li><a href="#">All posts</a></li>
+                        <li><a href="#">By categories</a></li>
+                        <li><a href="#">Create new post </a></li>
+                    </ul>
+                </li>
+                <li><a href="/admins/charts">Charts</a></li>
+                <li><a href="/">Comments <span class="comments">4</span></a></li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <header class="container">
+            <div class="toggle-nav2">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="temp1">
+                <form action="/admins/logout?_method=DELETE" method="POST">
+                    <button type="submit" id="logout" class="block">Log Out</button>
+                </form>
+            </div>
+        </header>
+
+        <section class="admin-posts-dashboard container">
+
+            <section class="charts">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </section>
+
+        </section>
+    </section>
+
+</main>
+<script src="../js/admin-nav.js"></script>
+
+<%- include('./partials/footer.ejs') %>

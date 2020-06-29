@@ -7,8 +7,6 @@ $color4:#C9CFEF;
 $color5:#070EEB;
 
 
-
-
 // General styling starts here
 @use './sass_files/general';
 //general styling ends here
@@ -35,147 +33,14 @@ $color5:#070EEB;
 //styling for detailed page ends here
 
 
-#dashboard-main{
-    .toggle-close{
-        margin-bottom:30px;
-        text-align: right;
-        margin-right: 20px;
-        font-size: 2rem;
-    }
-    header{
-        box-shadow: 0px 2px 1px rgb(128, 128, 128,0.2);
-        border: 0px;
-        margin-bottom: 30px;
-    }
-    background: rgba(255, 255, 255,1);
-    width: 100vw;
-    box-sizing: border-box;
-    .toggle-nav2{
-        padding: 5px;
-        width: 40px;
-      
-        box-shadow: 3px 3px 4px rgba(255, 255, 255,0.4);
-        div{
-            padding:2px;
-            border-radius: 50px;
-            background: rgba(0, 0, 255,0.7);
-            margin: 4px;
-            width: 30px;
-            &:last-child{
-                width: 21px;
-            }
-        }
-    }
-    nav{
-        background: rgba(255, 255, 255);
-        height: 100vh;
-        box-shadow: 4px 0px 2px rgb(128, 128, 128,0.2);
-        border-radius: 0px 100px 0px 0px;
-        padding-top: 50px;
-        color: rgba(0, 0, 255,0.4);
-        position: fixed;
-        z-index: 10;
-        & >ul{
-            &>li{
-                margin-left: 15px;
-                margin-right: 20px;
-                margin-bottom: 30px;
-                ul{
-                    li{
-                        padding-left: 20px;
-                        a{
-                            margin-bottom: 10px;
-                            display: block;
-                            padding: 10px;
-                        }
-                    }
-                }
-                &>a{
-                    padding: 10px;
-                    background: rgba(230, 227, 227, 0.1);
-                    width: 150px;
-                    display: block;
-                    text-transform: uppercase;
-                    span{
-                        margin-left:5px;
-                        padding: 4px 10px;
-                        background: blue;
-                        border-radius: 6px;
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
- 
-
-
-    #logout{
-        padding: 5px 10px;
-        position: fixed;
-        margin-top: 10px;
-        margin-right: 7px;
-        right: 0px;
-        z-index: 10;
-    }
-
-    .admin-posts-dashboard{
-        input{
-            width: 100%;
-            box-sizing: border-box;
-            border: none;
-            outline: none;
-            font-size: 20px;
-            padding: 8px;
-        }
-    }
-   
-    
-    #save-and-preview{
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 10px;
-        button{
-            padding: 10px 15px;
-            width: 25vw;
-            text-align: center;
-            text-transform: uppercase;
-            background-color: $color3;
-            color: white;
-            border: $color3;
-            outline: none;
-            border-radius: 5px;
-        }
-    }
-
-    #new-post-title{
-        
-        border: none;
-        outline: none;
-        width: 100%;
-        font-size: 27px;
-        box-sizing: border-box;
-        padding: 8px;
-        margin-bottom: 20px;
-    }
-    #category{
-        border: none;
-        outline: none;
-        width: 100%;
-        font-size: 20px;
-        padding: 8px;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-    }
-    .ck-editor__editable_inline {
-        min-height: 300px;
-        width: 100%;
-    }
-}
-
+//Admin dashboard starts here 
+@use './sass_files/admin_dashboard';
 // admin dashboard ends here
 
+//Admin login starts here
+@use './sass_files/admin_login';
 
+//Admin login ends here
 
 
 
@@ -799,105 +664,5 @@ footer{
     }
 }
 
-    //most ;iked story starts here
-    
-    //most ;iked story ends here
 
 
-
-
-
-
-// Desktop styling ends here
-
-
-
-//admin
-
-#admin-form {
-    background-color: white;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    .admin-brand{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        
-    }
-    
-
-    section{
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        width:300px;
-        min-height: 250px;
-        background: rgb(27, 27, 27);
-        background: white;
-        box-shadow: 3px 3px 4px 3px rgba(197, 197, 197, 0.3);
-        border-radius: 5px;
-        #admin-options{
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            
-        }
-        
-    }
-    .form-section{
-        width: 90%;
-        padding: 10px;
-       
-        form{
-            padding-bottom: 20px;
-            div>div{
-            
-            
-            
-            
-                background: white;
-                
-                
-                input{
-                    background: whitesmoke;
-                    padding: 10px;
-                
-                    width: 100%;
-                    box-sizing: border-box;
-                    border-radius: 4px;
-                    outline: none;
-                    border: none;
-
-                }
-            }
-            button{
-                text-transform: uppercase;
-                background:$color3;
-                outline: none;
-                border: $color3;
-                color: white;
-                margin-top: 10px;
-                padding: 10px;
-                width: 100%;
-                border-radius: 5px;
-                
-    
-            }
-           
-        }
-        
-
-    }
-    
-}
-
-.block{
-    display: block;
-}
-.hide{
-    display: none;
-}

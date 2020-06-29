@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const marked = require("marked");
 const creatDompurifier = require("dompurify");
+const slugify = require("slugify");
+slugify.extend({ '#': 'sharp', '+': "plus", "-": "minus", "*": "times" })
 
 const JSDOM = require("jsdom").JSDOM
 
@@ -28,14 +30,32 @@ const Schema = new mongoose.Schema({
     image_url: String,
     number_of_views: { type: Number, default: 0 },
     number_of_likes: { type: Number, default: 0 },
-    comments: [{ body: String, date: Date, by: String, email: String, website: String }]
+    comments: [{ body: String, date: Date, by: String, email: String, website: String }],
+    slug: {
+        type: String,
+        required: true,
+        unique: true
+    }
 })
 
 Schema.pre("validate", function (next) {
     if (this.body) {
         this.markedBody = dompurify.sanitize(marked(this.body))
 
+    } else {
+        this.markedBody = "Ooopss!!! There is no content to display here!"
     }
+    if (this.category) {
+        this.category = this.category.toLowerCase();
+    }
+    if (this.title) {
+        this.slug = slugify(this.title, {
+            lower: false,
+            strict: true,
+        })
+    }
+
+
     next()
 })
 

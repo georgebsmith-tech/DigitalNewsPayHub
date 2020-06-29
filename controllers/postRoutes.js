@@ -13,25 +13,20 @@ router.get("/", async (req, res) => {
 
     // console.log(osts)
     res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red" })
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
 
-    // res.render("index", { title: "Home" })
 
 
 
 
 })
 
-router.get("/news/:id", (req, res) => {
+router.get("/:slug", (req, res) => {
 
-    PostModel.findOne({ _id: req.params.id })
+    PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
             data.number_of_views += 1
             data.save()
-            res.render("news_detailed", { title: `${data.category}|${data.title}`, post: data })
+            res.render("news_detailed", { title: `${data.title}`, post: data })
         })
 
 
@@ -53,7 +48,7 @@ router.post("/news/comments/:id", async (req, res) => {
     console.log(new_comment)
     await data.comments.push(new_comment)
     await data.save()
-    res.redirect(`/news/${data._id}`)
+    res.redirect(`/${data.slug}`)
 
 
 })
@@ -76,7 +71,7 @@ router.post("/admins/add_post", (req, res) => {
 
 router.get("/index/:category", async (req, res) => {
     try {
-        const data = await PostModel.find({ category: req.params.category })
+        const data = await PostModel.find({ category: req.params.category.toLowerCase() })
         if (data === [])
             data = undefined
         let post
