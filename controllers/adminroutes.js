@@ -4,6 +4,11 @@ const { func } = require("joi")
 const passport = require("passport")
 const PostModel = require("../models/postModel")
 
+const creatDompurifier = require("dompurify");
+const JSDOM = require("jsdom").JSDOM
+const dompurify = creatDompurifier(new JSDOM().window)
+const marked = require("marked");
+
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
@@ -48,10 +53,53 @@ router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
 })
 
-router.get("/admins/all-posts", checkAuthenticated, async (req, res) => {
+router.get("/admins/all-posts", /*checkAuthenticated,*/ async (req, res) => {
     const allData = await PostModel.find()
+        .sort({ date: -1 })
     let post;
     res.render("admin-all-posts", { title: "Admin Posst Dashboard-All Post", post, posts: allData })
+})
+
+router.get("/admins/edit-post/:slug", /*checkAuthenticated,*/ async (req, res) => {
+    try {
+        const data = await PostModel.findOne({ slug: req.params.slug })
+            .select({ title: 1, category: 1, markedBody: 1, image_url: 1, slug: 1 })
+        let post;
+        res.render("admin-edit-post", { title: `Admin Posst Dashboard-Edit Post-${data.title}`, post, data })
+
+    } catch (e) {
+        throw e
+    }
+
+})
+
+router.get("/admins/preview-post/:slug", /*checkAuthenticated,*/ async (req, res) => {
+    // PostModel.findOne({ slug: req.params.slug })
+    // .then((data) => {
+    //     res.render("news_detailed", { title: `${data.title}`, post: data })
+    // })
+
+    // console.log(req)
+    console.log("Done!!")
+    res.render("admin-post-preview")
+
+})
+
+
+
+
+
+router.put("/admins/update_post/:slug", (req, res) => {
+    const result = req.body;
+    PostModel.findOneAndUpdate({ slug: req.params.slug }, result, { new: true })
+        .then(data => {
+            console.log(data)
+            res.redirect("/admins/all-posts")
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
 })
 
 
@@ -59,6 +107,8 @@ router.get("/admins/all-posts", checkAuthenticated, async (req, res) => {
 
 router.get("/admins/charts", checkAuthenticated, async function (req, res) {
     const allData = await PostModel.find()
+
+
     let post;
     res.render("general_charts", { post, title: "-Admin-Charts", posts: allData })
 })

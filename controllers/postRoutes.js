@@ -64,6 +64,8 @@ router.post("/admins/add_post", (req, res) => {
 })
 
 
+
+
 router.get("/index/:category", async (req, res) => {
     try {
         const data = await PostModel.find({ category: req.params.category.toLowerCase() })
@@ -83,6 +85,7 @@ router.get("/index/:category", async (req, res) => {
 
 router.get("/api", async (req, res) => {
     const allData = await PostModel.find()
+        .select({ category: 1 })
     res.send(allData)
 
 })

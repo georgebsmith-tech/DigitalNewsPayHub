@@ -74,10 +74,10 @@ app.set("view engine", "ejs")
 
 
 app.use(express.static("public"))
-app.use("/blog/css", express.static("public/css"))
-app.use("/blog/images", express.static("public/images"))
+app.use("/admins/css", express.static("public/css"))
+app.use("/admins/images", express.static("public/images"))
 app.use("/js", express.static("public/js"))
-
+app.use("/admins/js", express.static("public/js"))
 
 app.use(postRouter)
 app.use(userRouter)

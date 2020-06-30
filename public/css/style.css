@@ -464,6 +464,23 @@ ul {
   padding: 20px;
   border-collapse: collapse;
 }
+.all-posts .table-wrapper table .update {
+  padding: 10px 1px;
+}
+.all-posts .table-wrapper table .update a[title=Edit] {
+  color: green;
+}
+.all-posts .table-wrapper table .update a[title=Delete] {
+  color: red;
+}
+.all-posts .table-wrapper table .update a {
+  padding: 5px 6px;
+  border-radius: 5px;
+}
+.all-posts .table-wrapper table .update a:hover {
+  background: white;
+  box-shadow: 3px 3px 2px rgba(230, 229, 229, 0.2);
+}
 .all-posts .table-wrapper table thead {
   background: rgba(32, 123, 243, 0.5);
   color: white;

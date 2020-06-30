@@ -1,0 +1,90 @@
+<%- include('./partials/head.ejs') %>
+
+<main id="dashboard-main">
+    <section class="modal">
+
+    </section>
+    <section class="hide nav">
+        <nav>
+            <div class="toggle-close">X</div>
+            <ul>
+                <li><a>posts</a>
+                    <ul>
+                        <li><a href="/admins/all-posts">All posts</a></li>
+                        <li><a href="#">By categories</a></li>
+                        <li><a href="#">Create new post </a></li>
+                    </ul>
+                </li>
+                <li><a href="/admins/charts">Charts</a></li>
+                <li><a href="/">Comments <span class="comments">4</span></a></li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <header class="container">
+            <div class="toggle-nav2">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="temp1">
+                <form action="/admins/logout?_method=DELETE" method="POST">
+                    <button type="submit" id="logout" class="block">Log Out</button>
+                </form>
+            </div>
+        </header>
+
+        <section class="admin-posts-dashboard container">
+
+            <section class="middle-content">
+                <form action="/admins/update_post/<%= data.slug %>?_method=PUT" method="post" name="post">
+                    <div>
+                        <div>
+                            <input type="text" placeholder="Add post Title Here" id="new-post-title" class="block"
+                                name="title" value="<%= data.title %>">
+                        </div>
+                        <div>
+                            <input list="categories" name="category" id="category" placeholder="Category"
+                                value="<%= data.category %>">
+
+                            <datalist id="categories">
+                                <option value="Politics">
+                                <option value="Education">
+                                <option value="Entertainment">
+                                <option value="Health">
+                                <option value="Sports">
+                                <option value="Business">
+                            </datalist>
+                        </div>
+                        <input type="text" name="image_url" class="block" placeholder="Add the Post image path here"
+                            value="<%= data.image_url %>">
+
+                        <div>
+                            <textarea name="body" id="editor"><%= data.markedBody %></textarea>
+                        </div>
+                        <div id="save-and-preview">
+                            <button id="save-post" type="submit">Update</button>
+                            <button class="preview-post" href="#">Preview</button>
+                        </div>
+                        <!-- href="/admins/preview-post/<%= data.slug %>" -->
+                        <input type="hidden" value="/admins/preview-post/<%= data.slug %>" name="url">
+
+
+                    </div>
+
+                </form>
+
+
+            </section>
+
+        </section>
+    </section>
+
+</main>
+<script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
+<script src="../js/editor.js"></script>
+<script src="../js/admin-nav.js"></script>
+<script src="../js/admin-post-preview.js"></script>
+
+
+<%- include('./partials/footer.ejs') %>
