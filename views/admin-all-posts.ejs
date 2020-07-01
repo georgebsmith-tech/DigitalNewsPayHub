@@ -67,7 +67,8 @@
                                         class="fa fa-pencil"></i></a>
                             </td>
                             <td class="update">
-                                <a href="#" title="Delete" class="update-post"><i class="fa fa-trash-o"></i></i></a>
+                                <a title="Delete" class="update-post delete-post"><i class="fa fa-trash-o"></i></a>
+                                <a href="/admins/delete-post/<%= post.slug %>" class="nothing"></a>
                             </td>
                         </tr>
                         <% }) %>
@@ -82,5 +83,6 @@
 
 </main>
 <script src="../js/admin-nav.js"></script>
+<script src="../js/delete-post.js"></script>
 
 <%- include('./partials/footer.ejs') %>

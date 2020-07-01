@@ -1,1 +1,96 @@
-<h1>Thi is it</h1>
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+<main class="detailed">
+    <div class="social-media-share">
+        <div>
+            <a>share</a>
+            <div>
+                <i class="fa fa-share-alt"></i>
+            </div>
+        </div>
+        <a href="" id="facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="" id="twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" id="linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" id="whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+    <section>
+        <div class="breaking-news-and-more">
+            <div id="search">
+
+            </div>
+        </div>
+    </section>
+    <section class="the-search-and-more">
+        <div>
+            <div class="the-adverts">
+                <img src="../images/adverts-right1.png" alt="">
+                <span>advertisements</span>
+                <img src="../images/adverts-left1.png" alt="">
+            </div>
+            <div class="search">
+                <button>
+                    search
+                </button>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="content">
+        <div class="container detailed-section">
+            <div class="blog-content">
+                <section class="news-detailed">
+                    <h5><%= post.category %></h5>
+                    <h1 id="post-title"><%= post.title %></h1>
+                    <div class="image-wrapper">
+                        <img src="<%= post.image_url %>" alt="" class="image" id="post-image">
+                    </div>
+                    <div class="write-up">
+
+
+
+                        <article class="article">
+                            <%- post.body %>...
+                        </article>
+                        <div class="more-details">
+                            <div>
+                                <img src="../images/like.png" alt="" width="35px" title="Like this post">
+                                <span>12</span>
+                            </div>
+
+                            <div>
+                                <img src="../images/comments1.png" alt="" title="Drop a comment">
+
+                            </div>
+                            <div>
+                                <img src="../images/views1.png" alt="">
+                                <span><%= post.number_of_views %></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </section>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+<script src="../js/social-media-share.js"></script>
+<script src="../js/navs.js"></script>
+<%- include('./partials/footer.ejs') %>

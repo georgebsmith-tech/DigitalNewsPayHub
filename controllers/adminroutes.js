@@ -73,7 +73,9 @@ router.get("/admins/edit-post/:slug", /*checkAuthenticated,*/ async (req, res) =
 
 })
 
-router.get("/admins/preview-post/:slug", /*checkAuthenticated,*/ async (req, res) => {
+const previewPost = []
+
+router.get("/admins/preview-post", /*checkAuthenticated,*/(req, res) => {
     // PostModel.findOne({ slug: req.params.slug })
     // .then((data) => {
     //     res.render("news_detailed", { title: `${data.title}`, post: data })
@@ -81,8 +83,21 @@ router.get("/admins/preview-post/:slug", /*checkAuthenticated,*/ async (req, res
 
     // console.log(req)
     console.log("Done!!")
-    res.render("admin-post-preview")
+    // console.log(previewPost[0])
+    const resp = previewPost[0]
+    previewPost.length = 0
+    // resp.url = "None"
+    console.log(resp)
+    res.render("admin-post-preview", { title: `Post preview|${resp.title}`, post: resp })
 
+})
+
+router.post("/trial", (req, res) => {
+    // console.log(req.bodreq.bodyy)
+    previewPost.push(req.body)
+    console.log(previewPost)
+    // res.redirect("/admins/all-posts")
+    res.end()
 })
 
 
@@ -101,6 +116,20 @@ router.put("/admins/update_post/:slug", (req, res) => {
         })
 
 })
+
+router.delete("/admins/delete-post/:slug", (req, res) => {
+    console.log(req.params.slug)
+    PostModel.findOneAndDelete({ slug: req.params.slug })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    res.end()
+})
+
+// / admins / delete -post / doom
 
 
 
