@@ -6,7 +6,7 @@ const PostModel = require("../models/postModel")
 
 router.get("/", async (req, res) => {
     const data = await PostModel.findOne()
-    const allData = await PostModel.find()
+    const allData = await PostModel.find().sort({ date: -1 })
     // console.log(result)
     // res.end()
 
@@ -47,22 +47,6 @@ router.post("/news/comments/:id", async (req, res) => {
 
 
 })
-
-router.post("/admins/add_post", (req, res) => {
-    const result = req.body;
-
-    // console.log(result)
-    const post = new PostModel(result)
-    post.save()
-        .then(data => {
-            // console.log("data saved" + data)
-            res.redirect("/")
-        })
-        .catch(err => {
-            throw err
-        })
-})
-
 
 
 

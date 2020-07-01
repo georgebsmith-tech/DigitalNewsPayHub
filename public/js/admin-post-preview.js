@@ -30,8 +30,7 @@ previewBtn.addEventListener("click", function (e) {
 })
 
 
-let temp = document.querySelector(".update")
-console.log(temp)
+
 // document.querySelector(".update .delete-post").addEventListener("click", function (e) {
 
 //     alert("Do nothing")

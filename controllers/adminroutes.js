@@ -48,7 +48,7 @@ router.delete("/admins/logout", (req, res) => {
 
 
 
-router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
+router.get("/admins/posts_dashboard", /*checkAuthenticated,*/(req, res) => {
     let post;
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
 })
@@ -134,7 +134,7 @@ router.delete("/admins/delete-post/:slug", (req, res) => {
 
 
 
-router.get("/admins/charts", checkAuthenticated, async function (req, res) {
+router.get("/admins/charts", /*checkAuthenticated,*/ async function (req, res) {
     const allData = await PostModel.find()
 
 

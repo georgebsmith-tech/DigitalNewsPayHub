@@ -32,6 +32,7 @@
         </header>
 
         <section class="admin-posts-dashboard container">
+            <aside></aside>
 
             <section class="middle-content">
                 <form action="/admins/update_post/<%= data.slug %>?_method=PUT" method="post" name="post">
@@ -57,7 +58,7 @@
                             value="<%= data.image_url %>">
 
                         <div>
-                            <textarea name="body" id="editor"><%= data.markedBody %></textarea>
+                            <textarea name="body" id="editor" name="editor"><%= data.markedBody %></textarea>
                         </div>
                         <div id="save-and-preview">
                             <button id="save-post" type="submit">Update</button>
@@ -74,13 +75,15 @@
 
 
             </section>
+            <aside></aside>
 
         </section>
     </section>
     <a href="/admins/preview-post" class="try-me">TRY</a>
 
 </main>
-<script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script> -->
+<script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script src="../js/editor.js"></script>
 <script src="../js/admin-nav.js"></script>
 <script src="../js/admin-post-preview.js"></script>

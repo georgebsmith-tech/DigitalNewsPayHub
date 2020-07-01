@@ -17,6 +17,9 @@
             </ul>
         </nav>
     </section>
+
+
+
     <section>
         <header class="container">
             <div class="toggle-nav2">
@@ -30,47 +33,51 @@
                 </form>
             </div>
         </header>
+        <div>
 
-        <section class="admin-posts-dashboard container">
-
-            <section class="middle-content">
-                <form action="/admins/add_post" method="post">
-                    <div>
+            <section class="admin-posts-dashboard container">
+                <aside></aside>
+                <section class="middle-content">
+                    <form action="/admins/add_post" method="post">
                         <div>
-                            <input type="text" placeholder="Add post Title Here" id="new-post-title" class="block"
-                                name="title">
+                            <div>
+                                <input type="text" placeholder="Add post Title Here" id="new-post-title" class="block"
+                                    name="title">
+                            </div>
+                            <div>
+                                <input list="categories" name="category" id="category" placeholder="Category">
+
+                                <datalist id="categories">
+                                    <option value="Politics">
+                                    <option value="Education">
+                                    <option value="Entertainment">
+                                    <option value="Health">
+                                    <option value="Sports">
+                                    <option value="Business">
+                                </datalist>
+                            </div>
+                            <input type="text" name="image_url" class="block"
+                                placeholder="Add the Post image path here">
+
+                            <div>
+                                <textarea name="body" id="editor" name="editor"></textarea>
+                            </div>
+                            <div id="save-and-preview">
+                                <button id="save-post" type="submit">Save</button>
+                                <button id="preview-post">preview</button>
+                            </div>
+
+
                         </div>
-                        <div>
-                            <input list="categories" name="category" id="category" placeholder="Category">
 
-                            <datalist id="categories">
-                                <option value="Politics">
-                                <option value="Education">
-                                <option value="Entertainment">
-                                <option value="Health">
-                                <option value="Sports">
-                                <option value="Business">
-                            </datalist>
-                        </div>
-                        <input type="text" name="image_url" class="block" placeholder="Add the Post image path here">
-
-                        <div>
-                            <textarea name="body" id="editor" name="editor"></textarea>
-                        </div>
-                        <div id="save-and-preview">
-                            <button id="save-post" type="submit">Save</button>
-                            <button id="preview-post">preview</button>
-                        </div>
+                    </form>
 
 
-                    </div>
-
-                </form>
-
-
+                </section>
+                <aside></aside>
             </section>
 
-        </section>
+        </div>
     </section>
 
 </main>
