@@ -75,10 +75,12 @@
                                     <h3><a href="/index/<%= post.category.toLowerCase() %>"><%= post.category %></a>
                                     </h3>
                                     <h2><%= post.title %></h2>
+                                    <em><%= post.date.toDateString() %></em>
 
                                     <article>
                                         <%- post.markedBody.substr(0,200) %>...
-                                        <a href="/blogs/<%= post.slug %>" class="block right-text">Read more</a>
+                                        <a href="/blogs/<%= post.slug %>" class="block right-text read-more">Read
+                                            more</a>
                                     </article>
 
                                 </div>
@@ -113,19 +115,7 @@
 
                 <%- include('./partials/latest-news.ejs') %>
 
-                <section class="desktop-advert">
-                    <div class="adverts-content">
-                        <div>A</div>
-                        <div>D</div>
-                        <div>V</div>
-                        <div>E</div>
-                        <div>R</div>
-                        <div>T</div>
-                        <div>S</div>
 
-                    </div>
-
-                </section>
             </aside>
 
         </div>

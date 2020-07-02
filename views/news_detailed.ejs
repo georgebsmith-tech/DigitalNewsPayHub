@@ -63,7 +63,7 @@
             <div class="blog-content">
                 <section class="news-detailed">
                     <h5><%= post.category %></h5>
-                    <h1 id=" post-title"><%= post.title %></h1>
+                    <h1 id="post-title"><%= post.title %></h1>
                     <div class="image-wrapper">
                         <img src="<%= post.image_url %>" alt="" class="image" id="post-image">
                     </div>
@@ -73,7 +73,7 @@
                         <em>Posted on <%= post.date.toDateString() %>
                             <!-- by <%= post.time %>--></em>
                         <article class="article">
-                            <%- post.markedBody %>...
+                            <%- post.markedBody %>
                         </article>
                         <div class="more-details">
                             <div>

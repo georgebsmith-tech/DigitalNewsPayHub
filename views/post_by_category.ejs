@@ -38,6 +38,8 @@
                     <img src="<%= post.image_url %>" alt="" class="block">
                 </div>
                 <div>
+                    <h2 class="title"><%= post.title %></h2>
+                    <em class="date block"><%= post.date.toDateString() %></em>
                     <article>
                         <%- post.markedBody.substr(0,200) %>...
                     </article>
