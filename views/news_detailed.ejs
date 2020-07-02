@@ -11,20 +11,22 @@
 
 
         </div>
-        <a href="" id="facebook">
+        <a id="facebook" href="https://www.facebook.com/sharer.php?u=https://www.dnpayhub.com/blogs/<%= post.slug %>">
             <i class="fab fa-facebook"></i>
         </a>
 
         <!-- <a href="" id="instagram">
             <i class="fab fa-instagram"></i>
         </a> -->
-        <a href="" id="twitter">
+        <a href="https://twitter.com/share?url=https://www.dnpayhub.com/blogs/<%= post.slug %>&text=<%= post.title %>"
+            id="twitter">
             <i class="fab fa-twitter"></i>
         </a>
-        <a href="" id="linkedin">
+        <a id="linkedin"
+            href="https://www.linkedin.com/shareArticle?url= https://www.dnpayhub.com/blogs/<%= post.slug %>&title=<%= post.title %>">
             <i class="fab fa-linkedin"></i>
         </a>
-        <a href="" id="whatsapp">
+        <a id="whatsapp" href="https://wa.me/?text=<%= post.title %> https://www.dnpayhub.com/blogs/<%= post.slug %>">
             <i class="fab fa-whatsapp"></i>
         </a>
 
@@ -61,7 +63,7 @@
             <div class="blog-content">
                 <section class="news-detailed">
                     <h5><%= post.category %></h5>
-                    <h1 id="post-title"><%= post.title %></h1>
+                    <h1 id=" post-title"><%= post.title %></h1>
                     <div class="image-wrapper">
                         <img src="<%= post.image_url %>" alt="" class="image" id="post-image">
                     </div>
@@ -158,6 +160,6 @@
         <aside></aside>
     </section>
 </main>
-<script src="../js/social-media-share.js"></script>
+<!-- <script src="../js/social-media-share.js"></script> -->
 <script src="../js/navs.js"></script>
 <%- include('./partials/footer.ejs') %>
