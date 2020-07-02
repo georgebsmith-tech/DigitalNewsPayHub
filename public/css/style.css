@@ -757,12 +757,19 @@ footer .biz-links a {
   top: -2px;
   padding: 2px 0px 12px inherit;
 }
+.primary-nav nav .sub-menu-control {
+  color: white;
+}
 .primary-nav nav #sep1 {
   display: flex;
-  justify-content: space-between;
+}
+.primary-nav nav #sep1 span {
+  color: white;
+  font-size: 10px;
 }
 .primary-nav nav #sep1 #left-it {
   height: 14px;
+  margin-left: 30px;
 }
 .primary-nav nav #sub-cat1 {
   display: none;
