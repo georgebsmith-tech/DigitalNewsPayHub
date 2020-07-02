@@ -267,7 +267,6 @@ ul {
 }
 .news-detailed .article img {
   max-width: 100%;
-  max-height: fit-content;
   display: block;
 }
 
