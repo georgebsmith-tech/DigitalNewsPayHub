@@ -52,7 +52,7 @@ router.post("/news/comments/:id", async (req, res) => {
 
 router.get("/index/:category", async (req, res) => {
     try {
-        const data = await PostModel.find({ category: req.params.category.toLowerCase() })
+        const data = await PostModel.find({ category: req.params.category.toLowerCase() }).sort({ date: -1 })
         if (data === [])
             data = undefined
         let post

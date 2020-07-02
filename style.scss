@@ -42,176 +42,20 @@ $color5:#070EEB;
 
 //Admin login ends here
 
+//header starts here
+@use './sass_files/footer';
+
+//footer ends here
+
+//header starts here
+@use './sass_files/header';
+//footer ends here
+
+//header starts here
+@use './sass_files/primary-nav';
+//footer ends here
 
 
-
-//Mobile styling starts here
-
-//styling for the header starts here
-.header{
-    padding: 0px;
-}
-.banner{
-    background: rgba(168, 121, 121,0.02);
-    background: white;
-    height: 100%;
-    #brand{
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        height: 100%;
-       
-    }
-}
-
-
-#welcome{
-    display: none;
-    background: rgba(168, 121, 121,0.02);
-}
-
-//styling for the header ends here
-
-//breaking nes and adverts starts here
-.breaking-news-and-more{
-    // margin-top: 1px;
-    #adverts{
-        height: 36px;
-        width: 100vw;
-        background: $color4;
-    }
-}
-
-.the-search-and-more{
-    margin-top: 26px;
-    .the-adverts{
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: $color4;
-        width: 80vw;
-        margin: 0px auto;
-        height: 36px;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        span{
-            position: absolute;
-            left: 33%;
-        }
-       
-    }
-    .search{
-        margin-top: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        button{
-            padding: 10px 70px;
-            background: white;
-            border:1px solid grey;
-        }
-    }
-}
-
-//breaking news and adverts ends here
-
-//details about posts
-.more-details{
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(3,60px);
-    column-gap: 10px;
-    img{
-        cursor: pointer;
-    }
-}
-//details about posts ends here
-
-//Detailed story starts here
-.news-detailed{
-    // margin: ;
-
-    .image{
-        width:100%;
-    }
-}
-
-
-//Detailed story ends here
-
-//readers' reviews starts here
-.theComment{
-    margin-bottom: 12px;
-}
-.reviews{
-    padding: 7px;
-    margin-bottom: 10px;
-    border: 1px solid rgb(221, 216, 216);
-}
-
-//readers' review ends here
-
-
-// toggle nav styling starts here 
-.primary-nav{
-    
-    // background: $color2;
-    .toggle-nav{
-        padding-left: 0px;
-        background: $color2;
-        padding-bottom: 6px;
-        & div{
-            width: 100vw;
-            background: $color3;
-            padding-top: 8px;
-            margin-left: 0px;
-            img{
-                margin-left: 20px;
-            }
-        }
-    }
-    nav{
-        display: none;
-        opacity: 0;
-        height: 0px;
-        transition: all 0.8s;
-        background: $color2;
-        position: relative;
-        top: -2px;
-        padding: 2px 0px 12px inherit;
-        #sep1{
-            display: flex;
-            justify-content: space-between;
-            #left-it{
-                height: 14px;
-            }
-        }
-        #sub-cat1{
-            display: none;
-            margin-left: 30px;
-
-        }
-        a{
-            color:white;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-
-        }
-
-        ul{
-            background: $color2;
-            li{
-                padding-bottom: 4px;
-            }
-        }
-
-        .form-nav{
-            padding-bottom: 10px;
-        }
-    }
-}
 
 
 //styling for the most-liked starts
@@ -251,27 +95,22 @@ $color5:#070EEB;
 //category most liked starts here
 .liked-in-categories{
     margin-top: 30px;
+    .post-card{
+       
+        &>div{
+            text-decoration: none;
+        }
+
+    }
 
     .conainer{
         .story{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 23vh;
+
+           
             column-gap: 9px;
             margin-top: 10px;
             margin-bottom: 20px;
             margin-left: 20px;
-            .image-wrapper{
-                overflow: scroll;
-                border-radius: 7px;
-
-                .image{
-                    width: 300px;
-                    // display: block;
-                    
-                }
-
-            }
             
             h3,h2{
                 font-size: 0.8rem;
@@ -311,91 +150,6 @@ $color5:#070EEB;
 .aside-home{
     display: none;
 }
-
-//styling for the main content area ends here
-
-
-//comments starts here
-.comments{
-    padding: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(128, 128, 128,0.3);
-    form{
-        & >div{
-            margin-bottom: 15px;
-            margin-top: 15px;
-            input,textarea{
-                padding: 5px;
-                box-sizing: border-box;
-                outline: none;
-            }
-            input{
-                border:none;
-                border-bottom: 1px solid grey;
-            }
-
-        }
-        button{
-            padding: 10px;
-            background: $color3;
-            color: white;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            border: $color3;
-            border-radius: 4px;
-        }
-    }
-}
-
-// comments ends here
-
-.detailed{
-    background: rgba(128, 128, 128,0.2);
-}
-.news-detailed{
-    h1{
-       font-size: 1.8rem;
-       margin-bottom: 7px;
-    }
-    padding: 12px;
-    background: white;
-}
-
-
-
-// footer styling starts here
-footer{
-    margin-top: 20px;
-    // min-height: 88vh;
-    .biz-links{
-        background: $color1;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px initial 7px initial;
-        a{
-            color: rgba(255, 255, 255,0.8);
-            font-size: 0.5rem;
-            text-transform: uppercase;
-    
-        }
-    
-    }
-    
-}
-
-
-// footer styling ends here
-
-
-
-
-
-
-
-
-
-
-//Mobile styling ends here
-
 
 // Desktop styling starts here
 @media(min-width:810px){
@@ -641,29 +395,35 @@ footer{
         }
     }
     .liked-in-categories{
+        .post-card{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            // column-gap: 10px;
+            
+        
+            &>div{
+                border-radius: 5px;
+                padding: 10px 5px 20px  5px;
+                box-shadow: -2px 3px 1px  2px rgb(240, 239, 239);
+                .image-wrapper{
+                    width: 100%;
+                    .image{
+                        width: 100%;
+                        height: 250px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+    
+        }
  
     
         .conainer{
             .story{
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 150px;
-                column-gap: 9px;
+               
                 margin-top: 10px;
                 margin-bottom: 20px;
                 margin-left: 20px;
-                .image-wrapper{
-                    overflow: scroll;
-                    border-radius: 7px;
-    
-                    .image{
-                        width: 100%;
-                        // display: block;
-                        
-                    }
-    
-                }
-                
              
             }
     

@@ -63,25 +63,32 @@
                 </section>
                 <section class="liked-in-categories">
                     <div class="conainer">
-                        <% for(const post of posts){ %>
-                        <div class="story">
-                            <div class="image-wrapper">
-                                <img src="<%= post.image_url %>" alt="" class="image">
+
+                        <div class="post-card">
+                            <% for(const post of posts){ %>
+
+                            <div class="story">
+                                <div class="image-wrapper">
+                                    <img src="<%= post.image_url %>" alt="" class="image">
+                                </div>
+                                <div class="write-up">
+                                    <h3><a href="/index/<%= post.category.toLowerCase() %>"><%= post.category %></a>
+                                    </h3>
+                                    <h2><%= post.title %></h2>
+
+                                    <article>
+                                        <%- post.markedBody.substr(0,200) %>...
+                                        <a href="/blogs/<%= post.slug %>" class="block right-text">Read more</a>
+                                    </article>
+
+                                </div>
+
                             </div>
-                            <div class="write-up">
-                                <h3><%= post.category %></h3>
-                                <h2><%= post.title %></h2>
 
-                                <article>
-                                    <%- post.markedBody.substr(0,50) %>...
-                                    <a href="/blogs/<%= post.slug %>">Read more</a>
-                                </article>
 
-                            </div>
 
+                            <% } %>
                         </div>
-
-                        <% } %>
 
                     </div>
 
@@ -104,30 +111,8 @@
             <aside class="aside-home">
                 <h3>Latest News</h3>
 
+                <%- include('./partials/latest-news.ejs') %>
 
-                <section class="news">
-                    <% for(const post of posts){ %>
-                    <div class="latest-newz">
-                        <div class="image-wrapper">
-                            <img src="<%= post.image_url %>" alt="" class="image">
-                        </div>
-                        <div class="write-up">
-                            <h3><%= post.category %></h3>
-                            <h2><%= post.title %></h2>
-                            <!-- <em>Post on the<%= post.day %> by <%= post.time %></em> -->
-                            <article>
-                                <%- post.markedBody.substr(0,50) %>...
-                                <a href="/blogs/<%= post.slug %>">Read more</a>
-                            </article>
-
-                        </div>
-
-                    </div>
-
-                    <% } %>
-
-
-                </section>
                 <section class="desktop-advert">
                     <div class="adverts-content">
                         <div>A</div>

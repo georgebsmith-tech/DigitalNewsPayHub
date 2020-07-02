@@ -36,6 +36,10 @@ button:hover {
   text-align: center;
 }
 
+.right-text {
+  text-align: right;
+}
+
 a {
   text-decoration: none;
 }
@@ -288,6 +292,70 @@ ul {
   font-size: 1.6rem;
 }
 
+.theComment {
+  margin-bottom: 12px;
+}
+
+.reviews {
+  padding: 7px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd8d8;
+}
+
+.more-details {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  column-gap: 10px;
+}
+.more-details img {
+  cursor: pointer;
+}
+
+.news-detailed .image {
+  width: 100%;
+}
+
+.comments {
+  padding: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.3);
+}
+.comments form > div {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.comments form > div input, .comments form > div textarea {
+  padding: 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+.comments form > div input {
+  border: none;
+  border-bottom: 1px solid grey;
+}
+.comments form button {
+  padding: 10px;
+  background: #003FED;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: #003FED;
+  border-radius: 4px;
+}
+
+.detailed {
+  background: rgba(128, 128, 128, 0.2);
+}
+
+.news-detailed {
+  padding: 12px;
+  background: white;
+}
+.news-detailed h1 {
+  font-size: 1.8rem;
+  margin-bottom: 7px;
+}
+
 .admin-nav {
   display: none;
 }
@@ -497,9 +565,12 @@ ul {
   padding: 10px;
   background: rgba(32, 123, 243, 0.5);
 }
-.all-posts .table-wrapper table tbody tr:nth-child(2) {
+.all-posts .table-wrapper table tbody tr:nth-child(even) {
   background: rgba(32, 123, 243, 0.3);
   background: rgba(240, 239, 239, 0.8);
+}
+.all-posts .table-wrapper table tbody a {
+  color: black;
 }
 .all-posts .table-wrapper table td {
   padding: 10px 15px;
@@ -566,6 +637,21 @@ ul {
   border-radius: 5px;
 }
 
+footer {
+  margin-top: 20px;
+}
+footer .biz-links {
+  background: #070B7A;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px initial 7px initial;
+}
+footer .biz-links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
 .header {
   padding: 0px;
 }
@@ -623,30 +709,6 @@ ul {
   padding: 10px 70px;
   background: white;
   border: 1px solid grey;
-}
-
-.more-details {
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 60px);
-  column-gap: 10px;
-}
-.more-details img {
-  cursor: pointer;
-}
-
-.news-detailed .image {
-  width: 100%;
-}
-
-.theComment {
-  margin-bottom: 12px;
-}
-
-.reviews {
-  padding: 7px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd8d8;
 }
 
 .primary-nav .toggle-nav {
@@ -729,21 +791,14 @@ ul {
 .liked-in-categories {
   margin-top: 30px;
 }
+.liked-in-categories .post-card > div {
+  text-decoration: none;
+}
 .liked-in-categories .conainer .story {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 23vh;
   column-gap: 9px;
   margin-top: 10px;
   margin-bottom: 20px;
   margin-left: 20px;
-}
-.liked-in-categories .conainer .story .image-wrapper {
-  overflow: scroll;
-  border-radius: 7px;
-}
-.liked-in-categories .conainer .story .image-wrapper .image {
-  width: 300px;
 }
 .liked-in-categories .conainer .story h3, .liked-in-categories .conainer .story h2 {
   font-size: 0.8rem;
@@ -766,61 +821,6 @@ ul {
 
 .aside-home {
   display: none;
-}
-
-.comments {
-  padding: 10px;
-  box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.3);
-}
-.comments form > div {
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-.comments form > div input, .comments form > div textarea {
-  padding: 5px;
-  box-sizing: border-box;
-  outline: none;
-}
-.comments form > div input {
-  border: none;
-  border-bottom: 1px solid grey;
-}
-.comments form button {
-  padding: 10px;
-  background: #003FED;
-  color: white;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  border: #003FED;
-  border-radius: 4px;
-}
-
-.detailed {
-  background: rgba(128, 128, 128, 0.2);
-}
-
-.news-detailed {
-  padding: 12px;
-  background: white;
-}
-.news-detailed h1 {
-  font-size: 1.8rem;
-  margin-bottom: 7px;
-}
-
-footer {
-  margin-top: 20px;
-}
-footer .biz-links {
-  background: #070B7A;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px initial 7px initial;
-}
-footer .biz-links a {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.5rem;
-  text-transform: uppercase;
 }
 
 @media (min-width: 810px) {
@@ -1023,21 +1023,27 @@ footer .biz-links a {
     display: none;
   }
 
-  .liked-in-categories .conainer .story {
+  .liked-in-categories .post-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px;
-    column-gap: 9px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .liked-in-categories .post-card > div {
+    border-radius: 5px;
+    padding: 10px 5px 20px 5px;
+    box-shadow: -2px 3px 1px 2px #f0efef;
+  }
+  .liked-in-categories .post-card > div .image-wrapper {
+    width: 100%;
+  }
+  .liked-in-categories .post-card > div .image-wrapper .image {
+    width: 100%;
+    height: 250px;
+    border-radius: 6px;
+  }
+  .liked-in-categories .conainer .story {
     margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 20px;
-  }
-  .liked-in-categories .conainer .story .image-wrapper {
-    overflow: scroll;
-    border-radius: 7px;
-  }
-  .liked-in-categories .conainer .story .image-wrapper .image {
-    width: 100%;
   }
 
   #for-registry {

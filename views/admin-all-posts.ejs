@@ -29,7 +29,7 @@
                                 <!-- <th class="desktop">Id</th> -->
                                 <th>Title</th>
                                 <th>Category</th>
-                                <th class="desktop">Body</th>
+                                <!-- <th class="desktop">Body</th> -->
                                 <th>Posted on</th>
                                 <th class="desktop">Last modified</th>
                                 <th colspan="2">
@@ -43,9 +43,9 @@
                             <tr>
                                 <td><%= (index+1) %></td>
                                 <!-- <td class="desktop"><%= post._id.toString().substr(0,3) %>...</td> -->
-                                <td><%= post.title %></td>
+                                <td><a href="/blogs/<%= post.slug %>"><%= post.title %></a></td>
                                 <td><%= post.category %></td>
-                                <td class="desktop"><%- post.markedBody.substr(0,40) %>...</td>
+                                <!-- <td class="desktop"><%- post.markedBody.substr(0,40) %>...</td> -->
                                 <td><%= post.date.toDateString() %></td>
                                 <td class="desktop"><%= post.date.toDateString() %></td>
                                 <td class="update">
