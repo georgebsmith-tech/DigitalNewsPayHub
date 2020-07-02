@@ -43,7 +43,7 @@ router.post("/news/comments/:id", async (req, res) => {
     console.log(new_comment)
     await data.comments.push(new_comment)
     await data.save()
-    res.redirect(`/${data.slug}`)
+    res.redirect(`/blogs/${data.slug}`)
 
 
 })
