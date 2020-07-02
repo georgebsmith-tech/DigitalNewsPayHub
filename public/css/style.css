@@ -791,8 +791,11 @@ footer .biz-links a {
 .liked-in-categories {
   margin-top: 30px;
 }
-.liked-in-categories .post-card > div {
-  text-decoration: none;
+.liked-in-categories .post-card > div .image-wrapper {
+  width: 100%;
+}
+.liked-in-categories .post-card > div .image-wrapper .image {
+  width: 100%;
 }
 .liked-in-categories .conainer .story {
   column-gap: 9px;
