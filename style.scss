@@ -121,6 +121,9 @@ $color5:#070EEB;
                 }
             }
             article{
+                border-radius: 5px;
+                padding: 5px;
+                background: rgba(0,0,0,0.007);
                 margin-top: 30px;
             }
 
@@ -468,6 +471,11 @@ $color5:#070EEB;
     
     
     .news-detailed{
+        #post-title{
+            font-size: 2.8rem;
+            margin-bottom: 7px;
+            color: initial;
+         }
         background: white;
         margin:0 390px ;
         padding:20px 2vw;
