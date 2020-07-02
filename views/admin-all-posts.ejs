@@ -1,22 +1,7 @@
 <%- include('./partials/head.ejs') %>
 
 <main id="dashboard-main">
-    <section class="hide nav">
-        <nav>
-            <div class="toggle-close">X</div>
-            <ul>
-                <li><a>posts</a>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-table"></i>All posts</a></li>
-                        <li><a href="#">By categories</a></li>
-                        <li><a href="#">Create new post </a></li>
-                    </ul>
-                </li>
-                <li><a href="/admins/charts">Charts</a></li>
-                <li><a href="/">Comments <span class="comments">4</span></a></li>
-            </ul>
-        </nav>
-    </section>
+    <%- include('./partials/admin-nav.ejs') %>
     <section>
         <header class="container">
             <div class="toggle-nav2">
@@ -32,54 +17,56 @@
                 </form>
             </div>
         </header>
+        <div class="all-post-all">
+            <aside></aside>
+            <section class="container all-posts">
+                <h1 class="center-text">All posts</h1>
+                <section class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SN</th>
+                                <!-- <th class="desktop">Id</th> -->
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th class="desktop">Body</th>
+                                <th>Posted on</th>
+                                <th class="desktop">Last modified</th>
+                                <th colspan="2">
+                                    Action
+                                </th>
 
-        <section class="container all-posts">
-            <h1 class="center-text">All posts</h1>
-            <section class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>SN</th>
-                            <!-- <th class="desktop">Id</th> -->
-                            <th>Title</th>
-                            <th>Category</th>
-                            <th class="desktop">Body</th>
-                            <th>Posted on</th>
-                            <th class="desktop">Last modified</th>
-                            <th colspan="2">
-                                Action
-                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% posts.forEach((post,index)=>{ %>
+                            <tr>
+                                <td><%= (index+1) %></td>
+                                <!-- <td class="desktop"><%= post._id.toString().substr(0,3) %>...</td> -->
+                                <td><%= post.title %></td>
+                                <td><%= post.category %></td>
+                                <td class="desktop"><%- post.markedBody.substr(0,40) %>...</td>
+                                <td><%= post.date.toDateString() %></td>
+                                <td class="desktop"><%= post.date.toDateString() %></td>
+                                <td class="update">
+                                    <a href="/admins/edit-post/<%= post.slug %>" title="Edit" class="update-post"><i
+                                            class="fa fa-pencil"></i></a>
+                                </td>
+                                <td class="update">
+                                    <a title="Delete" class="update-post delete-post" href=""><i
+                                            class="fa fa-trash-o"></i></a>
+                                    <a href="/admins/delete-post/<%= post.slug %>" class="nothing"></a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </section>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% posts.forEach((post,index)=>{ %>
-                        <tr>
-                            <td><%= (index+1) %></td>
-                            <!-- <td class="desktop"><%= post._id.toString().substr(0,3) %>...</td> -->
-                            <td><%= post.title %></td>
-                            <td><%= post.category %></td>
-                            <td class="desktop"><%- post.markedBody.substr(0,40) %>...</td>
-                            <td><%= post.date.toDateString() %></td>
-                            <td class="desktop"><%= post.date.toDateString() %></td>
-                            <td class="update">
-                                <a href="/admins/edit-post/<%= post.slug %>" title="Edit" class="update-post"><i
-                                        class="fa fa-pencil"></i></a>
-                            </td>
-                            <td class="update">
-                                <a title="Delete" class="update-post delete-post" href=""><i
-                                        class="fa fa-trash-o"></i></a>
-                                <a href="/admins/delete-post/<%= post.slug %>" class="nothing"></a>
-                            </td>
-                        </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
+
+
             </section>
-
-
-
-        </section>
+        </div>
     </section>
 
 </main>

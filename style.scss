@@ -410,9 +410,30 @@ footer{
     //admin section ends here
 
 
+    .all-posts{
+        .table-wrapper{
 
+        
+            table{
+                td{
+                    font-size: 0.7rem;
+                }
+                
+            }
+        }
 
+    }
+    
+   
+    .admin-nav{
+        display:block;
+    }
 
+    #dashboard-main{
+        .toggle-close{
+            display: none;
+        }
+    }
     //admin dash board charts
     .charts{
         font-size: 1.7em;
