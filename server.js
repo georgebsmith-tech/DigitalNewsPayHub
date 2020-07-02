@@ -1,6 +1,9 @@
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config()
+
 }
+const favicon = require("serve-favicon")
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -53,6 +56,8 @@ initialize(passport, async name => {
     })
 
 // app.use("/admin", adminRouter)
+
+app.use(favicon(__dirname + '/public/images/favicon.png'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(flash())
