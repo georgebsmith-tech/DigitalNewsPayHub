@@ -48,7 +48,7 @@ router.delete("/admins/logout", (req, res) => {
 
 
 
-router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
+router.get("/admins/posts_dashboard", /*checkAuthenticated,*/(req, res) => {
     let post;
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
 })
@@ -75,7 +75,7 @@ router.get("/admins/edit-post/:slug", /*checkAuthenticated,*/ async (req, res) =
 
 const previewPost = []
 
-router.get("/admins/preview-post", /*checkAuthenticated,*/(req, res) => {
+router.get("/admins/preview-post",/* checkAuthenticated,*/(req, res) => {
     // PostModel.findOne({ slug: req.params.slug })
     // .then((data) => {
     //     res.render("news_detailed", { title: `${data.title}`, post: data })
@@ -139,7 +139,7 @@ router.post("/admins/add_post", (req, res) => {
 
 
 
-router.get("/admins/charts", checkAuthenticated, async function (req, res) {
+router.get("/admins/charts",/* checkAuthenticated,*/ async function (req, res) {
     const allData = await PostModel.find()
 
 
