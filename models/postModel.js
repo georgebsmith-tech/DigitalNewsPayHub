@@ -11,7 +11,7 @@ const dompurify = creatDompurifier(new JSDOM().window)
 // const url = "mongodb://localhost:27017/myPosts"
 const url = `mongodb+srv://digitalnews:digitalnews@cluster0-kyup2.mongodb.net/newsPosts?retryWrites=true&w=majority`
 
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(data => {
         console.log("Connection is successful!!")
     })

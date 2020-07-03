@@ -77,12 +77,14 @@
                         </article>
                         <div class="more-details">
                             <div>
-                                <img src="../images/like.png" alt="" width="35px" title="Like this post">
-                                <span>12</span>
+                                <img src="../images/like.png" alt="" width="35px" title="Like this post"
+                                    data-like-url="/blogs/inc-like/<%= post.slug %>" class="like-post">
+                                <span class="number-of-like"><%= post.number_of_likes %></span>
                             </div>
 
                             <div>
-                                <img src="../images/comments1.png" alt="" title="Drop a comment">
+                                <a href="#comments"><img src="../images/comments1.png" alt=""
+                                        title="Drop a comment"></a>
                                 <span><%= post.comments.length %></span>
                             </div>
                             <div>
@@ -112,7 +114,7 @@
                                 <% } %>
                             </div>
                         </div>
-                        <h3>Leave a comment</h3>
+                        <h3 id="comments">Leave a comment</h3>
                         <p>Your email address will not be published</p>
                         <form action="/news/comments/<%= post.id %>" method="POST">
                             <div>
@@ -162,4 +164,5 @@
 </main>
 <!-- <script src="../js/social-media-share.js"></script> -->
 <script src="../js/navs.js"></script>
+<script src="../js/like-post.js"></script>
 <%- include('./partials/footer.ejs') %>

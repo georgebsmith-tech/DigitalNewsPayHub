@@ -48,6 +48,17 @@ router.post("/news/comments/:id", async (req, res) => {
 
 })
 
+router.get("/blogs/inc-like/:slug", async (req, res) => {
+    const data = await PostModel.findOneAndUpdate({ slug: req.params.slug }, { $inc: { number_of_likes: 1 } }, { new: true })
+    // console.log(data)
+
+
+    res.send(data)
+
+
+})
+
+
 
 
 router.get("/index/:category", async (req, res) => {
