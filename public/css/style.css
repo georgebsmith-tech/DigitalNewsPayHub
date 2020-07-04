@@ -852,6 +852,41 @@ footer .biz-links a {
     }
   }
 }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+}
+.overlay .layer {
+  background: #cfcdcd;
+}
+.overlay .layer-1 {
+  flex: 1;
+}
+.overlay .layer-2 {
+  flex: 1;
+}
+.overlay .layer-3 {
+  flex: 1;
+}
+
+.dnpay {
+  color: #003FED;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 12;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .most-liked {
   margin-top: 35px;
 }

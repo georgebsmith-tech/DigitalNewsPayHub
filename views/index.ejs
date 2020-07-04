@@ -1,10 +1,13 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/header.ejs') %>
 <main>
-    <section>
-        <div class="breaking-news-and-more">
-
-        </div>
+    <h2 class="dnpay">
+        Welcome to Digital News Hub
+    </h2>
+    <section class="overlay">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
     </section>
     <section class="the-search-and-more">
         <div>
@@ -150,6 +153,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
     <script src="../js/navs.js"></script>
     <script src="../js/breaking-news.js"></script>
+    <script>
+        const tl = gsap.timeline()
+        tl.fromTo(".dnpay", 0.4, { opacity: 0, scale: 0, rotation: 720 }, { opacity: 1, scale: 3, rotation: 0 })
+            .to(".dnpay", 2.5, { y: "-60vh" })
+            .to(".dnpay", { display: "none" })
+            .to(".layer-1", { duration: 1, y: "-100vh" }, 1.5)
+            .to(".layer-2", { duration: 1, y: "-100vh" }, 2)
+            .to(".layer-3", { duration: 1, y: "-100vh" }, 2.5)
+            .to(".overlay", { display: "none" })
+
+
+    </script>
 
 
     <%- include('./partials/footer.ejs') %>
