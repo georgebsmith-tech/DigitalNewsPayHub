@@ -7,6 +7,10 @@
   font-size: 15px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .desktop {
   display: none;
 }
@@ -821,7 +825,7 @@ footer .biz-links a {
     transform: translateX(-150vw);
   }
 }
-.marquee-element > div {
+.marquee-element > a {
   width: 30vw;
   flex-shrink: 0;
   margin: 5px;
@@ -830,12 +834,12 @@ footer .biz-links a {
   display: flex;
   align-items: center;
 }
-.marquee-element > div div {
+.marquee-element > a div {
   margin-left: 5px;
 }
 
 @media (max-width: 657px) {
-  .breaking-news .marquee-element > div {
+  .breaking-news .marquee-element > a {
     width: 80vw;
   }
 

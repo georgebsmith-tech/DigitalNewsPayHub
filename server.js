@@ -58,8 +58,8 @@ initialize(passport, async name => {
 // app.use("/admin", adminRouter)
 
 app.use(favicon(__dirname + '/public/images/favicon.png'));
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true, limit: "500mb" }))
+app.use(bodyParser.json({ limit: "500mb" }))
 app.use(flash())
 app.use(session({
     secret: "my secret", //process.env.SESSION_SECRET,

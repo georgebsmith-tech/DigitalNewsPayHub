@@ -18,34 +18,38 @@
                 <img src="../images/adverts-left1.png" alt="">
             </div>
             <section class="breaking-news">
-                <a class="marquee-element" href="/blogs/<%= post.slug %>">
-
-                    <% posts.forEach((post,index)=>{ %>
-                    <div class="marquee-item-<%=(index+1) %> marquee-item">
-                        <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
+                <div class="marquee-element">
+                    <%  let counter=0 %>
+                    <% for(let post of posts){ %>
+                    <a href="/blogs/<%= post.slug %>" class="marquee-item-<%=(counter+1) %> marquee-item">
+                        <img src="<%= post.image_url %>" alt="breaking news-<%=(counter+1) %>">
                         <div>
 
                             <h3><%= post.title %></h3>
 
                         </div>
-                    </div>
+                    </a>
+                    <% if(counter===4) break %>
+                    <% counter=counter +1 %>
+                    <% } %>
 
-
-                    <% }) %>
-                    <% posts.forEach((post,index)=>{ %>
-                    <div class="marquee-item-<%=(index+1) %> marquee-item">
-                        <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
+                    <% counter=0 %>
+                    <% for(let post of posts){ %>
+                    <a class="marquee-item-<%=(counter+1) %> marquee-item" href="/blogs/<%= post.slug %>">
+                        <img src="<%= post.image_url %>" alt="breaking news-<%=(counter+1) %>">
                         <div>
 
                             <h3><%= post.title %></h3>
 
                         </div>
-                    </div>
+                    </a>
 
+                    <% if(counter===3) break %>
+                    <% counter=counter +1 %>
 
-                    <% }) %>
+                    <% } %>
 
-                </a>
+                </div>
 
             </section>
             <div class="search">
