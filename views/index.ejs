@@ -1,9 +1,10 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/header.ejs') %>
 <main>
-    <h2 class="dnpay">
-        Welcome to Digital News Hub
-    </h2>
+    <div class="dnpay">
+        <h4>Welcome to</h4>
+        <h2>Digital News Hub</h2>
+    </div>
     <section class="overlay">
         <div class="layer layer-1"></div>
         <div class="layer layer-2"></div>
@@ -155,8 +156,8 @@
     <script src="../js/breaking-news.js"></script>
     <script>
         const tl = gsap.timeline()
-        tl.fromTo(".dnpay", 0.4, { opacity: 0, scale: 0, rotation: 720 }, { opacity: 1, scale: 3, rotation: 0 })
-            .to(".dnpay", 2.5, { y: "-60vh" })
+        tl.fromTo(".dnpay", 1, { opacity: 0, scale: 0, }, { opacity: 1, scale: 2.5, })
+            .to(".dnpay", 1.5, { y: "-60vh" })
             .to(".dnpay", { display: "none" })
             .to(".layer-1", { duration: 1, y: "-100vh" }, 1.5)
             .to(".layer-2", { duration: 1, y: "-100vh" }, 2)

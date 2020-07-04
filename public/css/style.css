@@ -853,6 +853,7 @@ footer .biz-links a {
   }
 }
 .overlay {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -862,7 +863,7 @@ footer .biz-links a {
   display: flex;
 }
 .overlay .layer {
-  background: #cfcdcd;
+  background: #ffffff;
 }
 .overlay .layer-1 {
   flex: 1;
@@ -877,6 +878,7 @@ footer .biz-links a {
 .dnpay {
   color: #003FED;
   position: absolute;
+  flex-direction: column;
   top: 0;
   left: 0;
   height: 100vh;
@@ -885,6 +887,7 @@ footer .biz-links a {
   justify-content: center;
   align-items: center;
   display: flex;
+  word-wrap: wrap;
 }
 
 .most-liked {
