@@ -946,7 +946,7 @@ footer .biz-links a {
   border-radius: 5px;
   padding: 5px;
   background: rgba(0, 0, 0, 0.007);
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .liked-in-categories .conainer .story h2 {
   font-size: 20px;
@@ -1198,7 +1198,7 @@ footer .biz-links a {
   }
   .liked-in-categories .conainer .story {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-left: 20px;
   }
 

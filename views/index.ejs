@@ -19,24 +19,10 @@
             </div>
             <section class="breaking-news">
                 <div class="marquee-element">
-                    <%  let counter=0 %>
-                    <% for(let post of posts){ %>
-                    <a href="/blogs/<%= post.slug %>" class="marquee-item-<%=(counter+1) %> marquee-item">
-                        <img src="<%= post.image_url %>" alt="breaking news-<%=(counter+1) %>">
-                        <div>
 
-                            <h3><%= post.title %></h3>
-
-                        </div>
-                    </a>
-                    <% if(counter===4) break %>
-                    <% counter=counter +1 %>
-                    <% } %>
-
-                    <% counter=0 %>
-                    <% for(let post of posts){ %>
-                    <a class="marquee-item-<%=(counter+1) %> marquee-item" href="/blogs/<%= post.slug %>">
-                        <img src="<%= post.image_url %>" alt="breaking news-<%=(counter+1) %>">
+                    <% posts.forEach((post,index)=>{ %>
+                    <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blogs/<%= post.slug %>">
+                        <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
                         <div>
 
                             <h3><%= post.title %></h3>
@@ -44,12 +30,22 @@
                         </div>
                     </a>
 
-                    <% if(counter===3) break %>
-                    <% counter=counter +1 %>
 
-                    <% } %>
+                    <% }) %>
+                    <% posts.forEach((post,index)=>{ %>
+                    <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blogs/<%= post.slug %>">
+                        <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
+                        <div>
 
-                </div>
+                            <h3><%= post.title %></h3>
+
+                        </div>
+                    </a>
+
+
+                    <% }) %>
+
+                    </a>
 
             </section>
             <div class="search">
@@ -111,7 +107,7 @@
                                     <em><%= post.date.toDateString() %></em>
 
                                     <article>
-                                        <%- post.markedBody.substr(0,200) %>...
+                                        <%= post.description.substr(0,200) %>...
                                         <a href="/blogs/<%= post.slug %>" class="block right-text read-more">Read
                                             more</a>
                                     </article>
