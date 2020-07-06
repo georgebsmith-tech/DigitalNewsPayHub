@@ -27,7 +27,19 @@ router.get("/index-new", async (req, res) => {
 })
 
 router.get("/blogs/:slug", async (req, res) => {
-    const categories = await postCategory.find().select({ name: 1 })
+    const categories = await PostCategory.find().select({ name: 1 })
+
+    PostModel.findOne({ slug: req.params.slug })
+        .then((data) => {
+            data.number_of_views += 1
+            data.save()
+            res.render("news_detailed", { title: `${data.title}`, post: data, categories })
+        })
+
+
+})
+router.get("/blog/:slug", async (req, res) => {
+    const categories = await PostCategory.find().select({ name: 1 })
 
     PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
