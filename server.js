@@ -22,8 +22,9 @@ const session = require("express-session")
 const postRouter = require("./controllers/postRoutes");
 const userRouter = require("./controllers/userRoutes");
 const couponRouter = require("./controllers/coupons");
-// const adminRouter = require("./controllers/adminRouter");
+const howItWorksRouter = require("./controllers/how_it_works")
 const adminRoute = require("./controllers/adminroutes");
+
 const passport = require("passport");
 const initialize = require("./passport.config")
 
@@ -88,6 +89,8 @@ app.use(postRouter)
 app.use(userRouter)
 app.use(couponRouter)
 app.use(adminRoute)
+app.use(howItWorksRouter)
+
 
 
 

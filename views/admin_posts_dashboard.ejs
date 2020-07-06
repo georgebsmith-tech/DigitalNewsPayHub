@@ -61,7 +61,23 @@
 
 
                 </section>
-                <aside></aside>
+                <aside>
+                    <section>
+                        <h3>Available categories</h3>
+                        <ul>
+                            <% categories.forEach(cate=>{ %>
+                            <li><%= cate.name %></li>
+                            <% }) %>
+                        </ul>
+                        <form action="">
+                            <input type="text" name="name" id="name" placeholder="Add a new Category"> <button
+                                type="submit">Add category</button>
+                        </form>
+                        <ul>
+
+                        </ul>
+                    </section>
+                </aside>
             </section>
 
         </div>

@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt")
 const { func } = require("joi")
 const passport = require("passport")
 const PostModel = require("../models/postModel")
+const PostCategory = require("../models/postCategoryModel")
 
 const creatDompurifier = require("dompurify");
 const JSDOM = require("jsdom").JSDOM
@@ -27,9 +28,10 @@ function checkNotAuthenticated(req, res, next) {
 
 const router = require("express").Router()
 
-router.get("/admins/login", checkNotAuthenticated, (req, res) => {
+router.get("/admins/login", checkNotAuthenticated, async (req, res) => {
     let post;
-    res.render("admin", { title: "Admin Panel", post })
+    const categories = await PostCategory.find().select({ name: 1 })
+    res.render("admin", { title: "Admin Panel", post, categories })
 })
 
 router.post("/admins/login", passport.authenticate("local", {
@@ -48,9 +50,10 @@ router.delete("/admins/logout", (req, res) => {
 
 
 
-router.get("/admins/posts_dashboard", checkAuthenticated, (req, res) => {
+router.get("/admins/posts_dashboard", checkAuthenticated, async (req, res) => {
     let post;
-    res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post })
+    const categories = await PostCategory.find().select({ name: 1 })
+    res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post, categories })
 })
 
 router.get("/admins/all-posts", checkAuthenticated, async (req, res) => {

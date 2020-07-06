@@ -1,27 +1,31 @@
 const express = require("express");
 const router = express.Router()
 const PostModel = require("../models/postModel")
+const PostCategory = require("../models/postCategoryModel")
 
 
 
 router.get("/", async (req, res) => {
     const data = await PostModel.findOne()
     const allData = await PostModel.find().sort({ date: -1 })
+    const categories = await PostCategory.find().select({ name: 1 })
+    // console.log(categories)
     // console.log(result)
     // res.end()
 
 
     // console.log(osts)
-    res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red" })
+    res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
 })
 
-router.get("/blogs/:slug", (req, res) => {
+router.get("/blogs/:slug", async (req, res) => {
+    const categories = await postCategory.find().select({ name: 1 })
 
     PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
             data.number_of_views += 1
             data.save()
-            res.render("news_detailed", { title: `${data.title}`, post: data })
+            res.render("news_detailed", { title: `${data.title}`, post: data, categories })
         })
 
 
@@ -64,11 +68,12 @@ router.get("/blogs/inc-like/:slug", async (req, res) => {
 router.get("/index/:category", async (req, res) => {
     try {
         const data = await PostModel.find({ category: req.params.category.toLowerCase() }).sort({ date: -1 })
+        const categories = await PostCategory.find().select({ name: 1 })
         if (data === [])
             data = undefined
         let post
         // console.log(data)
-        res.render("post_by_category", { posts: data, title: req.params.category, post })
+        res.render("post_by_category", { posts: data, title: req.params.category, post, categories })
     } catch (err) {
         throw err
     }

@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router()
 
 
-router.get("/how_it_works", (req, res) => {
+router.get("/how-it-works", (req, res) => {
+    let post;
 
-    res.render("how_it_works", { title: "How it works", records })
+    res.render("how_it_works", { title: "How it works", post })
 })
 
 

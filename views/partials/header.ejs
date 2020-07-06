@@ -27,18 +27,15 @@
                         </div>
                         <div id="sub-cat1">
                             <ul>
-                                <li><a href="/index/politics">politics</a></li>
-                                <li><a href="/index/education">education</a></li>
-                                <li><a href="/index/entertainment">entertainment</a></li>
-                                <li><a href="/index/health">health</a></li>
-                                <li><a href="/index/sports">sports</a></li>
-                                <li><a href="/index/business">business</a></li>
+                                <% categories.forEach(cate=>{ %>
+                                <li><a href="/index/<%= cate.name.toLowerCase() %>"><%= cate.name %></a></li>
+                                <% }) %>
                             </ul>
                         </div>
                     </a>
                 </li>
                 <li><a href="/">About us</a></li>
-                <li><a href="/">How it works</a></li>
+                <li><a href="/how-it-works">How it works</a></li>
                 <li><a href="/">Our payroll</a></li>
                 <li><a href="/voucher-vendors">get Activation code</a></li>
                 <li><a href="/">Contact</a></li>
