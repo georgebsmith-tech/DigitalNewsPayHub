@@ -602,6 +602,10 @@ ul {
   padding: 10px 15px;
 }
 
+.categories-and-new {
+  margin-top: 250px;
+}
+
 #admin-form {
   background-color: white;
   height: 70vh;
@@ -984,6 +988,26 @@ footer .biz-links a {
   .admin-posts-dashboard {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    column-gap: 15px;
+  }
+  .admin-posts-dashboard .categories-and-new {
+    padding: 10px;
+    border: 1px solid grey;
+    width: fit-content;
+  }
+  .admin-posts-dashboard .categories-and-new h3 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+  .admin-posts-dashboard .categories-and-new button {
+    padding: 7px 10px;
+    text-align: center;
+    background: #003FED;
+    color: white;
+    border: #003FED;
+    outline: none;
+    border-radius: 2px;
+    text-transform: uppercase;
   }
 
   .all-posts .table-wrapper table td {

@@ -63,10 +63,6 @@ $color5:#070EEB;
 @use './sass_files/entry-animation';
 
 //entry animation ends here
-
-
-
-
 //styling for the most-liked starts
 .most-liked{
     margin-top: 35px;
@@ -96,8 +92,6 @@ $color5:#070EEB;
         display: block;
         margin-bottom: 5px;
     }
-
-
    
 }
 
@@ -135,8 +129,6 @@ $color5:#070EEB;
                 background: rgba(0,0,0,0.007);
                 margin-top: 20px;
             }
-
-           
             column-gap: 9px;
             margin-top: 10px;
             margin-bottom: 20px;
@@ -180,9 +172,7 @@ $color5:#070EEB;
     }
 }
 //forms controls ends here
-
 //styling for the most liked ends
-
 
 //styling for the main content area starts here
 
@@ -198,15 +188,32 @@ $color5:#070EEB;
     .admin-posts-dashboard{
         display:grid;
         grid-template-columns: 1fr 3fr 1fr;
+       column-gap: 15px;
+       .categories-and-new{
+           padding: 10px;
+           border: 1px solid grey;
+           width: fit-content;
+           h3{
+               text-transform: uppercase;
+               font-size: 1.2rem;
+           }
+           button{
+               padding: 7px 10px;
+               text-align: center;
+               background: $color3;
+               color: white;
+               border: $color3;
+               outline: none;
+               border-radius: 2px;
+               text-transform: uppercase;
+           }
+       }
        
     }
     //admin section ends here
 
-
     .all-posts{
         .table-wrapper{
-
-        
             table{
                 td{
                     font-size: 0.7rem;
@@ -217,7 +224,6 @@ $color5:#070EEB;
 
     }
     
-   
     .admin-nav{
         display:block;
     }
@@ -243,10 +249,6 @@ $color5:#070EEB;
 
     }
     //admin dash board charts
-
-
-
-    
     //registration starts here
 
     .register-section{
@@ -263,7 +265,6 @@ $color5:#070EEB;
 
     }
     //registration ends here
-
     .social-media-share{
         
         background: white;
@@ -296,7 +297,6 @@ $color5:#070EEB;
                 margin-top: 7px;
                 margin-left: -10px;
                 position: absolute;
-
             }
             & >ul>li:hover #sub-cat1 ul{
                 display: block;
@@ -437,8 +437,6 @@ $color5:#070EEB;
         .post-card{
             display: grid;
             grid-template-columns: repeat(2,1fr);
-            
-        
             &>div{
                 border-radius: 5px;
                 padding: 10px 5px 20px  5px;
@@ -470,13 +468,11 @@ $color5:#070EEB;
         margin-top: 5px;
         background: red;
         padding-bottom: 8px;
-
         #register{
             padding:5px;
             background:rgba(255, 255, 255,0.27);
         }
     }
-    
     
     .news-detailed{
         #post-title{

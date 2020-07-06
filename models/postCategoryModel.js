@@ -35,6 +35,7 @@ Schema.pre("validate", function (next) {
     if (this.name) {
         this.name = this.name[0].toUpperCase() + this.name.substr(1).toLowerCase()
     }
+    next()
 })
 
 

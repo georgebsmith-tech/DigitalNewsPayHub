@@ -9,6 +9,7 @@ const creatDompurifier = require("dompurify");
 const JSDOM = require("jsdom").JSDOM
 const dompurify = creatDompurifier(new JSDOM().window)
 const marked = require("marked");
+const Category = require("../models/postCategoryModel")
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -55,6 +56,20 @@ router.get("/admins/posts_dashboard", checkAuthenticated, async (req, res) => {
     const categories = await PostCategory.find().select({ name: 1 })
     res.render("admin_posts_dashboard", { title: "Admin Posst Dashboard", post, categories })
 })
+
+router.post("/admins/add-new-category", checkAuthenticated, (req, res) => {
+    console.log(req.body)
+    const category = new PostCategory(req.body)
+    category.save().then(data => {
+        console.log("Data saved!\n" + data)
+    })
+        .catch(err => console.log(err))
+
+
+    res.redirect("/admins/posts_dashboard")
+})
+
+
 
 router.get("/admins/all-posts", checkAuthenticated, async (req, res) => {
     const allData = await PostModel.find()

@@ -62,14 +62,14 @@
 
                 </section>
                 <aside>
-                    <section>
+                    <section class="categories-and-new">
                         <h3>Available categories</h3>
                         <ul>
                             <% categories.forEach(cate=>{ %>
                             <li><%= cate.name %></li>
                             <% }) %>
                         </ul>
-                        <form action="">
+                        <form action="/admins/add-new-category" method="POST">
                             <input type="text" name="name" id="name" placeholder="Add a new Category"> <button
                                 type="submit">Add category</button>
                         </form>
@@ -88,5 +88,6 @@
 <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script src="../js/editor.js"></script>
 <script src="../js/admin-nav.js"></script>
+<script src="../js/add-new-category.js"></script>
 
 <%- include('./partials/footer.ejs') %>
