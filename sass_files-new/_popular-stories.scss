@@ -1,0 +1,40 @@
+$primary-color-1:rgb(73, 73, 248);
+$primary-color-2:white;
+.popular-posts{
+    margin: 10px;
+    &>div{
+        &>h2{
+            color: $primary-color-1;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .post{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            column-gap: 8px;
+            margin-bottom: 18px;
+            .image-wrapper{
+                width: 100%;
+                img{
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+            .about-popular{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .date-and-views{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 1.3rem;
+                   margin-top: 10px;
+                   margin-right: 10px;
+                    text-transform: uppercase;
+                }
+            }
+            
+        }
+    }
+}

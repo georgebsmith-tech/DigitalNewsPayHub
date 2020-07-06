@@ -1,0 +1,48 @@
+
+$primary-color-1:rgb(73, 73, 248);
+$primary-color-2:white;
+//general styling
+@use './sass_files-new/general';
+//general styling ends here
+//general styling
+@use './sass_files-new/latest-post-new';
+//general styling ends here
+
+@use './sass_files-new/popular-stories';
+
+@use './sass_files-new/subscription-form';
+
+
+.categories{
+    padding: 10px;
+    .category{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 6px;
+        font-size: 1.2rem;
+        margin: 0px 10px 7px 10px;
+        border-bottom: 1px dotted grey;
+        span:nth-child(2){
+            padding: 2px 5px;
+            background: $primary-color-1;
+            color: $primary-color-2;
+        }
+    }
+    h2{
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+    }
+    ul{
+        list-style-type: circle;
+    }
+}
+
+.desktop{
+    display: none;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+   
+}

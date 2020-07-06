@@ -18,6 +18,14 @@ router.get("/", async (req, res) => {
     res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
 })
 
+router.get("/index-new", async (req, res) => {
+    const data = await PostModel.findOne()
+    const allData = await PostModel.find().sort({ date: -1 })
+    const categories = await PostCategory.find().sort({ name: 1 })
+
+    res.render("index-new", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
+})
+
 router.get("/blogs/:slug", async (req, res) => {
     const categories = await postCategory.find().select({ name: 1 })
 
