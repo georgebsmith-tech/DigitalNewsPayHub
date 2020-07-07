@@ -4,6 +4,10 @@ $primary-color-2:white;
 //general styling
 @use './sass_files-new/general';
 //general styling ends here
+
+@use './sass_files-new/main-nav';
+
+
 //general styling
 @use './sass_files-new/latest-post-new';
 //general styling ends here
