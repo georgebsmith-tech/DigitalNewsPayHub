@@ -1,4 +1,4 @@
-$primary-color-1:rgb(110, 110, 253);
+$primary-color-1:#0f55ec;
 $primary-color-2:white;
 .latest-post{
     margin: 10px 10px 50px 10px;
@@ -14,8 +14,9 @@ $primary-color-2:white;
             margin-bottom: 15px;
         }
         .title{
-            font-size:2rem;
+            font-size:2.4rem;
             line-height: 1.4;
+            color: black;
         }
         
     }

@@ -1,5 +1,6 @@
- $primary-color-1:rgb(110, 110, 253);
+ $primary-color-1:#0f55ec;
  $primary-color-2:white;
+ $primary-color-3:#FFC151;
 *{
     margin: 0;
     padding: 0;
@@ -11,9 +12,30 @@ html{
     color:#636363;
     line-height: 1.7;
     letter-spacing: 1px;
+    scroll-behavior: smooth;
+    
 }
 a{
     text-decoration: none;
+}
+
+.top{
+    display: none;
+
+    // transform: translate(92vw,82vh);
+    // display: block;
+    z-index: 100;
+    // position: fixed;
+    // padding: 10px;
+    position: fixed;
+    width: fit-content;
+    bottom: 20px; 
+    left: 30px;
+    background: red;
+   
+    
+
+
 }
 
 .block{
@@ -28,6 +50,7 @@ ul{
     text-align: center;
 }
 .social-media-section{
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +68,9 @@ ul{
     }
 }
 
+
 .main-social-media-links-container{
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,21 +78,34 @@ ul{
     .fa{
         color:$primary-color-1;
         font-size: 1.3rem;
-        margin-right: 20px;
+        // margin-right: 20px;
+        border-right: 1px solid $primary-color-1;
+        padding: 5px 15px;
         
     }
 
 }
 
+
+.top-banner{
+    position:fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    // background: red;
+    // height: 100px;
+}
 .logo-and-caption{
     text-align: center;
-    margin:40px 0px;
+    margin:120px 0px 40px 0px;
     color: #535252;
     h1{
         text-transform: uppercase;
         font-size: 4rem;
         padding: 7px 20px;
         line-height: 1.4;
+        color: #FFC151;
     }
     .sub-caption{
         text-transform: uppercase;
@@ -77,6 +115,9 @@ ul{
 }
 
 .primary-nav{
+    // position:fixed;
+    // width: 100vw;
+    // top: 0;
     background:  #f6f6f6;
     background:  $primary-color-1;
     // margin: 10px 20px;
@@ -86,6 +127,9 @@ ul{
     justify-content: space-between;
     align-items: center;
     // border-radius: 6px;
+    ul{
+        display: none;
+    }
     input{
         border: none;
         padding: 6px;
@@ -112,9 +156,14 @@ ul{
 
 .sliding-news{
     display: flex;
-    img{
-        width: 100vw;
+    overflow: hidden;
+    .image-wrapper{
+        max-height: 300px;
+        img{
+            width: 100vw;
+        }
     }
+   
     .story-title{
         position: relative;
         top: -60px;

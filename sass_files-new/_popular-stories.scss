@@ -1,5 +1,6 @@
-$primary-color-1:rgb(110, 110, 253);
+$primary-color-1:#0f55ec;
 $primary-color-2:white;
+$primary-color-3:#FFC151;
 .popular-posts{
     margin: 10px;
     &>div{
@@ -10,8 +11,9 @@ $primary-color-2:white;
             margin-bottom: 10px;
         }
         .post{
+            position: relative;
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 1fr 1.5fr;
             column-gap: 8px;
             margin-bottom: 18px;
             .image-wrapper{
@@ -21,17 +23,32 @@ $primary-color-2:white;
                     border-radius: 5px;
                 }
             }
+            .category{
+                top: 2px;
+                position: relative;
+                left: -138px;
+                background: rgba(255, 193, 81,0.8);
+                padding: 3px;
+                width: fit-content;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                color: $primary-color-2;
+            }
+            .title{
+                margin-top: -22px;
+            }
             .about-popular{
-                display: flex;
-                flex-direction: column;
                 justify-content: space-between;
+                a{
+                    color: black;
+                }
                 .date-and-views{
                     display: flex;
                     justify-content: space-between;
-                    font-size: 1.3rem;
+                    font-size: 1.1rem;
                    margin-top: 10px;
                    margin-right: 10px;
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
                 }
             }
             

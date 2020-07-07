@@ -9,10 +9,21 @@ html {
   color: #636363;
   line-height: 1.7;
   letter-spacing: 1px;
+  scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
+}
+
+.top {
+  display: none;
+  z-index: 100;
+  position: fixed;
+  width: fit-content;
+  bottom: 20px;
+  left: 30px;
+  background: red;
 }
 
 .block {
@@ -39,7 +50,7 @@ ul {
   padding: 5px 15px;
   text-align: center;
   color: white;
-  background: #6e6efd;
+  background: #0f55ec;
   margin-left: 10px;
   border-radius: 3px;
 }
@@ -50,14 +61,23 @@ ul {
   align-items: center;
 }
 .main-social-media-links-container .fa {
-  color: #6e6efd;
+  color: #0f55ec;
   font-size: 1.3rem;
-  margin-right: 20px;
+  border-right: 1px solid #0f55ec;
+  padding: 5px 15px;
+}
+
+.top-banner {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .logo-and-caption {
   text-align: center;
-  margin: 40px 0px;
+  margin: 120px 0px 40px 0px;
   color: #535252;
 }
 .logo-and-caption h1 {
@@ -65,6 +85,7 @@ ul {
   font-size: 4rem;
   padding: 7px 20px;
   line-height: 1.4;
+  color: #FFC151;
 }
 .logo-and-caption .sub-caption {
   text-transform: uppercase;
@@ -74,12 +95,15 @@ ul {
 
 .primary-nav {
   background: #f6f6f6;
-  background: #6e6efd;
+  background: #0f55ec;
   font-size: 1.6rem;
   padding: 10px 15px 10px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.primary-nav ul {
+  display: none;
 }
 .primary-nav input {
   border: none;
@@ -102,8 +126,12 @@ ul {
 
 .sliding-news {
   display: flex;
+  overflow: hidden;
 }
-.sliding-news img {
+.sliding-news .image-wrapper {
+  max-height: 300px;
+}
+.sliding-news .image-wrapper img {
   width: 100vw;
 }
 .sliding-news .story-title {
@@ -122,12 +150,13 @@ ul {
 }
 .latest-post .header .category {
   text-transform: uppercase;
-  color: #6e6efd;
+  color: #0f55ec;
   margin-bottom: 15px;
 }
 .latest-post .header .title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   line-height: 1.4;
+  color: black;
 }
 .latest-post .date-and-views, .latest-post .comments-and-share {
   display: flex;
@@ -148,14 +177,14 @@ ul {
   font-size: 1.6rem;
 }
 .latest-post .continue-reading {
-  background: #6e6efd;
+  background: #0f55ec;
   color: white;
   text-transform: uppercase;
   padding: 10px 15px;
   width: fit-content;
   border-radius: 5px;
   outline: none;
-  border: #6e6efd;
+  border: #0f55ec;
   margin-top: 10px;
 }
 .latest-post .description + div {
@@ -167,14 +196,15 @@ ul {
   margin: 10px;
 }
 .popular-posts > div > h2 {
-  color: #6e6efd;
+  color: #0f55ec;
   text-transform: uppercase;
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
 .popular-posts > div .post {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 1.5fr;
   column-gap: 8px;
   margin-bottom: 18px;
 }
@@ -185,18 +215,32 @@ ul {
   width: 100%;
   border-radius: 5px;
 }
+.popular-posts > div .post .category {
+  top: 2px;
+  position: relative;
+  left: -138px;
+  background: rgba(255, 193, 81, 0.8);
+  padding: 3px;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: white;
+}
+.popular-posts > div .post .title {
+  margin-top: -22px;
+}
 .popular-posts > div .post .about-popular {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+}
+.popular-posts > div .post .about-popular a {
+  color: black;
 }
 .popular-posts > div .post .about-popular .date-and-views {
   display: flex;
   justify-content: space-between;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 10px;
   margin-right: 10px;
-  text-transform: uppercase;
 }
 
 .subscribe {
@@ -229,11 +273,120 @@ ul {
 }
 .subscribe button {
   text-transform: uppercase;
-  background: #6e6efd;
+  background: #0f55ec;
   color: white;
   font-size: 0.9rem;
 }
 
+footer {
+  margin-top: 40px;
+  background: #FFC151;
+  overflow: hidden;
+}
+footer .secondary-nav-and-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: #f8bc4b;
+}
+footer .secondary-nav-and-credit ul > li a {
+  color: white;
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+footer .secondary-nav-and-credit ul {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+  box-sizing: border-box;
+}
+footer .terms-conditions-and-copy-right {
+  color: white;
+}
+
+@media only screen and (min-width: 769px) {
+  .primary-nav .desktop {
+    display: initial;
+  }
+
+  .social-media-section {
+    padding: 10px 11vw;
+    justify-content: center;
+    background-color: #FFC151;
+  }
+
+  .main-social-media-links-container .desktop {
+    display: initial;
+  }
+  .main-social-media-links-container .fa {
+    color: white;
+    font-size: 1.6rem;
+    border-right: none;
+    padding: 5px;
+  }
+  .main-social-media-links-container li > a {
+    padding: 10px;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bolder;
+    scroll-padding-bottom: 5px;
+  }
+  .main-social-media-links-container li > a span {
+    display: inline-block;
+    border-bottom: 2px solid #FFC151;
+    padding-bottom: 5px;
+  }
+  .main-social-media-links-container li > a:hover span {
+    border-bottom: 2px solid white;
+  }
+
+  .primary-nav {
+    background: white;
+    padding: 25px 11vw;
+  }
+  .primary-nav .search-and-form {
+    display: flex;
+  }
+  .primary-nav .search-and-form ul {
+    margin-left: 10px;
+  }
+  .primary-nav .search-and-form i, .primary-nav .search-and-form input {
+    font-size: 1.7rem;
+  }
+  .primary-nav .search-and-form input {
+    background: #f8f6f6;
+    width: 130px;
+  }
+  .primary-nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .primary-nav ul a {
+    padding: 7px 10px;
+    margin-right: 9px;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: #FFC151;
+  }
+
+  .sliding-news {
+    display: none;
+  }
+
+  .index {
+    padding: 10px 11vw;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 50px;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
 .categories {
   padding: 10px;
 }
@@ -247,7 +400,7 @@ ul {
 }
 .categories .category span:nth-child(2) {
   padding: 2px 5px;
-  background: #4949f8;
+  background: #0f55ec;
   color: white;
 }
 .categories h2 {
@@ -261,10 +414,6 @@ ul {
 
 .desktop {
   display: none;
-  padding: 5px 20px;
-  justify-content: center;
-  align-items: center;
-  background: blue;
 }
 
 /*# sourceMappingURL=style-new.css.map */

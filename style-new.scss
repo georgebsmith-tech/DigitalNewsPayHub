@@ -1,5 +1,5 @@
 
-$primary-color-1:rgb(73, 73, 248);
+$primary-color-1:#0f55ec;
 $primary-color-2:white;
 //general styling
 @use './sass_files-new/general';
@@ -11,6 +11,10 @@ $primary-color-2:white;
 @use './sass_files-new/popular-stories';
 
 @use './sass_files-new/subscription-form';
+
+@use './sass_files-new/footer';
+
+@use './sass_files-new/desktop';
 
 
 .categories{
@@ -39,10 +43,5 @@ $primary-color-2:white;
 }
 
 .desktop{
-    display: none;
-    padding: 5px 20px;
-    justify-content: center;
-    align-items: center;
-    background: blue;
-   
+    display: none; 
 }

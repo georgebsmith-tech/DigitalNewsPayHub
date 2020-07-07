@@ -1,0 +1,105 @@
+$primary-color-1:#0f55ec;
+$primary-color-2:white;
+$primary-color-3:#FFC151;
+$main-padding-sides:11vw;
+
+// for small screen laptops
+@media only screen and (min-width:769px){
+    .primary-nav{
+        .desktop{
+            display: initial;
+        }
+       
+    }
+
+
+    .social-media-section{
+        padding: 10px $main-padding-sides;
+        justify-content: center;
+        background-color: $primary-color-3;
+        
+    }
+    .main-social-media-links-container{
+        
+        .desktop{
+            display: initial;
+        }
+        .fa{
+            color:$primary-color-2;
+            font-size: 1.6rem;
+            border-right: none;
+            padding: 5px;
+            
+        }
+        li>a{
+            padding: 10px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color:$primary-color-2;
+            font-weight: bolder;
+            scroll-padding-bottom: 5px;
+            span{
+                display: inline-block;
+                border-bottom: 2px solid $primary-color-3;
+                padding-bottom: 5px;
+            }
+            
+           
+            
+        }
+        li>a{
+            &:hover span{
+                border-bottom: 2px solid $primary-color-2;
+            }
+        }
+    }
+
+    .primary-nav{
+        background: $primary-color-2;
+        padding: 25px $main-padding-sides;
+        
+        .search-and-form{
+            display: flex;
+            ul{
+                margin-left: 10px;
+            }
+            i,input{
+                font-size: 1.7rem;
+            }
+            input{
+                background: rgb(248, 246, 246);
+                width: 130px;
+            }
+        }
+        
+        ul{
+            display: flex;
+            justify-content: space-between;
+            // background: red;
+            a{
+                padding: 7px 10px;
+                margin-right: 9px;
+                text-transform: uppercase;
+                font-size: 1.7rem;
+                color: $primary-color-3;
+            }
+        }
+    }
+
+    .sliding-news{
+        display: none;
+    }
+
+    .index{
+        padding: 10px $main-padding-sides;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        column-gap: 50px;
+    }
+
+    .mobile{
+        display: none;
+    }
+    
+
+}

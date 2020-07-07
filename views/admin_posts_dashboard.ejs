@@ -35,12 +35,9 @@
                                 <input list="categories" name="category" id="category" placeholder="Category">
 
                                 <datalist id="categories">
-                                    <option value="Politics">
-                                    <option value="Education">
-                                    <option value="Entertainment">
-                                    <option value="Health">
-                                    <option value="Sports">
-                                    <option value="Business">
+                                    <% categories.forEach(cate=>{ %>
+                                    <option value="<%= cate.name %>">
+                                        <% }%>
                                 </datalist>
                             </div>
                             <input type="text" name="image_url" class="block"

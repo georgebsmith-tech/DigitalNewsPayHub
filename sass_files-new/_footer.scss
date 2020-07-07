@@ -1,0 +1,39 @@
+$primary-color-1:#0f55ec;
+$primary-color-2:white;
+$primary-color-3:#FFC151;
+
+
+footer{
+    margin-top: 40px;
+    background: $primary-color-3;
+    overflow: hidden;
+    // transform: skewY(-9deg);
+
+    .secondary-nav-and-credit{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        background:#f8bc4b;
+        ul>li {
+            
+            a{
+                color: $primary-color-2;
+                color:black;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            // background: red;
+            width: 60vw;
+            box-sizing: border-box;
+        }
+        
+    }
+    .terms-conditions-and-copy-right{
+        color:white;
+    }
+}
