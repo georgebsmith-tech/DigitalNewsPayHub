@@ -11,7 +11,7 @@ html {
   letter-spacing: 1px;
   scroll-behavior: smooth;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
