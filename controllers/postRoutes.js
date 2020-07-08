@@ -8,7 +8,7 @@ const PostCategory = require("../models/postCategoryModel")
 router.get("/", async (req, res) => {
     const data = await PostModel.findOne()
     const allData = await PostModel.find().sort({ date: -1 })
-    const categories = await PostCategory.find().select({ name: 1 })
+    const categories = await PostCategory.find()
     // console.log(categories)
     // console.log(result)
     // res.end()

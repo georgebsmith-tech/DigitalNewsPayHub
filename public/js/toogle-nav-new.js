@@ -2,7 +2,7 @@
     const toggleNavHandler = document.querySelector(".toggle-nav-main")
     const toggleNav = document.querySelector(".primary-nav-mobile-container")
     const brand = document.querySelector(".logo-and-caption")
-    gsap.set(".primary-nav-mobile-container", { y: "-340px", position: "absolute" })
+    gsap.set(".primary-nav-mobile-container", { y: "-340px", position: "absolute", zIndex: -20, backgroundColor: "white" })
     let tl = gsap.timeline()
     let toggleFlag = false
     // brand.style.marginTop = "0px"
@@ -10,7 +10,7 @@
 
         if (!toggleFlag) {
             // brand.style.marginTop = "220px";
-            tl.to(".primary-nav-mobile-container", 1.2, { y: "-120" })
+            tl.to(".primary-nav-mobile-container", 1.2, { y: "-90", zIndex: 10 })
                 .fromTo(".primary-nav-mobile>ul>li>a", 1, { x: "-120" }, { x: "0" }, 0.8)
                 .to(".toggle-nav-main>div:nth-child(2)", 0.6, { opacity: 0 }, 0.6)
                 .to(".toggle-nav-main>div:first-child", 0.6, { y: 5.5, rotation: 45 }, 0.6)
