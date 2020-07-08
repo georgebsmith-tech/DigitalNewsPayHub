@@ -18,6 +18,36 @@
             <h3 class="sub-caption" style="display: none;;"> Make cash while you get informed</h3>
         </div>
     </section>
+    <section class="breaking-news">
+        <div class="marquee-element">
+
+            <% posts.forEach((post,index)=>{ %>
+            <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blog/<%= post.slug %>">
+                <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
+                <div>
+
+                    <h3><%= post.title %></h3>
+
+                </div>
+            </a>
+
+
+            <% }) %>
+            <% posts.forEach((post,index)=>{ %>
+            <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blog/<%= post.slug %>">
+                <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
+                <div>
+
+                    <h3><%= post.title %></h3>
+
+                </div>
+            </a>
+
+
+            <% }) %>
+
+        </div>
+    </section>
     <section class="sliding-news">
         <% for (let post of posts){ %>
         <div>

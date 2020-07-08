@@ -4,6 +4,10 @@
   font-family: "Lato", "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
+.hide {
+  display: none;
+}
+
 html {
   font-size: 10px;
   color: #636363;
@@ -201,6 +205,68 @@ ul {
   font-weight: bold;
 }
 
+.breaking-news {
+  background: rgba(246, 244, 244, 0.2);
+  width: 80vw;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.breaking-news img {
+  width: 60px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.marquee-element {
+  height: 100%;
+  display: flex;
+  animation: scrolling 20s linear infinite;
+}
+
+.marquee-element:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-150vw);
+  }
+}
+.marquee-element > a {
+  width: 30vw;
+  flex-shrink: 0;
+  margin: 5px;
+  /* background: grey; */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.marquee-element > a div {
+  margin-left: 5px;
+}
+
+@media (max-width: 657px) {
+  .breaking-news .marquee-element > a {
+    width: 80vw;
+  }
+
+  .marquee-element {
+    animation: scrolling 20s linear infinite;
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0vw);
+    }
+    100% {
+      transform: translateX(-400vw);
+    }
+  }
+}
 .latest-post {
   margin: 10px 10px 50px 10px;
   padding: 20px 10px;
@@ -426,7 +492,7 @@ footer .terms-conditions-and-copy-right {
   .primary-nav ul a {
     padding: 20px 15px;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #FFC151;
     font-weight: bold;
     transition: 0.6s;
