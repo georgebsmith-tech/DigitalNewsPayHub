@@ -1,5 +1,6 @@
-<%- include('./partials/head.ejs') %>
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/head-new.ejs') %>
+<%- include('./partials/header-new.ejs') %>
+
 <main>
     <div class="dnpay">
         <h4>Welcome to</h4>
@@ -10,162 +11,122 @@
         <div class="layer layer-2"></div>
         <div class="layer layer-3"></div>
     </section>
-    <section class="the-search-and-more">
+    <%- include('./partials/mobile-navigation.ejs') %>
+    <section class="logo-and-caption">
         <div>
-            <div class="the-adverts">
-                <img src="../images/adverts-right1.png" alt="">
-                <span>advertisements</span>
-                <img src="../images/adverts-left1.png" alt="">
+            <h1>Digital News Pay Hub</h1>
+            <h3 class="sub-caption" style="display: none;;"> Make cash while you get informed</h3>
+        </div>
+    </section>
+    <section class="sliding-news">
+        <% for (let post of posts){ %>
+        <div>
+            <div class="image-wrapper">
+                <img src="<%= post.image_url %>" alt="image for <%= post.title %>">
             </div>
-            <section class="breaking-news">
-                <div class="marquee-element">
+            <h3 class="story-title"><%= post.title %></h3>
+        </div>
 
-                    <% posts.forEach((post,index)=>{ %>
-                    <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blogs/<%= post.slug %>">
-                        <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
-                        <div>
+        <% } %>
+    </section>
+    <div class="index">
+        <section>
+            <section>
+                <% for(post of posts){ %>
+                <div class="latest-post">
+                    <header class="header center-text">
+                        <h3 class="category"><%= post.category %></h3>
+                        <h2 class="title"><%= post.title %></h2>
+                    </header>
+                    <div class="date-and-views">
+                        <em class="date"><%= post.date.toDateString() %></em>
+                        <span class="views"><%= post.number_of_views %> views</span>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="<%= post.image_url %>" alt="">
+                    </div>
+                    <article class="description">
+                        <%= post.description %>...
+                    </article>
+                    <div class="center-text">
+                        <a href="blog/<%= post.slug %>" class="continue-reading center-text block">continue reading</a>
+                    </div>
+                    <div class="comments-and-share">
 
-                            <h3><%= post.title %></h3>
-
-                        </div>
-                    </a>
-
-
-                    <% }) %>
-                    <% posts.forEach((post,index)=>{ %>
-                    <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blogs/<%= post.slug %>">
-                        <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
-                        <div>
-
-                            <h3><%= post.title %></h3>
-
-                        </div>
-                    </a>
+                        <span><%= post.comments.length %> Comments</span>
+                        <span>share</span>
+                    </div>
+                </div>
 
 
-                    <% }) %>
+                <% } %>
 
-                    </a>
 
             </section>
-            <div class="search">
-                <button>
-                    search
-                </button>
+        </section>
+        <aside>
+            <section class="subscribe">
+                <div>
+                    <h2 class="center-text">
+                        subscribe
+                    </h2>
+                    <p>Get all latest news and content delivered straight to your inbox</p>
 
-            </div>
-        </div>
+                    <form action="">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" id="" placeholder="Email Address">
+                        <button type="submit">subscribe</button>
+
+                    </form>
+
+                </div>
 
 
-    </section>
+            </section>
+            <section class="popular-posts">
+                <div>
+                    <h2>Popular posts</h2>
+                    <% for(post of posts){ %>
+                    <div class="post">
+                        <div class="image-wrapper">
+                            <a href="/blog/<%= post.slug %>"><img src="<%= post.image_url %>" alt=""></a>
 
-
-    <section class="content">
-        <div class="container main-section">
-            <div class="blog-content">
-                <section class="most-liked">
-                    <div class="image-wrapper">
-                        <img src="<%= post.image_url %>" alt="" class="image">
-                    </div>
-                    <div class="write-up">
-                        <h4><%= post.category %></h4>
-                        <h3><%= post.title %></h3>
-                        <em>Posted on <%= post.date.toDateString() %>
-                            <!-- by <%= post.time %>--></em>
-                        <div class="more-details">
-                            <div>
-                                <img src="../images/views1.png" alt="">
-                                <span><%= post.number_of_views %></span>
-                            </div>
-                            <div>
-                                <img src="../images/comments1.png" alt="">
-                                <span><%= post.comments.length %></span>
-                            </div>
                         </div>
-                        <article>
-                            <%- post.markedBody.substr(0,200) %>...
-                            <a href="/blogs/<%= post.slug %>">Read more</a>
-                        </article>
+                        <div class="about-popular">
+                            <a href="/blog/<%= post.slug %>">
+                                <h4 class="category"><%= post.category %></h4>
+                                <h3 class="title"><%= post.title %></h3>
 
-                    </div>
-
-                </section>
-                <section class="liked-in-categories">
-                    <div class="conainer">
-
-                        <div class="post-card">
-                            <% for(const post of posts){ %>
-
-                            <div class="story">
-                                <div class="image-wrapper">
-                                    <img src="<%= post.image_url %>" alt="" class="image">
-                                </div>
-                                <div class="write-up">
-                                    <h3><a href="/index/<%= post.category.toLowerCase() %>"><%= post.category %></a>
-                                    </h3>
-                                    <h2><%= post.title %></h2>
-                                    <em><%= post.date.toDateString() %></em>
-
-                                    <article>
-                                        <%= post.description.substr(0,200) %>...
-                                        <a href="/blogs/<%= post.slug %>" class="block right-text read-more">Read
-                                            more</a>
-                                    </article>
-
-                                </div>
-
+                            </a>
+                            <div class="date-and-views">
+                                <em class="date"><%= post.date.toDateString() %></em>
+                                <span class="views"><%= post.number_of_views %> views</span>
                             </div>
 
-
-
-                            <% } %>
                         </div>
-
                     </div>
-
-                </section>
-                <section class="forms-section">
-                    <div class="container">
-                        <div>
-                            <a href="/login">login</a>
-                        </div>
-
-                        <div>
-                            <a href="/">register</a>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
-            <aside class="aside-home">
-                <h3>Latest News</h3>
-
-                <%- include('./partials/latest-news.ejs') %>
+                    <% } %>
+                </div>
 
 
-            </aside>
+            </section>
+            <section class="categories">
+                <div>
+                    <h2>Categories</h2>
+                </div>
+                <ul>
+                    <% categories.forEach(category=>{ %>
+                    <li class="category">
+                        <span><%= category.name %></span>
+                        <span><%= category.number_of_posts %></span>
+                    </li>
 
-        </div>
+                    <% }) %>
+                </ul>
 
+            </section>
+        </aside>
+    </div>
 
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-    <script src="../js/navs.js"></script>
-    <script src="../js/breaking-news.js"></script>
-    <script>
-        const tl = gsap.timeline()
-        tl.fromTo(".dnpay", 1, { opacity: 0, scale: 0, }, { opacity: 1, scale: 2.5, })
-            .to(".dnpay", 1.5, { y: "-60vh" })
-            .to(".dnpay", { display: "none" })
-            .to(".layer-1", { duration: 1, y: "-100vh" }, 1.5)
-            .to(".layer-2", { duration: 1, y: "-100vh" }, 2)
-            .to(".layer-3", { duration: 1, y: "-100vh" }, 2.5)
-            .to(".overlay", { display: "none" })
-
-
-    </script>
-
-
-    <%- include('./partials/footer.ejs') %>
+</main>
+<%- include('./partials/footer-new.ejs') %>

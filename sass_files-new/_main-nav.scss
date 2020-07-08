@@ -74,7 +74,7 @@ $primary-color-3:#FFC151;
     background:  #f6f6f6;
     background:  $primary-color-1;
     // margin: 10px 20px;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding: 10px 15px 10px 10px;
     display: flex;
     justify-content: space-between;
@@ -94,6 +94,9 @@ $primary-color-3:#FFC151;
     }
     .toggle-nav-main{
         padding: 5px;
+        &:hover{
+            box-shadow: -2px 2px 1px 3px rgba(255, 255, 255,0.5);
+        }
      
         &>div{
             padding: 1.5px;
@@ -106,3 +109,25 @@ $primary-color-3:#FFC151;
     }
 
 }
+
+//primary-nav mobile
+.primary-nav-mobile-container{
+    margin-top: 87px;
+    width:100vw;
+    border: 1px solid rgb(212, 212, 212);
+    padding: 10px 15px 10px 0;
+    box-shadow: 0px 3px 2px rgb(156, 155, 155);
+    .primary-nav-mobile{
+        
+        a{
+            text-transform: uppercase;
+            padding: 1px 15px;
+            display: block;
+            color: $primary-color-3;
+            font-weight: bold;
+        }
+    }
+}
+
+
+//ends here 

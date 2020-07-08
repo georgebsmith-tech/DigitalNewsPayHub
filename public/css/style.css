@@ -867,7 +867,7 @@ footer .biz-links a {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 10;
+  z-index: 200;
   display: flex;
 }
 .overlay .layer {
@@ -891,7 +891,7 @@ footer .biz-links a {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 12;
+  z-index: 220;
   justify-content: center;
   align-items: center;
   display: flex;
