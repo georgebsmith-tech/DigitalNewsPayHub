@@ -9,7 +9,7 @@ $primary-color-3:#FFC151;
     align-items: center;
     background: $primary-color-2;
     padding: 7px 15px;
-    width: 100%;
+    // width: 100%;
     .login{
         width: fit-content;
         padding: 5px 15px;
@@ -17,7 +17,7 @@ $primary-color-3:#FFC151;
         color: $primary-color-2;
         background: $primary-color-1;
         margin-left: 10px;
-        margin-right: 30px;
+        // margin-right: 30px;
         border-radius: 3px;
         
     }
@@ -29,6 +29,7 @@ $primary-color-3:#FFC151;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
     // width: 100%;
     
     .fa{
@@ -49,6 +50,7 @@ $primary-color-3:#FFC151;
     top: 0;
     left: 0;
     z-index: 100;
+    background: $primary-color-2;
     // background: red;
     // height: 100px;
 }
@@ -82,11 +84,11 @@ $primary-color-3:#FFC151;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    // width: 100%;
     // border-radius: 6px;
-    i{
-        padding-right: 30px;
-    }
+    // i{
+    //     padding-right: 30px;
+    // }
     ul{
         display: none;
     }
