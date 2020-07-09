@@ -21,8 +21,28 @@
             tl.reverse()
             toggleFlag = !toggleFlag
             tl = gsap.timeline()
+            subMenmenucategoriesuHandler.classList.add("hide")
+            document.querySelector(".sub-menu-control i").classList.add("fa-caret-right")
+            document.querySelector(".sub-menu-control i").classList.remove("fa-caret-down")
         }
         // console.log(toggleFlag)
+
+    })
+
+    const subMenuHandler = document.querySelector(".sub-menu-control")
+    const subMenmenucategoriesuHandler = document.querySelector(".menu-categories")
+    document.querySelector(".menu-categories ul").style.paddingLeft = "12px"
+    // const categoryToggleFlag=false
+    subMenuHandler.addEventListener("click", function () {
+        document.querySelector(".sub-menu-control i").classList.toggle("fa-caret-right")
+        document.querySelector(".sub-menu-control i").classList.toggle("fa-caret-down")
+        subMenmenucategoriesuHandler.classList.toggle("hide")
+        // if(!categoryToggleFlag){
+        console.log("clicked!!")
+
+
+
+        // }
 
     })
 

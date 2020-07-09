@@ -66,14 +66,16 @@
                 <div class="latest-post">
                     <header class="header center-text">
                         <h3 class="category"><%= post.category %></h3>
-                        <h2 class="title"><%= post.title %></h2>
+                        <a href="blog/<%= post.slug %>">
+                            <h2 class="title"><%= post.title %></h2>
+                        </a>
                     </header>
                     <div class="date-and-views">
                         <em class="date"><%= post.date.toDateString() %></em>
                         <span class="views"><%= post.number_of_views %> views</span>
                     </div>
                     <div class="image-wrapper">
-                        <img src="<%= post.image_url %>" alt="">
+                        <a href="blog/<%= post.slug %>"><img src="<%= post.image_url %>" alt=""></a>
                     </div>
                     <article class="description">
                         <%= post.description %>...
