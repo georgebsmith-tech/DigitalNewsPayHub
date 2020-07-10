@@ -78,7 +78,7 @@ router.post("/blog/comments/:id", async (req, res) => {
     new_comment.date = new Date().toDateString()
     console.log()
 
-    console.log(new_comment)
+    // console.log(new_comment)
     await data.comments.push(new_comment)
     await data.save()
     res.redirect(`/blog/${data.slug}`)

@@ -1,9 +1,9 @@
+
+
 const previewBtn = document.querySelector(".comment-form .preview")
 let commentForm
 let editIcon;
-
-previewBtn.addEventListener("click", function (e) {
-    e.preventDefault()
+function createComment(preview = true) {
     commentForm = document.forms["comment-form"]
 
     const aComment = document.createElement("div")
@@ -26,7 +26,7 @@ previewBtn.addEventListener("click", function (e) {
     aComment.appendChild(theComment)
 
     const by = document.createElement("h4")
-    by.textContent = commentForm.name.value
+    by.textContent = commentForm.name.value === "" ? "Anonymous" : commentForm.name.value
     theComment.appendChild(by)
 
 
@@ -46,25 +46,35 @@ previewBtn.addEventListener("click", function (e) {
 
     reviews.appendChild(aComment)
 
-    const edit = document.createElement("div")
-    editIcon = document.createElement("i")
-    editIcon.classList.add("fa")
-    editIcon.classList.add("fa-pencil")
-    editIcon.classList.add("edit-comment")
-    editIcon.setAttribute("title", "Edit comment")
-    editIcon.addEventListener("click", function () {
-        commentForm.style.display = "block"
-        document.querySelector(".a-comment.temporal").remove()
-        // alert("Clicked")
-    })
-    edit.appendChild(editIcon)
-    aComment.appendChild(edit)
+    if (preview) {
+        const edit = document.createElement("div")
+        editIcon = document.createElement("i")
+        editIcon.classList.add("fa")
+        editIcon.classList.add("fa-pencil")
+        editIcon.classList.add("edit-comment")
+        editIcon.setAttribute("title", "Edit comment")
+        editIcon.addEventListener("click", function () {
+            commentForm.style.display = "block"
+            document.querySelector(".a-comment.temporal").remove()
+            // alert("Clicked")
+        })
+        edit.appendChild(editIcon)
+        aComment.appendChild(edit)
+
+        commentForm.style.display = "none"
+
+    } else {
+        commentForm.comment.value = ""
+        commentForm.name.value = ""
+    }
 
 
-    commentForm.style.display = "none"
+}
 
 
-
+previewBtn.addEventListener("click", function (e) {
+    e.preventDefault()
+    createComment()
 
 
 
@@ -79,3 +89,32 @@ previewBtn.addEventListener("click", function (e) {
 //     alert("Clicked")
 // })
 // alert("linked!!")
+const publishBtn = document.querySelector(".pubish-comment")
+
+publishBtn.addEventListener("click", async function (e) {
+    e.preventDefault()
+    const postSlug = this.dataset.postSlug
+    const url = `/api/comments/add/${postSlug}`
+    // console.log(url)
+    const resp = await fetch(url,
+        {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                by: commentForm.name.value === "" ? "Anonymous" : commentForm.name.value,
+                body: commentForm.comment.value,
+                date: new Date()
+            })
+
+        })
+
+    const data = await resp.json()
+    // console.log(data.by)
+    // console.log(data.body)
+    // console.log(data.date)
+
+    createComment(preview = false)
+})
