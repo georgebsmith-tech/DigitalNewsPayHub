@@ -114,11 +114,12 @@
                         </div>
                     </div>
                     <div class="comment" id="comments">
-                        <form action="/blog/comments/<%= post.id %>" method="POST">
+                        <form action="/blog/comments/<%= post.id %>" method="POST" name="comment-form"
+                            class="comment-form">
                             <div>
 
 
-                                <textarea name="comment" id="" cols="30" rows="4" placeholder="Leave a comment...">
+                                <textarea name="comment" cols="30" rows="4" placeholder="Leave a comment...">
 
                                 </textarea>
                             </div>
@@ -132,8 +133,8 @@
                                     </div>
                                 </div>
                                 <div class="form-controls">
-                                    <button>Publish</button>
-                                    <button>Preview</button>
+                                    <button type="submit">Publish</button>
+                                    <button class="preview">Preview</button>
                                 </div>
                             </div>
                         </form>
@@ -161,7 +162,7 @@
 
                     <form action="">
                         <input type="text" name="name" placeholder="Name">
-                        <input type="email" name="email" id="" placeholder="Email Address">
+                        <input type="email" name="email" placeholder="Email Address">
                         <button type="submit">subscribe</button>
 
                     </form>
@@ -216,4 +217,6 @@
     </div>
 
 </main>
+
+<script src="../js/detailed-blog-comment.js"></script>
 <%- include('./partials/footer-new.ejs') %>

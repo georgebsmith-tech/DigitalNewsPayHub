@@ -713,6 +713,20 @@ footer .terms-conditions-and-copy-right {
 .the-post .user i {
   font-size: 4rem;
 }
+.the-post .edit-comment {
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 12px;
+  margin-left: 45px;
+  background: #0f55ec;
+  color: white;
+  border-radius: 3px;
+}
+.the-post .edit-comment:hover {
+  cursor: pointer;
+  background: rgba(15, 85, 236, 0.502);
+}
 
 .categories {
   margin: 10px;
