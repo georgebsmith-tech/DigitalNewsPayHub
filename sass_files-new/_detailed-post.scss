@@ -89,6 +89,18 @@ $primary-color-3:#FFC151;
         }
         .comment-action-wrapper{
             margin-top: 5px;
+            &>div:first-child{
+                display: flex;
+                align-items: center;
+                div{
+                    margin-left: 10px;
+                    input{
+                        padding: 8px;
+                        border-radius: 5px;
+                        border: 1px solid rgb(240, 239, 239);
+                    }
+                }
+            }
         }
 
         

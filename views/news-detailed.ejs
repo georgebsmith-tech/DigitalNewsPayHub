@@ -4,7 +4,9 @@
 <main>
     <section class="logo-and-caption">
         <div>
-            <h2 class="brand-name">Digital News Pay Hub</h2>
+            <a href="/">
+                <h2 class="brand-name">Digital News Pay Hub</h2>
+            </a>
             <h3 class="sub-caption" style="display: none;;"> Make cash while you get informed</h3>
         </div>
     </section>
@@ -91,9 +93,12 @@
                         <div class="reviews">
                             <% for(let comment of post.comments) { %>
                             <div class="a-comment">
+
                                 <div class="user">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                 </div>
+
+
                                 <div class="theComment">
 
 
@@ -109,17 +114,22 @@
                         </div>
                     </div>
                     <div class="comment" id="comments">
-                        <form action="">
+                        <form action="/blog/comments/<%= post.id %>" method="POST">
                             <div>
 
 
-                                <textarea name="" id="" cols="30" rows="4" placeholder="Leave a comment...">
+                                <textarea name="comment" id="" cols="30" rows="4" placeholder="Leave a comment...">
 
                                 </textarea>
                             </div>
                             <div class="comment-action-wrapper">
-                                <div class="user">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                <div>
+                                    <div class="user">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="name" placeholder="Name">
+                                    </div>
                                 </div>
                                 <div class="form-controls">
                                     <button>Publish</button>

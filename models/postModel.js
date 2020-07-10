@@ -30,7 +30,7 @@ const Schema = new mongoose.Schema({
     image_url: String,
     number_of_views: { type: Number, default: 0 },
     number_of_likes: { type: Number, default: 0 },
-    comments: [{ body: String, date: Date, by: String, email: String, website: String }],
+    comments: [{ body: String, date: Date, by: { type: String, default: "Anonymous" }, email: String, website: String }],
     slug: {
         type: String,
         required: true,

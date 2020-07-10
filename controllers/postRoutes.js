@@ -57,7 +57,7 @@ router.get("/blog/:slug", async (req, res) => {
 
     PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
-            // data.number_of_views += 1
+            data.number_of_views += 1
             data.save()
             res.render("news-detailed", { title: `${data.title}`, post: data, categories, posts: allData })
         })
@@ -65,14 +65,14 @@ router.get("/blog/:slug", async (req, res) => {
 
 })
 
-router.post("/news/comments/:id", async (req, res) => {
+router.post("/blog/comments/:id", async (req, res) => {
     const data = await PostModel.findOne({ _id: req.params.id })
 
     console.log(req.body)
     const result = req.body
     const new_comment = {}
     new_comment.body = result.comment
-    new_comment.by = result.name
+    new_comment.by = result.name === "" ? "Anonymous" : result.name
     new_comment.email = result.email
     new_comment.website = result.website
     new_comment.date = new Date().toDateString()
@@ -81,7 +81,7 @@ router.post("/news/comments/:id", async (req, res) => {
     console.log(new_comment)
     await data.comments.push(new_comment)
     await data.save()
-    res.redirect(`/blogs/${data.slug}`)
+    res.redirect(`/blog/${data.slug}`)
 
 
 })

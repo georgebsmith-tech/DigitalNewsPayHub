@@ -180,6 +180,7 @@ ul {
 }
 .primary-nav .toggle-nav-main:hover {
   box-shadow: -2px 2px 1px 3px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 .primary-nav .toggle-nav-main > div {
   padding: 1.5px;
@@ -203,6 +204,18 @@ ul {
   display: block;
   color: #FFC151;
   font-weight: bold;
+}
+
+.toggle-and-home {
+  display: flex;
+  align-items: center;
+}
+.toggle-and-home i {
+  font-size: 2.4rem;
+  color: #d6d5d5;
+}
+.toggle-and-home i:hover {
+  color: white;
 }
 
 .breaking-news {
@@ -636,6 +649,18 @@ footer .terms-conditions-and-copy-right {
 }
 .the-post .comment .comment-action-wrapper {
   margin-top: 5px;
+}
+.the-post .comment .comment-action-wrapper > div:first-child {
+  display: flex;
+  align-items: center;
+}
+.the-post .comment .comment-action-wrapper > div:first-child div {
+  margin-left: 10px;
+}
+.the-post .comment .comment-action-wrapper > div:first-child div input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #f0efef;
 }
 .the-post .comment .form-controls {
   margin-top: 8px;
