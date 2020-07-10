@@ -59,6 +59,7 @@ $main-padding-sides:11vw;
         
         background: $primary-color-2;
         padding:11px $main-padding-sides;
+        box-shadow: 0px 2px 2px rgb(226, 224, 224,0.5);
         
         .search-and-form{
             display: flex;
@@ -110,8 +111,8 @@ $main-padding-sides:11vw;
     .menu-categories-desktop{
         display:none;
         position: absolute;
-        top: 30px;
-        left: 10px;
+        top: 37px;
+        left: 0;
         ul{
             display: flex;
             flex-direction: column;

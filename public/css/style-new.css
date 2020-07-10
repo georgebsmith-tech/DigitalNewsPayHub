@@ -142,7 +142,7 @@ ul {
   margin: 120px 0px 40px 0px;
   color: #535252;
 }
-.logo-and-caption h1 {
+.logo-and-caption .brand-name {
   text-transform: uppercase;
   font-size: 4rem;
   padding: 7px 20px;
@@ -289,6 +289,10 @@ ul {
   font-size: 1.3rem;
   margin: 10px;
   text-transform: uppercase;
+  font-style: italic;
+}
+.latest-post .date-and-views a i, .latest-post .comments-and-share a i {
+  font-size: 1.3rem;
 }
 .latest-post .image-wrapper {
   width: 100%;
@@ -319,6 +323,9 @@ ul {
 
 .popular-posts {
   margin: 10px;
+  box-shadow: 2px 2px 2px 3px rgba(221, 218, 218, 0.3);
+  padding: 10px;
+  border-radius: 4px;
 }
 .popular-posts > div > h2 {
   color: #0f55ec;
@@ -343,12 +350,12 @@ ul {
 .popular-posts > div .post .category {
   top: 2px;
   position: relative;
-  left: -138px;
+  left: -128px;
   background: rgba(255, 193, 81, 0.8);
-  padding: 3px;
+  padding: 2px;
   width: fit-content;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: white;
 }
 .popular-posts > div .post .title {
@@ -471,6 +478,7 @@ footer .terms-conditions-and-copy-right {
   .primary-nav {
     background: white;
     padding: 11px 11vw;
+    box-shadow: 0px 2px 2px rgba(226, 224, 224, 0.5);
   }
   .primary-nav .search-and-form {
     display: flex;
@@ -514,8 +522,8 @@ footer .terms-conditions-and-copy-right {
   .menu-categories-desktop {
     display: none;
     position: absolute;
-    top: 30px;
-    left: 10px;
+    top: 37px;
+    left: 0;
   }
   .menu-categories-desktop ul {
     display: flex;
@@ -550,8 +558,143 @@ footer .terms-conditions-and-copy-right {
     display: none;
   }
 }
-.categories {
+.the-post {
+  margin-top: 20px;
+  box-shadow: 2px 2px 2px 3px rgba(221, 218, 218, 0.3);
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.the-post .title, .the-post .category, .the-post .date-and-views, .the-post .comments-and-share, .the-post .navigation, .the-post .comment {
+  padding: 0 10px;
+}
+.the-post .category {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.the-post .image-wrapper {
+  width: 100%;
+  margin-top: 12px;
+}
+.the-post .image-wrapper img {
+  width: 100%;
+}
+.the-post .title {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+.the-post article {
+  font-size: 1.6rem;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.the-post article img {
+  max-width: 100%;
+}
+.the-post .date-and-views, .the-post .comments-and-share, .the-post .navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.the-post .comments-and-share {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.the-post .comments-and-share i {
+  font-size: 1.6rem;
+}
+.the-post .comments-and-share .fa-facebook {
+  color: #3b5998;
+}
+.the-post .comments-and-share .fa-whatsapp {
+  color: #25d366;
+}
+.the-post .comments-and-share .fa-twitter {
+  color: #1da1f2;
+}
+.the-post .comments-and-share .fa-instagram {
+  color: #c13584;
+}
+.the-post .comments-and-share .fa-linkedin {
+  color: #0077b5;
+}
+.the-post .comment {
+  width: 100%;
+  box-sizing: border-box;
+}
+.the-post .comment form {
+  border: 1px solid grey;
+  padding: 15px;
+}
+.the-post .comment textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+}
+.the-post .comment textarea:focus {
+  border: 1px solid #0f55ec;
+}
+.the-post .comment .comment-action-wrapper {
+  margin-top: 5px;
+}
+.the-post .comment .form-controls {
+  margin-top: 8px;
+  padding: 12px 5px;
+  background: #f0eded;
+}
+.the-post .comment .form-controls button {
+  padding: 9px 14px;
+  border-radius: 4px;
+  outline: none;
+  margin-right: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+.the-post .comment .form-controls button:first-child {
+  background: #0f55ec;
+  border: 1px solid #0f55ec;
+  color: white;
+}
+.the-post .comment .form-controls button:last-child {
+  border: 1px solid #FFC151;
+}
+.the-post .comments {
   padding: 10px;
+  font-size: 1.3rem;
+}
+.the-post a.controller {
+  margin-bottom: 10px;
+}
+.the-post .a-comment {
+  display: grid;
+  grid-template-columns: 47px auto;
+  column-gap: 2px;
+  padding: 10px;
+  margin-bottom: 7px;
+}
+.the-post .a-comment em {
+  font-size: 1rem;
+}
+.the-post .user {
+  padding: 8px;
+  background: #f0eded;
+  width: fit-content;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+.the-post .user i {
+  font-size: 4rem;
+}
+
+.categories {
+  margin: 10px;
+  margin-top: 30px;
+  box-shadow: 2px 2px 2px 3px rgba(221, 218, 218, 0.3);
+  padding: 10px;
+  border-radius: 4px;
 }
 .categories .category {
   display: flex;

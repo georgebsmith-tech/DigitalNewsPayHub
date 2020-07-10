@@ -18,13 +18,13 @@ router.get("/", async (req, res) => {
     res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
 })
 
-router.get("/index-new", async (req, res) => {
-    const data = await PostModel.findOne()
-    const allData = await PostModel.find().sort({ date: -1 })
-    const categories = await PostCategory.find().sort({ name: 1 })
+// router.get("/index-new", async (req, res) => {
+//     const data = await PostModel.findOne()
+//     const allData = await PostModel.find().sort({ date: -1 })
+//     const categories = await PostCategory.find().sort({ name: 1 })
 
-    res.render("index-new", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
-})
+//     res.render("index-new", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
+// })
 
 router.get("/blogs/:slug", async (req, res) => {
     const categories = await PostCategory.find().select({ name: 1 })
@@ -38,14 +38,28 @@ router.get("/blogs/:slug", async (req, res) => {
 
 
 })
+// router.get("/blog/:slug", async (req, res) => {
+//     const categories = await PostCategory.find().select({ name: 1 })
+
+//     PostModel.findOne({ slug: req.params.slug })
+//         .then((data) => {
+//             data.number_of_views += 1
+//             data.save()
+//             res.render("news_detailed", { title: `${data.title}`, post: data, categories })
+//         })
+
+
+// })
+
 router.get("/blog/:slug", async (req, res) => {
-    const categories = await PostCategory.find().select({ name: 1 })
+    const categories = await PostCategory.find()
+    const allData = await PostModel.find().sort({ date: -1 })
 
     PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
-            data.number_of_views += 1
+            // data.number_of_views += 1
             data.save()
-            res.render("news_detailed", { title: `${data.title}`, post: data, categories })
+            res.render("news-detailed", { title: `${data.title}`, post: data, categories, posts: allData })
         })
 
 

@@ -15,7 +15,7 @@
                 .to(".toggle-nav-main>div:nth-child(2)", 0.6, { opacity: 0 }, 0.6)
                 .to(".toggle-nav-main>div:first-child", 0.6, { y: 5.5, rotation: 45 }, 0.6)
                 .to(".toggle-nav-main>div:last-child", 0.6, { y: -5.5, rotation: -45 }, 0.6)
-                .to(".logo-and-caption h1", 1, { scale: 0.3, y: -120, x: -80, color: "white", position: "relative", zIndex: 120 }, 0)
+                .to(".logo-and-caption .brand-name", 1, { scale: 0.3, y: -120, x: -80, color: "white", position: "relative", zIndex: 120 }, 0)
             toggleFlag = !toggleFlag
         } else {
             tl.reverse()

@@ -14,7 +14,7 @@
 
     <section class="logo-and-caption">
         <div>
-            <h1>Digital News Pay Hub</h1>
+            <h1 class="brand-name">Digital News Pay Hub</h1>
             <h3 class="sub-caption" style="display: none;;"> Make cash while you get informed</h3>
         </div>
     </section>
@@ -86,7 +86,23 @@
                     <div class="comments-and-share">
 
                         <span><%= post.comments.length %> Comments</span>
-                        <span>share</span>
+                        <span>share
+                            <a id="facebook"
+                                href="https://www.facebook.com/sharer.php?u=https://www.dnpayhub.com/blog/<%= post.slug %>">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/share?url=https://www.dnpayhub.com/blog/<%= post.slug %>&text=<%= post.title %>"
+                                id="twitter">
+                                <i class="fab fa-twitter"></i>
+                                <a id="whatsapp"
+                                    href="https://wa.me/?text=<%= post.title %> https://www.dnpayhub.com/blog/<%= post.slug %>">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a id="linkedin"
+                                    href="https://www.linkedin.com/shareArticle?url= https://www.dnpayhub.com/blog/<%= post.slug %>&title=<%= post.title %>">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                        </span>
                     </div>
                 </div>
 

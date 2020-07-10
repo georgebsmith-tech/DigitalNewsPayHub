@@ -139,16 +139,28 @@ router.delete("/admins/delete-post/:slug", (req, res) => {
     console.log(req.params.slug)
     PostModel.findOneAndDelete({ slug: req.params.slug })
         .then(data => {
+
+            const category = data
+            console.log(category[0].toUpperCase() + category.substr(1).toLowerCase())
+            PostCategory.findOneAndUpdate({ name: category[0].toUpperCase() + category.substr(1).toLowerCase() }, { $inc: { number_of_posts: -1 } })
             console.log(data)
         })
         .catch(err => {
             console.log(err)
         })
+
     res.end()
 })
 
 router.post("/admins/add_post", (req, res) => {
     const reqBody = req.body
+    const category = reqBody.category
+    console.log(category[0].toUpperCase() + category.substr(1).toLowerCase())
+    PostCategory.findOne({ name: category[0].toUpperCase() + category.substr(1).toLowerCase() })
+        .then(data => {
+            data.number_of_posts += 1
+            data.save()
+        })
     const post = new PostModel(reqBody)
     post.save()
     res.redirect("/admins/all-posts")
