@@ -4,6 +4,9 @@ const { func } = require("joi")
 const passport = require("passport")
 const PostModel = require("../models/postModel")
 const PostCategory = require("../models/postCategoryModel")
+const CouponModel = require("../models/couponModel")
+
+const voucherCode = require("voucher-code-generator")
 
 const creatDompurifier = require("dompurify");
 const JSDOM = require("jsdom").JSDOM
@@ -114,7 +117,8 @@ router.post("/trial", (req, res) => {
     // console.log(req.bodreq.bodyy)
     previewPost.push(req.body)
     console.log(previewPost)
-    // res.redirect("/admins/all-posts")
+
+    res.redirect("/admins/all-posts")
     res.end()
 })
 
@@ -175,6 +179,47 @@ router.get("/admins/charts", checkAuthenticated, async function (req, res) {
 
     let post;
     res.render("general_charts", { post, title: "-Admin-Charts", posts: allData })
+})
+
+
+
+router.post("/admins/coupons/new", async (req, res) => {
+    // console.log(req.body)
+    const vouchers = voucherCode.generate({
+        count: req.body.number * 1,
+        length: 7,
+        postfix: "dnp"
+    })
+    // const data = await CouponModel.find().sort({ id: -1 }).limit(1).select("id")
+    // let index = data.length === 0 ? 1 : data[0].id + 1
+    vouchers.forEach(async voucher => {
+        const theVoucher = {
+            coupon: voucher
+        }
+        let coupon = new CouponModel(theVoucher)
+        const data = await CouponModel.find({ coupon: voucher })
+
+        if (!data.length) {
+            coupon.save()
+                .then(data => {
+                    console.log("Voucher saved!!" + data)
+                    // index++;
+                })
+        } else {
+            console.log("Record Exists" + data)
+        }
+
+    })
+
+
+    // res.send(vouchers)
+    // console.log(req.body)
+    res.end("Done!!")
+})
+
+router.get("/admins/coupons/new", (req, res) => {
+    // console.log(req.body)
+    res.send("The is is coupon get")
 })
 
 module.exports = router

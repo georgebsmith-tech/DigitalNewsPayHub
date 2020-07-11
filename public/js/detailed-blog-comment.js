@@ -26,7 +26,7 @@ function createComment(preview = true) {
     aComment.appendChild(theComment)
 
     const by = document.createElement("h4")
-    by.textContent = commentForm.name.value === "" ? "Anonymous" : commentForm.name.value
+    by.textContent = commentForm.name.value === "" ? "Anonymous" : commentForm.name.value.trim()
     theComment.appendChild(by)
 
 
@@ -38,7 +38,7 @@ function createComment(preview = true) {
 
     const commentBody = document.createElement("p")
     commentBody.classList.add("comment-body")
-    commentBody.textContent = commentForm.comment.value
+    commentBody.textContent = commentForm.comment.value.trim()
     theComment.appendChild(commentBody)
 
     const reviews = document.querySelector(".comments .reviews")
@@ -104,7 +104,7 @@ publishBtn.addEventListener("click", async function (e) {
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify({
-                by: commentForm.name.value === "" ? "Anonymous" : commentForm.name.value,
+                by: commentForm.name.value === "" ? "Anonymous" : commentForm.name.value.trim(),
                 body: commentForm.comment.value,
                 date: new Date()
             })

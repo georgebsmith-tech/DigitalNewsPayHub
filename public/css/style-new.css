@@ -728,6 +728,135 @@ footer .terms-conditions-and-copy-right {
   background: rgba(15, 85, 236, 0.502);
 }
 
+.coupon-page {
+  min-height: 86vh;
+}
+.coupon-page .modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 85, 236, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coupon-page .modal {
+  width: 80vw;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(250, 249, 249, 0.3);
+  padding-bottom: 15px;
+}
+.coupon-page .modal footer {
+  display: none;
+}
+.coupon-page .modal main, .coupon-page .modal header, .coupon-page .modal footer {
+  padding: 10px;
+}
+.coupon-page .modal main > p {
+  font-size: 1.6rem;
+}
+.coupon-page .modal header {
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+  background: #f1f0f0;
+  padding: 15px;
+}
+.coupon-page .modal header h1 {
+  text-transform: uppercase;
+  color: #0f55ec;
+  padding-bottom: 15px;
+}
+.coupon-page .modal header h2 {
+  color: #8b8989;
+}
+.coupon-page .modal header p {
+  font-size: 1.5rem;
+}
+.coupon-page .modal .navigation {
+  text-align: right;
+}
+.coupon-page .modal .navigation i {
+  font-size: 2.5rem;
+  padding: 7px 10px;
+  font-weight: lighter;
+  color: #e4e1e1;
+  width: fit-content;
+}
+.coupon-page .modal .navigation i:hover {
+  color: black;
+  cursor: pointer;
+}
+.coupon-page .modal form {
+  font-size: 1.6rem;
+  color: black;
+}
+.coupon-page .modal form .coupon-input-wrapper {
+  position: relative;
+}
+.coupon-page .modal form .coupon-input-wrapper i {
+  position: absolute;
+  top: 46px;
+  right: 15px;
+  visibility: hidden;
+}
+.coupon-page .modal form div {
+  padding: 10px 30px;
+}
+.coupon-page .modal form p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.coupon-page .modal form p a {
+  color: red;
+  text-decoration: underline;
+}
+.coupon-page .modal form label {
+  display: block;
+}
+.coupon-page .modal form input {
+  height: 1.7rem;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 0.5px solid lightgray;
+  padding: 8px;
+}
+.coupon-page .modal form .controller {
+  display: flex;
+  justify-content: space-between;
+  background: #f1f0f0;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.coupon-page .modal form .controller button {
+  width: 90px;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.coupon-page .modal form .controller button:first-child {
+  background: #0f55ec;
+  border: 1px solid #0f55ec;
+  color: white;
+}
+.coupon-page .modal form .controller button:first-child:hover {
+  background: #FFC151;
+  border: none;
+}
+.coupon-page .modal form .controller button:last-child {
+  border: 1px solid #FFC151;
+  background: white;
+}
+.coupon-page .modal form .controller button:last-child:hover {
+  border: 1px solid white;
+  background: #f1eded;
+}
+
 .categories {
   margin: 10px;
   margin-top: 30px;

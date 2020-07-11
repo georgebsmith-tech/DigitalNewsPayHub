@@ -1,0 +1,52 @@
+<%- include('./partials/head-new.ejs') %>
+<%- include('./partials/header-new.ejs') %>
+
+<main class="coupon-page">
+    <section class="modal-container">
+        <div class="modal">
+            <div class="navigation">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <header>
+                
+                <h1>Create account</h1>
+                <h2>Final stage: Coupon verification</h2>
+                
+            </header>
+            
+            <!-- <div cla</div> -->
+            <main>
+                <p class="center-text">Please key in a verified coupon gotten from our vendors</p>
+                
+                <div>
+                    <form action="/registration/coupon" method="POST">
+                        <div class="coupon-input-wrapper">
+                            <label for="coupon">Coupon</label>
+                            <input type="text" placeholder="key in Coupon" name="coupon" id="coupon" required>
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                        <p>
+                             <small>Don't have one yet? Just contact any of our <a href="/voucher-vendors">Vendors.</a></small>
+                         </p>
+                        <div class="controller">
+                            <button class="submit-coupon">Submit</button>
+                            <button class="reset-coupon">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <a href="/login" class="hidden-login"></a>
+
+            </main>
+            <footer>More info</footer>
+        </div>
+
+    </section>
+</main>
+
+
+
+
+
+<script src="../js/user-registration.js"></script>
+<%- include('./partials/footer-new.ejs') %>
