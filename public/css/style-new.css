@@ -589,13 +589,13 @@ footer .terms-conditions-and-copy-right {
   background: #f0eded;
   width: fit-content;
   border-radius: 50px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   overflow: hidden;
 }
 .the-post .user i {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 .the-post .edit-comment {
   padding: 10px;
