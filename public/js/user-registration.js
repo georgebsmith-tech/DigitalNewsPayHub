@@ -3,6 +3,21 @@
 const couponEntry = document.querySelector("#coupon")
 const couponSubmitButton = document.querySelector(".submit-coupon")
 const couponResetButton = document.querySelector(".reset-coupon")
+const userSubmitButton = document.querySelector(".user-submit")
+
+const couponModalWrapper = document.querySelector(".coupon-page");
+
+
+
+userSubmitButton.addEventListener("click", function (e) {
+
+    e.preventDefault()
+    couponModalWrapper.classList.remove("hide")
+    couponModalWrapper.style.height = document.documentElement.clientHeight;
+    console.log(document.documentElement.clientHeight)
+
+})
+
 
 
 couponEntry.addEventListener("input", function () {

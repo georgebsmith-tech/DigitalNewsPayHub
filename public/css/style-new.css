@@ -667,14 +667,19 @@ footer .terms-conditions-and-copy-right {
 .registeration .title {
   text-transform: uppercase;
   margin-bottom: 10px;
+  font-size: 2.8rem;
 }
 
 .coupon-page {
   min-height: 86vh;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
 }
 .coupon-page .modal-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 170vh;
   background: rgba(15, 85, 236, 0.8);
   position: absolute;
   top: 0;
@@ -682,7 +687,6 @@ footer .terms-conditions-and-copy-right {
   z-index: 150;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .coupon-page .modal {
   width: 80vw;
@@ -690,6 +694,8 @@ footer .terms-conditions-and-copy-right {
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(250, 249, 249, 0.3);
   padding-bottom: 15px;
+  height: fit-content;
+  transform: translateY(60%);
 }
 .coupon-page .modal footer {
   display: none;
@@ -762,9 +768,8 @@ footer .terms-conditions-and-copy-right {
   height: 1.7rem;
   width: 100%;
   outline: none;
-  border-radius: 5px;
   border: 0.5px solid lightgray;
-  padding: 8px;
+  padding: 12px;
 }
 .coupon-page .modal form .controller {
   display: flex;
@@ -799,6 +804,10 @@ footer .terms-conditions-and-copy-right {
 }
 
 @media only screen and (min-width: 769px) {
+  .coupon-page .modal-container .modal {
+    width: 60vw;
+  }
+
   .registration-wrapper {
     background: #0f55ec;
     min-height: 100vh;
