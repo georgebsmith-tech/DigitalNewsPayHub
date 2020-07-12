@@ -22,6 +22,7 @@ $primary-color-3:#FFC151;
        border: none;
        border-bottom: 1px solid grey;
        outline: none;
+    //    box-shadow: 0px 2px 3px;
    }
   
    .form-group{
@@ -33,7 +34,7 @@ $primary-color-3:#FFC151;
 
    .button-control{
        margin-bottom: 15px;
-       padding: 10px 5vw;
+       padding: 15px 30px;
        button{
            padding: 8px 20px;
            background: $primary-color-1;
@@ -41,17 +42,26 @@ $primary-color-3:#FFC151;
            text-transform: uppercase;
            border: 1px solid $primary-color-1;
            border-radius: 2px;
+           &:hover{
+               cursor: pointer;
+               background: #86acff;
+           }
        }
    }
    .divider{
        border: 0.5px solid rgb(212, 211, 211);
-       margin-bottom: 15px;
+       margin:0px 15px 15px 15px;
+
    }
    .create-acct-others{
        font-size: 1.4rem;
        p{
-           margin-top: 7px;
+           margin: 7px 15px 2px 15px;
        }
+   }
+   .title{
+       text-transform: uppercase;
+       margin-bottom: 10px;
    }
    
 
