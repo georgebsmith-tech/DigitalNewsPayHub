@@ -1,0 +1,58 @@
+$primary-color-1:#0f55ec;
+$primary-color-2:white;
+$primary-color-3:#FFC151;
+
+.registeration{
+   margin: 120px auto 20px auto;
+   display: flex;
+   justify-content: center;
+   &>div{
+       width: 90vw;
+    //    background: blue;
+   }
+   label{
+       display: none;
+   }
+   
+   input:not([type=checkbox]){
+       width: 100%;
+       box-sizing: border-box;
+       font-size: 1.6rem;
+       padding: 6px;
+       border: none;
+       border-bottom: 1px solid grey;
+       outline: none;
+   }
+  
+   .form-group{
+       font-size: 1.4rem;
+       padding: 10px;
+       width: 90%;
+       margin: 10px auto;
+   }
+
+   .button-control{
+       margin-bottom: 15px;
+       padding: 10px 5vw;
+       button{
+           padding: 8px 20px;
+           background: $primary-color-1;
+           color: white;
+           text-transform: uppercase;
+           border: 1px solid $primary-color-1;
+           border-radius: 2px;
+       }
+   }
+   .divider{
+       border: 0.5px solid rgb(212, 211, 211);
+       margin-bottom: 15px;
+   }
+   .create-acct-others{
+       font-size: 1.4rem;
+       p{
+           margin-top: 7px;
+       }
+   }
+   
+
+}

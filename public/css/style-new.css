@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   font-family: "Lato", "Helvetica Neue", helvetica, arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.red {
+  color: red;
 }
 
 .hide {
@@ -726,6 +731,55 @@ footer .terms-conditions-and-copy-right {
 .the-post .edit-comment:hover {
   cursor: pointer;
   background: rgba(15, 85, 236, 0.502);
+}
+
+.registeration {
+  margin: 120px auto 20px auto;
+  display: flex;
+  justify-content: center;
+}
+.registeration > div {
+  width: 90vw;
+}
+.registeration label {
+  display: none;
+}
+.registeration input:not([type=checkbox]) {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  padding: 6px;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+}
+.registeration .form-group {
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 90%;
+  margin: 10px auto;
+}
+.registeration .button-control {
+  margin-bottom: 15px;
+  padding: 10px 5vw;
+}
+.registeration .button-control button {
+  padding: 8px 20px;
+  background: #0f55ec;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid #0f55ec;
+  border-radius: 2px;
+}
+.registeration .divider {
+  border: 0.5px solid #d4d3d3;
+  margin-bottom: 15px;
+}
+.registeration .create-acct-others {
+  font-size: 1.4rem;
+}
+.registeration .create-acct-others p {
+  margin-top: 7px;
 }
 
 .coupon-page {

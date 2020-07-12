@@ -2,76 +2,80 @@
 <%- include('./partials/header-new.ejs') %>
 
 <main>
-    <section class="content">
-        <div class="container main-section">
-            <section class="container register-section">
+        <div class="container registeration">
+            
                 <div>
-                    <h2 class="center-text sign-up">Sign Up</h2>
+                    <h1 class="center-text sign-up">Create account</h1>
+                    <h3 class="center-text">Let's get started</h3>
 
                     <form action="/" method="POST">
                         <section>
                             <div class="form-group">
 
-                                <label for="user-name" class="block">First Name</label>
-                                <input type="text" name="user-name" class="block">
+                                <label for="first-name" class="block">First Name</label>
+                                <input type="text" name="user-name" class="block" placeholder="First name">
                             </div>
                             <div class="form-group">
                                 <label for="last-name" class="block">Last Name</label>
-                                <input type="text" name="last-name" class="block">
+                                <input type="text" name="last-name" class="block" placeholder="Last Name">
 
                             </div>
                             <div class="form-group">
                                 <label for="username" class="block">Username</label>
-                                <input type="text" name="username" class="block">
+                                <input type="text" name="username" class="block" placeholder="Username">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="block">Email</label>
-                                <input type="email" name="email" class="block">
+                                <input type="email" name="email" class="block" placeholder="Email">
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="email" class="block">Email</label>
-                                <input type="email" name="email" class="block">
-                            </div>
+                                <input type="email" name="email" class="block"> -->
+                            <!-- </div> -->
 
                             <div class="form-group">
                                 <label for="phone" class="block">Phone</label>
-                                <input type="tel" name="phone" class="block">
+                                <input type="tel" name="phone" class="block" placeholder="Mobile Phone">
                             </div>
 
                             <div class="form-group">
                                 <label for="password" class="block">Password</label>
-                                <input type="password" name="password" class="block">
+                                <input type="password" name="password" class="block" placeholder="Password">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password" class="block">Password</label>
+                                <input type="password" name="confirm-password" class="block" placeholder="Confirm password">
                             </div>
 
                             <div class="form-group">
                                 <label for="ref-username" class="block">Referal's Username</label>
-                                <input type="text" name="ref-username" class="block">
+                                <input type="text" name="ref-username" class="block" placeholder="Referral's Username">
                             </div>
                         </section>
 
                         <div class="form-group">
 
                             <input type="checkbox" name="t-and-c">
-                            <label for="t-and-c">I accept to the <a href="#">Terms</a> and <a
-                                    href="">Conditions.</a></label>
+                            <span for="t-and-c">I accept to the <a href="#">Terms and Conditions.</a></span>
                         </div>
-
-                        <button type="submit" class="sign-up block">sign up</button>
+                        <div class="button-control">
+                             <button type="submit" class="sign-up block">Submit</button>
+                         </div>
 
                     </form>
                     <div class="divider"></div>
-                    <div>
+                    <div class="create-acct-others">
                         <p>
-                        <div class="center-text have-acct">Already have an account?<a href="#"> Login Here</a></div>
-                        <div class="divider the-second"></div>
-                        <div class="padd-more padd-first">Click <a href="#" class="red">here</a> for authorised
+                        <div class="center-text have-acct ">Already have an account?<a href="#" class="red"> Login Here</a></div>
+                        <div class="center-text">Click <a href="#" class="red">here</a> for authorised
                             activation code
                             merchants.</div>
 
                         </p>
                         <p>
-                        <h3 class="center-text"> Withdraw, Payment or cash</h3>
+                        <h3 class="center-text"> Withdraw, Payment or Cash</h3>
                         <p class="padd-more padd-second">
                             Kindly note that affiliate/referral
                             commissions are paid out in cash
@@ -82,17 +86,10 @@
                     </div>
 
                 </div>
-            </section>
-
-            <aside class="aside-home">
-                <h3>Latest News</h3>
-                <%- include('./partials/latest-news.ejs') %>
-
-            </aside>
-
+           
         </div>
 
 
-    </section>
+   
 </main>
 <%- include('./partials/footer-new.ejs') %>
