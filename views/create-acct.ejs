@@ -57,47 +57,54 @@
                         <div class="form-group">
 
                             <label for="first-name" class="block">First Name</label>
-                            <input type="text" name="user-name" class="block" placeholder="First name">
+                            <input type="text" name="user-name" class="block" placeholder="First name" required>
+                            <small class="error-message">Error</small>
                         </div>
                         <div class="form-group">
                             <label for="last-name" class="block">Last Name</label>
-                            <input type="text" name="last-name" class="block" placeholder="Last Name">
-
+                            <input type="text" name="last-name" class="block" placeholder="Last Name" required>
+                            <small class="error-message">Error</small>
                         </div>
                         <div class="form-group">
                             <label for="username" class="block">Username</label>
-                            <input type="text" name="username" class="block" placeholder="Username">
+                            <input type="text" name="username" class="block" placeholder="Username" required>
+                            <small class="error-message">Error</small>
                         </div>
                         <div class="form-group">
                             <label for="email" class="block">Email</label>
-                            <input type="email" name="email" class="block" placeholder="Email">
+                            <input type="email" name="email" class="block" placeholder="Email" required>
+                            <small class="error-message">Error</small>
                         </div>
 
 
                         <div class="form-group">
                             <label for="phone" class="block">Phone</label>
-                            <input type="tel" name="phone" class="block" placeholder="Mobile Phone">
+                            <input type="tel" name="phone" class="block" placeholder="Mobile Phone" required>
+                            <small class="error-message">Error</small>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="block">Password</label>
-                            <input type="password" name="password" class="block" placeholder="Password">
+                            <input type="password" name="password" class="block" placeholder="Password" required>
+                            <small class="error-message">Error</small>
                         </div>
                         
                         <div class="form-group">
                             <label for="password" class="block">Password</label>
-                            <input type="password" name="confirm-password" class="block" placeholder="Confirm password">
+                            <input type="password" name="confirm-password" class="block" placeholder="Confirm password" required>
+                            <small class="error-message">Error</small>
                         </div>
 
                         <div class="form-group">
                             <label for="ref-username" class="block">Referal's Username</label>
-                            <input type="text" name="ref-username" class="block" placeholder="Referral's Username">
+                            <input type="text" name="ref-username" class="block" placeholder="Referral's Username" required>
+                            <small class="error-message">Error</small>
                         </div>
                     </section>
 
                     <div class="form-group">
 
-                        <input type="checkbox" name="t-and-c">
+                        <input type="checkbox" name="t-and-c" required class="t-and-c">
                         <span for="t-and-c">I accept to the <a href="#">Terms and Conditions.</a></span>
                     </div>
                     <div class="button-control">

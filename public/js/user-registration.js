@@ -6,8 +6,40 @@ const couponResetButton = document.querySelector(".reset-coupon")
 const userSubmitButton = document.querySelector(".user-submit")
 
 const couponModalWrapper = document.querySelector(".coupon-page");
+const termsAndConditions = document.querySelector(".registeration .t-and-c")
+// console.log(termsAndConditions)
+
+const modalPageClose = document.querySelector(".coupon-page .fa-close")
+// console.log(modalPageClose)
+modalPageClose.addEventListener("click", function () {
+    couponModalWrapper.classList.add("hide")
+})
+
+//create account inputs validation
+termsAndConditions.addEventListener("input", function () {
+    if (this.checked) {
+        enableButton()
+    } else {
+        disableButton()
+    }
+})
 
 
+
+function disableButton() {
+    userSubmitButton.style.backgroundColor = "lightgray"
+    userSubmitButton.style.border = "1px solid lightgray"
+    userSubmitButton.disabled = true
+}
+
+function enableButton() {
+    userSubmitButton.style.backgroundColor = "#0f55ec"
+    userSubmitButton.style.border = "1px solid #0f55ec"
+    userSubmitButton.disabled = false
+}
+
+
+disableButton()
 
 userSubmitButton.addEventListener("click", function (e) {
 

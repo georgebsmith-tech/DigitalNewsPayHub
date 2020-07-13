@@ -30,6 +30,14 @@ $primary-color-3:#FFC151;
        padding: 10px;
        width: 90%;
        margin: 10px auto;
+       position: relative;
+   }
+   .error-message{
+       position: absolute;
+       font-size: 1rem;
+       color: red;
+       padding-left: 15px;
+       visibility: hidden;
    }
 
    .button-control{

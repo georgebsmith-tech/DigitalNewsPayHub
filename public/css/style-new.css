@@ -637,6 +637,14 @@ footer .terms-conditions-and-copy-right {
   padding: 10px;
   width: 90%;
   margin: 10px auto;
+  position: relative;
+}
+.registeration .error-message {
+  position: absolute;
+  font-size: 1rem;
+  color: red;
+  padding-left: 15px;
+  visibility: hidden;
 }
 .registeration .button-control {
   margin-bottom: 15px;
