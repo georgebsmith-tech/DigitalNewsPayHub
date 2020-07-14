@@ -1,0 +1,33 @@
+<section class="breaking-news">
+    <div class="marquee-element">
+        <% let index=1 %>
+        <% for (let post of posts ){ %>
+        <a class="marquee-item-<%=(index) %> marquee-item" href="/blog/<%= post.slug %>">
+            <img src="<%= post.image_url %>" alt="breaking news-<%=(index) %>">
+            <div>
+
+                <h3><%= post.title.substr(0,54) %>...</h3>
+
+            </div>
+        </a>
+        <% index++ %>
+        <% if(index===6) break %>
+
+        <% } %>
+        <% index=1 %>
+        <% for (let post of posts ){ %>
+        <a class="marquee-item-<%=(index) %> marquee-item" href="/blog/<%= post.slug %>">
+            <img src="<%= post.image_url %>" alt="breaking news-<%=(index) %>">
+            <div>
+
+                <h3><%= post.title.substr(0,54) %>...</h3>
+
+            </div>
+        </a>
+        <% index++ %>
+        <% if(index===6) break %>
+
+        <% } %>
+
+    </div>
+</section>

@@ -10,36 +10,7 @@
             <h3 class="sub-caption" style="display: none;;"> Make cash while you get informed</h3>
         </div>
     </section>
-    <section class="breaking-news">
-        <div class="marquee-element">
-
-            <% posts.forEach((post,index)=>{ %>
-            <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blog/<%= post.slug %>">
-                <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
-                <div>
-
-                    <h3><%= post.title %></h3>
-
-                </div>
-            </a>
-
-
-            <% }) %>
-            <% posts.forEach((post,index)=>{ %>
-            <a class="marquee-item-<%=(index+1) %> marquee-item" href="/blog/<%= post.slug %>">
-                <img src="<%= post.image_url %>" alt="breaking news-<%=(index+1) %>">
-                <div>
-
-                    <h3><%= post.title %></h3>
-
-                </div>
-            </a>
-
-
-            <% }) %>
-
-        </div>
-    </section>
+    <%- include('./partials/breaking-news.ejs') %>
 
     <div class="index">
         <section>
@@ -52,8 +23,6 @@
                         <em><%= post.date.toDateString() %></em>
                         <em><%= post.number_of_views %> views</em>
                     </div>
-
-
                 </header>
                 <div class="image-wrapper">
                     <img src="<%= post.image_url %>" alt="image for post:<%= post.title %>">
