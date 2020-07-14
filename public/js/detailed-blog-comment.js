@@ -1,7 +1,7 @@
 
 
 const previewBtn = document.querySelector(".comment-form .preview")
-let commentForm
+let commentForm = document.forms["comment-form"]
 let editIcon;
 function createComment(preview = true) {
     commentForm = document.forms["comment-form"]
@@ -75,24 +75,14 @@ function createComment(preview = true) {
 previewBtn.addEventListener("click", function (e) {
     e.preventDefault()
     createComment()
-
-
-
-    // console.log(aComment)
-
-    // console.log(commentForm)
-
 })
 
-// document.querySelector(".edit-comment").addEventListener("click", function () {
-//     // commentForm.style.display = "initial"
-//     alert("Clicked")
-// })
-// alert("linked!!")
+
 const publishBtn = document.querySelector(".pubish-comment")
 
 publishBtn.addEventListener("click", async function (e) {
     e.preventDefault()
+    commentForm = document.forms["comment-form"]
     const postSlug = this.dataset.postSlug
     const url = `/api/comments/add/${postSlug}`
     // console.log(url)
