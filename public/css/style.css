@@ -741,62 +741,9 @@ footer .biz-links a {
   border: 1px solid grey;
 }
 
-.primary-nav .toggle-nav {
-  padding-left: 0px;
-  background: #000E5C;
-  padding-bottom: 6px;
-}
-.primary-nav .toggle-nav div {
-  width: 100vw;
-  background: #003FED;
-  padding-top: 8px;
-  margin-left: 0px;
-}
-.primary-nav .toggle-nav div img {
-  margin-left: 20px;
-}
-.primary-nav nav {
-  display: none;
-  opacity: 0;
-  height: 0px;
-  transition: all 0.8s;
-  background: #000E5C;
-  position: relative;
-  top: -2px;
-  padding: 2px 0px 12px inherit;
-}
-.primary-nav nav .sub-menu-control {
-  color: white;
-}
-.primary-nav nav #sep1 {
-  display: flex;
-}
-.primary-nav nav #sep1 span {
-  color: white;
-  font-size: 10px;
-}
-.primary-nav nav #sep1 #left-it {
-  height: 14px;
-  margin-left: 30px;
-}
-.primary-nav nav #sub-cat1 {
-  display: none;
-  margin-left: 30px;
-}
-.primary-nav nav a {
-  color: white;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-}
-.primary-nav nav ul {
-  background: #000E5C;
-}
-.primary-nav nav ul li {
-  padding-bottom: 4px;
-}
-.primary-nav nav .form-nav {
-  padding-bottom: 10px;
-}
+
+
+
 
 .breaking-news {
   background: rgba(246, 244, 244, 0.2);

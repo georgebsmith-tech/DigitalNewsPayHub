@@ -5,8 +5,11 @@
     <ul>
         <% categories.forEach(category=>{ %>
         <li class="category">
-            <span><%= category.name %></span>
+            <a href="/index/<%= category.name.toLowerCase() %>">
+                <span><%= category.name %></span>
+            </a>
             <span><%= category.number_of_posts %></span>
+
         </li>
 
         <% }) %>
