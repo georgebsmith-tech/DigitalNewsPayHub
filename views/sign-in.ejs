@@ -1,0 +1,63 @@
+<%- include('./partials/head-new.ejs') %>
+<%- include('./partials/header-new.ejs') %>
+
+<main>
+
+    <section class="registration-wrapper">
+        <div class="container registeration">
+            <aside></aside>
+
+            <div>
+                <h1 class="center-text title">login</h1>
+
+                <form action="/" method="POST">
+                    <section>
+
+
+                        <div class="form-group">
+                            <label for="username" class="block">Username</label>
+                            <input type="text" name="username" class="block" placeholder="Username" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="block">Password</label>
+                            <input type="password" name="password" class="block" placeholder="Password" required>
+                            <small class="error-message"></small>
+                        </div>
+                    </section>
+
+
+                    <div class="button-control">
+                        <button type="submit" class="user-submit block">login</button>
+                    </div>
+
+                </form>
+                <div class="divider"></div>
+                <div class="create-acct-others">
+                    <p>
+                    <div class="center-text have-acct ">Don't have an account?<a href="/create-account" class="red">
+                            Create
+                            one here.</a></div>
+                    <div class="center-text">Click <a href="#" class="red">here</a> for authorised
+                        activation code
+                        merchants.</div>
+
+                    </p>
+                    <p>
+                    <h3 class="center-text"> Withdraw, Payment or Cash</h3>
+                    <p class="padd-more padd-second">
+                        Kindly note that affiliate/referral
+                        commissions are paid out in cash
+                        within 24 hours.
+                    </p>
+                    </p>
+
+                </div>
+            </div>
+    </section>
+
+
+
+</main>
+<!-- <script src="../js/user-registration.js"></script> -->
+<%- include('./partials/footer-new.ejs') %>

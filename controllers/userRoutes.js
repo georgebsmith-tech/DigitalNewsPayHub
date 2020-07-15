@@ -10,7 +10,7 @@ router.get("/login", async (req, res) => {
     const categories = await PostCategory.find().select({ name: 1 })
     let post;
 
-    res.render("login", { title: "Login", posts: allData, post, categories })
+    res.render("sign-in", { title: "Login", posts: allData, post, categories })
 })
 
 router.get("/register", async (req, res) => {

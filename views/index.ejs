@@ -132,21 +132,8 @@
 
 
             </section>
-            <section class="categories">
-                <div>
-                    <h2>Categories</h2>
-                </div>
-                <ul>
-                    <% categories.forEach(category=>{ %>
-                    <li class="category">
-                        <span><%= category.name %></span>
-                        <span><%= category.number_of_posts %></span>
-                    </li>
-
-                    <% }) %>
-                </ul>
-
-            </section>
+            <%- include('./partials/categories-and-counts.ejs') %>
+            
         </aside>
     </div>
 
