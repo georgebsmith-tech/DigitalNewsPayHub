@@ -1,6 +1,6 @@
 $primary-color-1:#0f55ec;
 $primary-color-2:white;
-$primary-color-3:#FFC151;
+$primary-color-3:#d18b08;
 
 
 footer{
@@ -14,7 +14,7 @@ footer{
         flex-direction: column;
         align-items: center;
         padding: 10px;
-        background:#f8bc4b;
+        background:$primary-color-3;
         ul>li {
             
             a{
