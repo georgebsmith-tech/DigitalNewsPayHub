@@ -79,7 +79,7 @@ app.use(passport.session())
 app.set("views", "./views")
 app.set("view engine", "ejs")
 
-
+app.use("/uploads", express.static("uploads"))
 app.use(express.static("public"))
 app.use("/admins/css", express.static("public/css"))
 app.use("/admins/images", express.static("public/images"))

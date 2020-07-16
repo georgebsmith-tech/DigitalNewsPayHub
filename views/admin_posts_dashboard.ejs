@@ -21,7 +21,7 @@
             <section class="admin-posts-dashboard container">
                 <aside></aside>
                 <section class="middle-content">
-                    <form action="/admins/add_post" method="post">
+                    <form action="/admins/add_post" method="post" enctype="multipart/form-data">
                         <div>
                             <div>
                                 <input type="text" placeholder="Add post Title Here" id="new-post-title" class="block"
@@ -40,8 +40,14 @@
                                         <% })%>
                                 </datalist>
                             </div>
+
                             <input type="text" name="image_url" class="block"
                                 placeholder="Add the Post image path here">
+
+                            <div>
+                                <i class="fa fa-picture-o"></i> <input type="file" name="photo"
+                                    style="display: inline;">
+                            </div>
 
                             <div>
                                 <textarea name="body" id="editor" name="editor"></textarea>

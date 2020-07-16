@@ -5,6 +5,8 @@ const passport = require("passport")
 const PostModel = require("../models/postModel")
 const PostCategory = require("../models/postCategoryModel")
 const CouponModel = require("../models/couponModel")
+const multer = require("multer")
+const path = require("path")
 
 const voucherCode = require("voucher-code-generator")
 
@@ -20,6 +22,16 @@ function checkAuthenticated(req, res, next) {
     }
     res.redirect("/admins/login")
 }
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "./uploads/")
+    },
+    filename: function (req, file, cb) {
+        cb(null, new Date().toISOString().replace(":", "-") + file.originalname)
+    }
+})
+
+const upload = multer({ storage: storage })
 
 function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -156,8 +168,13 @@ router.delete("/admins/delete-post/:slug", (req, res) => {
     res.end()
 })
 
-router.post("/admins/add_post", (req, res) => {
+router.post("/admins/add_post", upload.single("photo"), (req, res) => {
+    console.log(req.file)
     const reqBody = req.body
+    if (reqBody.image_url === "") {
+        reqBody.image_url = path.join(`www.dnpayhub.com`, req.file.path)
+        console.log(reqBody.image_url)
+    }
     const category = reqBody.category
     console.log(category[0].toUpperCase() + category.substr(1).toLowerCase())
     PostCategory.findOne({ name: category[0].toUpperCase() + category.substr(1).toLowerCase() })
