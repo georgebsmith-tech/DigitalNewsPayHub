@@ -20,6 +20,7 @@ $primary-color-2:white;
 
 @use './sass_files-new/subscription-form';
 
+@use './sass_files-new/news_by_category';
 @use './sass_files-new/footer';
 
 
@@ -29,6 +30,8 @@ $primary-color-2:white;
 
 @use './sass_files-new/coupon-verification';
 @use './sass_files-new/desktop';
+
+@use './sass_files-new/admin_login';
 
 
 .categories{

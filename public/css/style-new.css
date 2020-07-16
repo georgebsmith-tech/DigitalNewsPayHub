@@ -152,7 +152,7 @@ ul {
   font-size: 4rem;
   padding: 7px 20px;
   line-height: 1.4;
-  color: #FFC151;
+  color: #d18b08;
 }
 .logo-and-caption .sub-caption {
   text-transform: uppercase;
@@ -207,7 +207,7 @@ ul {
   text-transform: uppercase;
   padding: 1px 15px;
   display: block;
-  color: #FFC151;
+  color: #d18b08;
   font-weight: bold;
 }
 
@@ -425,6 +425,49 @@ ul {
   background: #0f55ec;
   color: white;
   font-size: 0.9rem;
+}
+
+.news-by-cat {
+  min-height: 68vh;
+}
+
+.category-contents {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.category-contents a {
+  display: block;
+  background: #0f55ec;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 10px;
+  width: fit-content;
+}
+.category-contents .title {
+  color: Black;
+  line-height: 1.5;
+  margin-bottom: 3px;
+  margin-top: 12px;
+}
+.category-contents .date {
+  margin-bottom: 12px;
+}
+.category-contents > div {
+  padding: 5px;
+  display: block;
+  margin: 10px 5px;
+  box-shadow: 2px 2px 1px #ebe8e8;
+  width: 250px;
+}
+.category-contents > div > div {
+  width: 100%;
+  margin-top: 8px;
+}
+.category-contents > div > div img {
+  width: 100%;
+  border-radius: 6px;
 }
 
 footer {
@@ -852,7 +895,7 @@ footer .terms-conditions-and-copy-right {
   .social-media-section {
     padding: 10px 11vw;
     justify-content: center;
-    background-color: #FFC151;
+    background-color: #d18b08;
   }
 
   .main-social-media-links-container .desktop {
@@ -874,7 +917,7 @@ footer .terms-conditions-and-copy-right {
   }
   .main-social-media-links-container li > a span {
     display: inline-block;
-    border-bottom: 2px solid #FFC151;
+    border-bottom: 2px solid #d18b08;
     padding-bottom: 5px;
   }
   .main-social-media-links-container li > a:hover span {
@@ -907,13 +950,13 @@ footer .terms-conditions-and-copy-right {
     padding: 20px 15px;
     text-transform: uppercase;
     font-size: 1rem;
-    color: #FFC151;
+    color: #d18b08;
     font-weight: bold;
     transition: 0.6s;
   }
   .primary-nav ul a:hover {
-    background: #FFC151;
-    background: rgba(255, 193, 81, 0.6);
+    background: #d18b08;
+    background: #d18b08;
     color: white;
   }
 
@@ -964,6 +1007,67 @@ footer .terms-conditions-and-copy-right {
     display: none;
   }
 }
+#admin-form {
+  background-color: white;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+#admin-form .admin-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#admin-form section {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 300px;
+  min-height: 250px;
+  background: #1b1b1b;
+  background: white;
+  box-shadow: 3px 3px 4px 3px rgba(197, 197, 197, 0.3);
+  border-radius: 5px;
+}
+#admin-form section #admin-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#admin-form .form-section {
+  width: 90%;
+  padding: 10px;
+}
+#admin-form .form-section form {
+  padding-bottom: 20px;
+}
+#admin-form .form-section form div > div {
+  background: white;
+}
+#admin-form .form-section form div > div input {
+  background: whitesmoke;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+#admin-form .form-section form button {
+  text-transform: uppercase;
+  background: #0f55ec;
+  outline: none;
+  border: #0f55ec;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
 .categories {
   margin: 10px;
   margin-top: 30px;

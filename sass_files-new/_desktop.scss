@@ -1,6 +1,6 @@
 $primary-color-1:#0f55ec;
 $primary-color-2:white;
-$primary-color-3:#FFC151;
+$primary-color-3:#d18b08;
 $main-padding-sides:11vw;
 
 // for small screen laptops
@@ -135,7 +135,7 @@ $main-padding-sides:11vw;
                 transition: 0.6s;
                 &:hover{
                     background: $primary-color-3;
-                    background: rgba(255, 193, 81,0.6);
+                    background: $primary-color-3;
                     color: white;
                     
                 }

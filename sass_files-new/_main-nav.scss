@@ -1,6 +1,6 @@
 $primary-color-1:#0f55ec;
 $primary-color-2:white;
-$primary-color-3:#FFC151;
+$primary-color-3:#d18b08;
 
 .social-media-section{
     
@@ -63,7 +63,7 @@ $primary-color-3:#FFC151;
         font-size: 4rem;
         padding: 7px 20px;
         line-height: 1.4;
-        color: #FFC151;
+        color: $primary-color-3;
     }
     .sub-caption{
         text-transform: uppercase;

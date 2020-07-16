@@ -1,0 +1,85 @@
+$primary-color-1:#0f55ec;
+$primary-color-2:white;
+$primary-color-3:#FFC151;
+
+
+#admin-form {
+    background-color: white;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    .admin-brand{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    
+
+    section{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width:300px;
+        min-height: 250px;
+        background: rgb(27, 27, 27);
+        background: white;
+        box-shadow: 3px 3px 4px 3px rgba(197, 197, 197, 0.3);
+        border-radius: 5px;
+        #admin-options{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        
+    }
+    .form-section{
+        width: 90%;
+        padding: 10px;
+       
+        form{
+            padding-bottom: 20px;
+            div>div{
+            
+            
+            
+            
+                background: white;
+                
+                
+                input{
+                    background: whitesmoke;
+                    padding: 10px;
+                
+                    width: 100%;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    outline: none;
+                    border: none;
+
+                }
+            }
+            button{
+                text-transform: uppercase;
+                background:$primary-color-1;
+                outline: none;
+                border: $primary-color-1;
+                color: white;
+                margin-top: 10px;
+                padding: 10px;
+                width: 100%;
+                border-radius: 5px;
+                
+    
+            }
+           
+        }
+        
+
+    }
+    
+}
