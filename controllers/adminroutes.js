@@ -167,15 +167,16 @@ router.delete("/admins/delete-post/:slug", (req, res) => {
 
     res.end()
 })
-// , upload.single("photo")
 
-router.post("/admins/add_post", (req, res) => {
+
+router.post("/admins/add_post", upload.single("photo"), (req, res) => {
     // console.log(req.file)
     const reqBody = req.body
     // if (reqBody.image_url === "") {
     //     reqBody.image_url = path.join(`www.dnpayhub.com`, req.file.path)
     //     console.log(reqBody.image_url)
     // }
+    console.log(reqBody)
     const category = reqBody.category
     console.log(category[0].toUpperCase() + category.substr(1).toLowerCase())
     PostCategory.findOne({ name: category[0].toUpperCase() + category.substr(1).toLowerCase() })
