@@ -31,6 +31,11 @@ const initialize = require("./passport.config")
 
 const AdminModel = require("./models/adminModel")
 const VendorModel = require("./models/vendorsModel")
+const NewsLetterSubRoutes = require("./controllers/newsletterRoutes");
+
+
+
+
 const app = express()
 
 
@@ -91,6 +96,8 @@ app.use(userRouter)
 app.use(couponRouter)
 app.use(adminRoute)
 app.use(howItWorksRouter)
+app.use(NewsLetterSubRoutes)
+
 
 app.use("/api", postsAPIRoutes)
 
