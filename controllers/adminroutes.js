@@ -8,6 +8,37 @@ const CouponModel = require("../models/couponModel")
 const multer = require("multer")
 const path = require("path")
 
+const AWS = require("aws-sdk");
+const multerS3 = require("multer-s3");
+
+AWS.config.update({
+    accessKeyId: "AKIAIV3ERNLZQ3R3GCSQ",
+    secretAccessKey: "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",
+    region: "us-east-2"
+})
+
+
+const s3 = new AWS.S3()
+const storage = multerS3({
+    s3: s3,
+    acl: "public-read",
+    bucket: "dnpayhub",
+    metadata: function (req, file, cb) {
+        cb(null, { fieldName: "dnpayhub_meta_data" })
+    },
+    key: function (req, file, cb) {
+        cb(null, new Date().getTime().toString() + file.originalname)
+    }
+})
+
+const upload = multer({
+    storage: storage, limits: {
+        fileSize: 1024 * 1025 * 10
+    }
+})
+const singleUpload = upload.single("photo")
+
+
 const voucherCode = require("voucher-code-generator")
 
 const creatDompurifier = require("dompurify");
@@ -22,16 +53,16 @@ function checkAuthenticated(req, res, next) {
     }
     res.redirect("/admins/login")
 }
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "./uploads/")
-    },
-    filename: function (req, file, cb) {
-        cb(null, new Date().toISOString().replace(":", "-") + file.originalname)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, "./uploads/")
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, new Date().toISOString().replace(":", "-") + file.originalname)
+//     }
+// })
 
-const upload = multer({ storage: storage })
+// const upload = multer({ storage: storage })
 
 function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -169,24 +200,29 @@ router.delete("/admins/delete-post/:slug", (req, res) => {
 })
 
 
-router.post("/admins/add_post", upload.single("photo"), (req, res) => {
-    // console.log(req.file)
-    const reqBody = req.body
-    // if (reqBody.image_url === "") {
-    //     reqBody.image_url = path.join(`www.dnpayhub.com`, req.file.path)
-    //     console.log(reqBody.image_url)
-    // }
-    console.log(reqBody)
-    const category = reqBody.category
-    console.log(category[0].toUpperCase() + category.substr(1).toLowerCase())
-    PostCategory.findOne({ name: category[0].toUpperCase() + category.substr(1).toLowerCase() })
-        .then(data => {
-            data.number_of_posts += 1
-            data.save()
-        })
-    const post = new PostModel(reqBody)
-    post.save()
-    res.redirect("/admins/all-posts")
+router.post("/admins/add_post", (req, res) => {
+
+    singleUpload(req, res, function (err) {
+        console.log("In")
+        const reqBody = req.body
+        if (err) {
+            console.log(err)
+        } else {
+            if (reqBody.image_url.trim() == "")
+                reqBody.image_url = req.file.location
+            console.log(reqBody)
+            const category = reqBody.category
+            console.log(category[0].toUpperCase() + category.substr(1).toLowerCase())
+            PostCategory.findOne({ name: category[0].toUpperCase() + category.substr(1).toLowerCase() })
+                .then(data => {
+                    data.number_of_posts += 1
+                    data.save()
+                })
+            const post = new PostModel(reqBody)
+            post.save()
+            res.redirect("/admins/all-posts")
+        }
+    })
 })
 
 

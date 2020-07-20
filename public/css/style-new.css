@@ -471,7 +471,7 @@ ul {
 }
 
 footer {
-  background: #FFC151;
+  background: #d18b08;
   overflow: hidden;
 }
 footer .secondary-nav-and-credit {
@@ -479,7 +479,7 @@ footer .secondary-nav-and-credit {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  background: #f8bc4b;
+  background: #d18b08;
 }
 footer .secondary-nav-and-credit ul > li a {
   color: white;
