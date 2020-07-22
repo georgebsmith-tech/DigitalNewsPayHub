@@ -19,6 +19,7 @@ const session = require("express-session")
 
 
 // const postRoutes = require("./controllers/postRoutes");
+const superAdminRoute = require("./controllers/superAdminRoutes");
 const postRouter = require("./controllers/postRoutes");
 const userRouter = require("./controllers/userRoutes");
 const couponRouter = require("./controllers/coupons");
@@ -97,6 +98,8 @@ app.use(couponRouter)
 app.use(adminRoute)
 app.use(howItWorksRouter)
 app.use(NewsLetterSubRoutes)
+app.use(superAdminRoute)
+superAdminRoute
 
 
 app.use("/api", postsAPIRoutes)

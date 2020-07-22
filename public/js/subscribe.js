@@ -1,6 +1,7 @@
 (function () {
 
     const subscribeBtn = document.querySelector(".subscribe-btn");
+    if (subscribeBtn === null) return
     subscribeBtn.addEventListener("click", async function (e) {
         e.preventDefault()
         const form = this.parentElement

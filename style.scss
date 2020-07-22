@@ -62,6 +62,8 @@ $color5:#070EEB;
 //entry-animation starts here
 @use './sass_files/entry-animation';
 
+@use './sass_files/generate-token';
+
 //entry animation ends here
 //styling for the most-liked starts
 .most-liked{

@@ -8,6 +8,7 @@
             <aside></aside>
 
             <div>
+                <div class="sign-in-error hide">Invalid Username or Password</div>
                 <h1 class="center-text title">login</h1>
 
                 <form action="/" method="POST">
@@ -28,7 +29,7 @@
 
 
                     <div class="button-control">
-                        <button type="submit" class="user-submit block">login</button>
+                        <button type="submit" class="user-submit user-sign-in-btn block">login</button>
                     </div>
 
                 </form>
@@ -59,5 +60,5 @@
 
 
 </main>
-<!-- <script src="../js/user-registration.js"></script> -->
+<script src="../js/user-sign-in.js"></script>
 <%- include('./partials/footer-new.ejs') %>

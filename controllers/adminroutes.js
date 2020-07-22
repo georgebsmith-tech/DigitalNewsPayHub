@@ -4,18 +4,21 @@ const { func } = require("joi")
 const passport = require("passport")
 const PostModel = require("../models/postModel")
 const PostCategory = require("../models/postCategoryModel")
-const CouponModel = require("../models/couponModel")
+
 const multer = require("multer")
 const path = require("path")
+const dotenv = require("dotenv")
+dotenv.config()
 
 const AWS = require("aws-sdk");
 const multerS3 = require("multer-s3");
 
 AWS.config.update({
-    accessKeyId: "AKIAIV3ERNLZQ3R3GCSQ",
-    secretAccessKey: "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",
-    region: "us-east-2"
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
 })
+console.log(process.env.AWS_SECRET_ACCESS_KEY)
 
 
 const s3 = new AWS.S3()
@@ -39,7 +42,7 @@ const upload = multer({
 const singleUpload = upload.single("photo")
 
 
-const voucherCode = require("voucher-code-generator")
+
 
 const creatDompurifier = require("dompurify");
 const JSDOM = require("jsdom").JSDOM
@@ -53,16 +56,7 @@ function checkAuthenticated(req, res, next) {
     }
     res.redirect("/admins/login")
 }
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, "./uploads/")
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, new Date().toISOString().replace(":", "-") + file.originalname)
-//     }
-// })
 
-// const upload = multer({ storage: storage })
 
 function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -238,39 +232,6 @@ router.get("/admins/charts", checkAuthenticated, async function (req, res) {
 
 
 
-router.post("/admins/coupons/new", async (req, res) => {
-    // console.log(req.body)
-    const vouchers = voucherCode.generate({
-        count: req.body.number * 1,
-        length: 7,
-        postfix: "dnp"
-    })
-    // const data = await CouponModel.find().sort({ id: -1 }).limit(1).select("id")
-    // let index = data.length === 0 ? 1 : data[0].id + 1
-    vouchers.forEach(async voucher => {
-        const theVoucher = {
-            coupon: voucher
-        }
-        let coupon = new CouponModel(theVoucher)
-        const data = await CouponModel.find({ coupon: voucher })
-
-        if (!data.length) {
-            coupon.save()
-                .then(data => {
-                    console.log("Voucher saved!!" + data)
-                    // index++;
-                })
-        } else {
-            console.log("Record Exists" + data)
-        }
-
-    })
-
-
-    // res.send(vouchers)
-    // console.log(req.body)
-    res.end("Done!!")
-})
 
 router.get("/admins/coupons/new", (req, res) => {
     // console.log(req.body)

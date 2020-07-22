@@ -1,9 +1,75 @@
 const express = require("express");
 const router = express.Router()
-
 const PostModel = require("../models/postModel");
 const PostCategory = require("../models/postCategoryModel")
 const CouponModel = require("../models/couponModel")
+const UsersModel = require("../models/usersModel")
+const bcrypt = require("bcrypt")
+
+
+router.post("/api/users", async function (req, res) {
+    const reqBody = req.body
+    const data = await CouponModel.find({ coupon: reqBody.coupon })
+    if (data.length === 1 && data[0].used === false) {
+        console.log("Found and un used")
+        const user = new UsersModel(req.body)
+        const newUser = await user.save()
+        const outData = {
+            registered: true,
+            used: false,
+            found: true
+        }
+        return res.status(200).json(outData)
+
+    } else if (data.length === 1 && data[0].used === true) {
+        console.log("Found but used")
+        const outData = {
+            registered: false,
+            used: true,
+            found: true
+        }
+        return res.json(outData)
+    } else {
+        console.log("Nothing")
+        const outData = {
+            registered: false,
+            used: false,
+            found: false
+        }
+        return res.json(outData)
+    }
+
+    // res.status(200).json({
+    //     registered: true
+    // })
+})
+
+router.post("/api/users/:username", async (req, res) => {
+
+    console.log(req.params.username)
+    console.log(req.body)
+    const data = await UsersModel.findOne({ username: req.params.username })
+    if (!data) return res.status(401).json({
+        error: "Invalid username or password"
+    })
+    const reqBody = req.body
+    console.log(reqBody)
+    console.log(data)
+    const userPass = reqBody.password
+    console.log(userPass)
+    const hash = data.password
+    console.log(hash)
+    const isPassword = await bcrypt.compare(userPass, hash)
+    if (isPassword)
+        return res.status(200).json({
+            message: "Access Granted",
+            data: data
+        })
+    return res.status(401).json({
+        error: "Invalid username or password"
+    })
+})
+
 
 router.get("/login", async (req, res) => {
     const allData = await PostModel.find().sort({ date: -1 })
