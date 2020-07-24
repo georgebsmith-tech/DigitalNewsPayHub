@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.container {
+  padding: 10px;
+}
+
 .red {
   color: red;
 }
@@ -284,6 +288,90 @@ ul {
     }
   }
 }
+.user-dashboard .container {
+  background: #f1f2f7;
+}
+.user-dashboard .container .fa-users, .user-dashboard .container .fa-star {
+  font-size: 4.2rem;
+  color: #0f55ec;
+  width: 60px;
+  border: 1px solid blue;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+.user-dashboard .container .fa-star {
+  border: 1px solid green;
+  color: green;
+}
+.user-dashboard .container > div {
+  height: 80px;
+  background: white;
+  box-shadow: 2px 2px 2px 3px #e7e5e5;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.user-dashboard {
+  padding-bottom: 500px;
+}
+
+.user-dashboard-header {
+  padding: 6px 0px;
+}
+.user-dashboard-header .fa {
+  font-size: 1.6rem;
+  margin-right: 16px;
+}
+.user-dashboard-header .fa:hover {
+  cursor: pointer;
+  color: black;
+}
+.user-dashboard-header .fa-user {
+  background: #f1f2f7;
+  padding: 6px 7px;
+  border-radius: 50px;
+  margin-right: 2px;
+}
+.user-dashboard-header .quick-access {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.identity:hover {
+  cursor: pointer;
+  color: #0f55ec;
+}
+
+.user-nav {
+  background: #0f55ec;
+  padding: 10px;
+}
+.user-nav > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-nav h2 {
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+.user-toggle {
+  padding: 4px;
+}
+.user-toggle > div {
+  width: 20px;
+  padding: 1px;
+  background: white;
+  margin-top: 3px;
+}
+
 .latest-post {
   margin: 10px 10px 50px 10px;
   padding: 20px 10px;

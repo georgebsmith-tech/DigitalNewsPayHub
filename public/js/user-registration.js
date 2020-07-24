@@ -41,14 +41,22 @@ function enableButton() {
 
 disableButton()
 let inData;
+let exitFlag;
+const errorMsgs = document.querySelectorAll(".error-message")
 userSubmitButton.addEventListener("click", async function (e) {
-
+    exitFlag = false
     e.preventDefault()
-    couponModalWrapper.classList.remove("hide")
+    errorMsgs.forEach(msg => {
+        msg.style.visibility = "hidden"
+    })
+
     couponModalWrapper.style.height = document.documentElement.clientHeight;
     // console.log(document.documentElement.clientHeight)
     const username = document.querySelector("[name=username]").value
     const first_name = document.querySelector("[name=first-name]").value
+    console.log(document.querySelector(".error-message"))
+    // console.log(first_name.trim() === "")
+
     const last_name = document.querySelector("[name=last-name]").value
     const email = document.querySelector("[name=email]").value
     const phone = document.querySelector("[name=phone]").value
@@ -57,8 +65,45 @@ userSubmitButton.addEventListener("click", async function (e) {
     const password_check = document.querySelector("[name=confirm-password]").value
     const ref_username = document.querySelector("[name=ref-username]").value
     const termsAndConditions = document.querySelector("[name=t-and-c]").checked
-    console.log(termsAndConditions)
-    console.log(last_name)
+    if (first_name.trim() === "") {
+        errorMsgs[0].textContent = "First Name field can not be empty"
+        errorMsgs[0].style.visibility = "visible"
+
+        exitFlag = true
+    }
+    if (last_name.trim() === "") {
+        errorMsgs[1].textContent = "Last Name field can not be empty"
+        errorMsgs[1].style.visibility = "visible"
+        exitFlag = true
+    }
+    if (username.trim() === "") {
+        errorMsgs[2].textContent = "Username field can not be empty"
+        errorMsgs[2].style.visibility = "visible"
+        exitFlag = true
+    }
+    if (email.trim() === "") {
+        errorMsgs[3].textContent = "Email field can not be empty"
+        errorMsgs[3].style.visibility = "visible"
+        exitFlag = true
+    }
+    if (phone.trim() === "") {
+        errorMsgs[4].textContent = "Phone field can not be empty"
+        errorMsgs[4].style.visibility = "visible"
+        exitFlag = true
+    }
+    if (password.trim() === "") {
+        errorMsgs[5].textContent = "Password field can not be empty"
+        errorMsgs[5].style.visibility = "visible"
+        exitFlag = true
+    }
+    if (password_check.trim() === "") {
+        errorMsgs[6].textContent = "'Confirm field' password field can not be empty"
+        errorMsgs[6].style.visibility = "visible"
+        exitFlag = true
+    }
+    // console.log(termsAndConditions)
+    // console.log(last_name)
+    if (exitFlag) return
     inData = {
         username,
         first_name,
@@ -70,6 +115,7 @@ userSubmitButton.addEventListener("click", async function (e) {
         password_check,
         termsAndConditions
     }
+    couponModalWrapper.classList.remove("hide")
     // console.log(inData)
     // return
 
@@ -91,19 +137,6 @@ couponEntry.addEventListener("input", function () {
 
 couponSubmitButton.addEventListener("click", async function (e) {
     e.preventDefault()
-    // console.log("Clicked")
-    // const resp = await fetch("/registration/coupon", {
-    //     method: "post",
-    //     body: JSON.stringify({
-    //         coupon: couponEntry.value
-    //     }),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //         // 'Content-Type': 'application/x-www-form-urlencoded',
-    //     }
-
-    // })
-
     inData.coupon = couponEntry.value.trim()
     const resp = await fetch("/api/users", {
         method: 'post',
@@ -114,8 +147,6 @@ couponSubmitButton.addEventListener("click", async function (e) {
     })
 
     const outData = await resp.json()
-    // console.log(outData)
-    // console.log(data[0].used)
     if (outData.found) {
 
         if (resp.status === 200 && outData.registered) {

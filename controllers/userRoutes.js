@@ -39,9 +39,7 @@ router.post("/api/users", async function (req, res) {
         return res.json(outData)
     }
 
-    // res.status(200).json({
-    //     registered: true
-    // })
+
 })
 
 router.post("/api/users/:username", async (req, res) => {
@@ -133,11 +131,11 @@ router.post("/registration/coupon", async (req, res) => {
         res.send({ "message": "nothing 1" })
     }
 
+})
 
-    // console.log("linked")
-    // console.log(req.body)
-    // // console.log(data)
-    // res.end()
+router.get("/dashboard/home", (req, res) => {
+    // res.send("Welcome!")
+    res.render("user_dashboard", { title: "User Dashboard" })
 })
 
 module.exports = router;
