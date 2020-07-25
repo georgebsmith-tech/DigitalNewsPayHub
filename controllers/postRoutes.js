@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
 
     // console.log(osts)
-    res.render("index", { title: "BLOG", post: data, posts: allData, cat_color: "fg-red", categories })
+    res.render("index", { title: "Getting the latest infomation on different topics and trends", post: data, posts: allData, cat_color: "fg-red", categories })
 })
 
 // router.get("/index-new", async (req, res) => {
@@ -58,8 +58,14 @@ router.get("/blog/:slug", async (req, res) => {
     PostModel.findOne({ slug: req.params.slug })
         .then((data) => {
             data.number_of_views += 1
+            let tags = ""
+            for (let letter of data.slug) {
+                if (letter === "-") letter = ","
+                tags += letter
+            }
             data.save()
-            res.render("news-detailed", { title: `${data.title}`, post: data, categories, posts: allData })
+            data.tags = tags
+            res.render("news-detailed", { title: `${data.title}`, post: data, categories, posts: allData, tags })
         })
 
 
@@ -107,7 +113,7 @@ router.get("/index/:category", async (req, res) => {
             data = undefined
         let post
         // console.log(data)
-        res.render("post_by_category", { posts: data, title: req.params.category, post, categories })
+        res.render("post_by_category", { posts: data, title: `Articles and blog posts on ${req.params.category}`, post, categories })
     } catch (err) {
         throw err
     }
