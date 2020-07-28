@@ -7,5 +7,6 @@ public/css/style.css.map
 node_modules/
 package.json
 package-lock.json
+models/
 
 
