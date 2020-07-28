@@ -77,15 +77,15 @@ router.get("/login", async (req, res) => {
     res.render("sign-in", { title: "Login", posts: allData, post, categories })
 })
 
-router.get("/register", async (req, res) => {
-    const allData = await PostModel.find().sort({ date: -1 })
-    const categories = await PostCategory.find().select({ name: 1 })
+// router.get("/register", async (req, res) => {
+//     const allData = await PostModel.find().sort({ date: -1 })
+//     const categories = await PostCategory.find().select({ name: 1 })
 
-    let post;
+//     let post;
 
-    res.render("register", { show: false, post, title: "User Registration", posts: allData, categories })
+//     res.render("register", { show: false, post, title: "User Registration", posts: allData, categories })
 
-})
+// })
 
 router.get("/create-account", async (req, res) => {
     const allData = await PostModel.find().sort({ date: -1 })
@@ -97,9 +97,9 @@ router.get("/create-account", async (req, res) => {
 
 })
 
-router.post("/register", (req, res) => {
+// router.post("/register", (req, res) => {
 
-})
+// })
 
 router.get("/dashboard", async (req, res) => {
     let post;
@@ -134,8 +134,9 @@ router.post("/registration/coupon", async (req, res) => {
 })
 
 router.get("/dashboard/home", (req, res) => {
+    let post;
     // res.send("Welcome!")
-    res.render("user_dashboard", { title: "User Dashboard" })
+    res.render("user_dashboard", { title: "User Dashboard", post })
 })
 
 module.exports = router;

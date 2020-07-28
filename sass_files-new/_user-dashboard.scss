@@ -36,14 +36,34 @@ $primary-color-3:#FFC151;
 .user-dashboard{
     padding-bottom: 500px;
 }
+.user-menu{
+    text-transform: uppercase;
+    &>li{
+        
+
+        a{
+            color: white;
+            display: inline-block;
+            padding: 6px 0px;
+            font-size: 1.3rem;
+            padding: 5px;
+            &:hover{
+                background: black;
+                background: rgb(39, 39, 39);
+            }
+        }
+        .fa{
+            padding-right: 7px;
+            font-size: 1.5rem;
+        }
+    }
+}
 .user-dashboard-header{
-    // .avatar-wrapper{
-    //     background: red;
-    // }
-    // position: fixed;
-    padding: 6px 0px;
-    // width: 100vw;
-    .fa{
+    
+    padding: 0px;
+    background: $primary-color-1;
+    background: black;
+    .quick-access.fa{
         font-size: 1.6rem;
         margin-right:16px;
         &:hover{
@@ -54,7 +74,7 @@ $primary-color-3:#FFC151;
     // .fa-caret-down{
     //     margin-right: 0px;
     // }
-    .fa-user{
+    .quick-access.fa-user{
         background: #f1f2f7;
         padding: 6px 7px;
         border-radius: 50px;
@@ -64,6 +84,7 @@ $primary-color-3:#FFC151;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background: white;
     }
 }
 .identity{
@@ -88,6 +109,7 @@ $primary-color-3:#FFC151;
 
 .user-toggle{
     padding: 4px;
+    cursor: pointer;
     &>div{
         width: 20px;
         padding: 1px;

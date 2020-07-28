@@ -6,6 +6,14 @@ $main-padding-sides:11vw;
 // for small screen laptops
 @media only screen and (min-width:769px){
 
+    footer{
+        .secondary-nav-and-credit{
+           ul{
+               flex-direction: row;
+           }
+        }
+    }
+
     //refistration
     .coupon-page{
         .modal-container{

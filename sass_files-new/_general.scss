@@ -53,6 +53,27 @@ a{
 .block{
     display: block;
 }
+.main{
+    margin-top: 70px;
+    padding-top: 40px;
+    font-size: 1.5em;
+    h2,h1{
+        text-transform: uppercase;
+    }
+    h3{
+        margin: 10px 0px;
+    }
+    h1,h2{
+        background: $primary-color-1;
+        color: white;
+        text-align: center;
+        padding: 10px 0px;
+    }
+}
+
+.main section{
+    margin: 20px 0px;
+}
 
 ul{
     list-style-type: none;

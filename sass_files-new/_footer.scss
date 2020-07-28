@@ -1,6 +1,6 @@
 $primary-color-1:#0f55ec;
 $primary-color-2:white;
-$primary-color-3:#d18b08;
+$primary-color-3:#ABA9BB;
 
 
 footer{
@@ -15,21 +15,21 @@ footer{
         align-items: center;
         padding: 10px;
         background:$primary-color-3;
-        ul>li {
-            
-            a{
-                color: $primary-color-2;
-                color:black;
-                font-weight: bolder;
-                text-transform: uppercase;
-            }
+        a{
+            color: $primary-color-2;
+            color:#474555;
+            font-weight: bolder;
+            text-transform: uppercase;
         }
+       
         ul{
             display: flex;
+            flex-direction: column;
             justify-content: space-around;
             // background: red;
             width: 60vw;
             box-sizing: border-box;
+            text-align: center;
         }
         
     }

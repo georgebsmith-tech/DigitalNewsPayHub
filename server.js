@@ -26,6 +26,7 @@ const couponRouter = require("./controllers/coupons");
 const howItWorksRouter = require("./controllers/how_it_works")
 const adminRoute = require("./controllers/adminroutes");
 const postsAPIRoutes = require("./controllers/postsAPIRoutes");
+const privacyRoute = require("./controllers/privacyRoute");
 
 const passport = require("passport");
 const initialize = require("./passport.config")
@@ -99,7 +100,8 @@ app.use(adminRoute)
 app.use(howItWorksRouter)
 app.use(NewsLetterSubRoutes)
 app.use(superAdminRoute)
-superAdminRoute
+app.use(privacyRoute)
+
 
 
 app.use("/api", postsAPIRoutes)
