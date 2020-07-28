@@ -44,7 +44,7 @@ a {
 }
 
 .main {
-  margin-top: 70px;
+  margin-top: 100px;
   padding-top: 40px;
   font-size: 1.5em;
 }
@@ -194,17 +194,23 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .primary-nav ul {
   display: none;
 }
 .primary-nav input {
   border: none;
-  padding: 6px;
-  width: 70px;
-  border-radius: 6px;
+  padding: 10px;
+  width: 95%;
+  border-radius: 3px;
   outline: none;
   background: white;
+  position: absolute;
+  right: 10px;
+  font-size: 1.6rem;
+  top: 55px;
+  background: #e9e5e5;
 }
 .primary-nav .toggle-nav-main {
   padding: 5px;
@@ -219,6 +225,14 @@ ul {
   margin-bottom: 3px;
   border-radius: 10px;
   width: 20px;
+}
+.primary-nav .fa-search, .primary-nav .fa-close {
+  color: white;
+  font-size: 1.5rem;
+}
+.primary-nav .fa-search:hover, .primary-nav .fa-close:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .primary-nav-mobile-container {

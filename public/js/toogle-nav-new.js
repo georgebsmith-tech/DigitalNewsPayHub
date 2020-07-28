@@ -1,4 +1,8 @@
 (function () {
+    const searchBtn = document.querySelector(".primary-nav .fa-search")
+    const searchCloseBtn = document.querySelector(".primary-nav .fa-close")
+    const searchInput = document.querySelector(".primary-nav [name=search]")
+
     const toggleNavHandler = document.querySelector(".toggle-nav-main")
     const toggleNav = document.querySelector(".primary-nav-mobile-container")
     const brand = document.querySelector(".logo-and-caption")
@@ -54,6 +58,21 @@
         .to(".layer-2", { duration: 1, y: "-100vh" }, 2)
         .to(".layer-3", { duration: 1, y: "-100vh" }, 2.5)
         .to(".overlay", { display: "none" })
+
+
+
+    searchBtn.addEventListener("click", function () {
+        searchInput.classList.remove("hide")
+        this.classList.add("hide")
+        searchCloseBtn.classList.remove("hide")
+
+    })
+    searchCloseBtn.addEventListener("click", function () {
+        searchInput.classList.add("hide")
+        this.classList.add("hide")
+        searchBtn.classList.remove("hide")
+
+    })
 })()
 
 
