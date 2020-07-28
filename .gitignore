@@ -4,4 +4,5 @@ node_modules
 style.scss
 sass_files
 public/css/style.css.map
+node_modules/
 
